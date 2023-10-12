@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import H2ProjectTitle from "../components/H2project-title.astro";
+
+const { project } = Astro.props;
+---
+
+<Layout>
+  <div class="flex flex-col  items-center w-fit gap-4 col-start-2">
+    <a href={project.data.projectURL} class=" flex flex-col items-center w-fit">
+      <span class="material-symbols-outlined"> open_in_new</span>
+      <p>Github</p>
+    </a>
+    <a href={project.data.projectURL} class=" flex flex-col items-center w-fit">
+      <span class="material-symbols-outlined"> open_in_new</span>
+      <p>Figma</p>
+    </a>
+    <a href={project.data.projectURL} class=" flex flex-col items-center w-fit">
+      <span class="material-symbols-outlined"> open_in_new</span>
+      <p>Project</p>
+    </a>
+  </div>
+  <H2ProjectTitle text={project.data.projectTitle} />
+  <img src={project} />
+  <p></p>
+</Layout>

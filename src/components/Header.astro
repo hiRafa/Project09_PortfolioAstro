@@ -5,68 +5,54 @@ import H1 from "./H1.astro";
 const { headerIntro } = Astro.props;
 ---
 
-<header class="grid grid-cols-12">
-  <section
-    class="h-screen col-start-1 col-span-5 grid grid-rows-2 max-md:px-24 py-4 w-full max-w-5xl mx-auto clr-bg"
-  >
-    {
-      headerIntro ? (
-        <>
-          <div class="overflow-hidden">
-            <H1 text="HIRASHIKI RAFAEL" />
-            <p>Casual Dancer</p>
+<header
+  class="h-screen col-start-1 col-span-5 grid grid-rows-2 max-md:px-24 py-4 w-full max-w-5xl mx-auto clr-bg"
+>
+  {
+    headerIntro ? (
+      <>
+        <div class="overflow-hidden">
+          <H1 text="HIRASHIKI RAFAEL" />
+          <p>Casual Dancer</p>
 
-            <h2>⯁Web Frontend Developer (Junior)</h2>
-            <h3>❍System Developer (graduating)</h3>
-            <p>
-              From Brazil, Based in Tokyo. <br />
-              Passionate for connecting stars, understanding problems, finding
-              solutions, upgrading performances and flows.
-            </p>
-            <p>Special interest in the health, environment and nature fields</p>
-          </div>
-          <nav>
-            <ul>
-              <li class="flex flex-nowrap justify-between gap-4">
-                <a href="/roadmap">RoadMap & Projects</a>
-                <p>⟢</p>
-              </li>
-            </ul>
-          </nav>
-        </>
-      ) : (
+          <h2>⯁Web Frontend Developer (Junior)</h2>
+          <h3>❍System Developer (graduating)</h3>
+          <p>
+            From Brazil, Based in Tokyo. <br />
+            Passionate for connecting stars, understanding problems, finding
+            solutions, upgrading performances and flows.
+          </p>
+          <p>Special interest in the health, environment and nature fields</p>
+        </div>
         <nav>
           <ul>
-            <li>
-              <a href="/">Intro</a>
-            </li>
-            <li>
-              <a href="/">RoadMap & Projects</a>
-            </li>
-            <li class="li-year">2023</li>
-            <li>
-              <a href="/project01" class="flex justify-between">
-                <p class="flex gap-1 items-end">
-                  AgendaeSaude <span class="li-role">System Dev</span>{" "}
-                </p>
-                <p>⟢</p>
-              </a>
+            <li class="flex flex-nowrap justify-between gap-4">
+              <a href="/roadmap">RoadMap & Projects</a>
+              <p>⟢</p>
             </li>
           </ul>
         </nav>
-      )
-    }
-  </section>
-  <section
-    class="h-screen col-start-7 col-span-6 grid grid-rows-2 max-md:px-24 py-4 w-full max-w-5xl mx-auto"
-  >
-    <Image
-      src="/Images/rafa.png"
-      width={500}
-      height={500}
-      format="webp"
-      alt="Japanese looking guy from Brazil wearing stylish clothes"
-      class="rounded-2x1 aspect-thumbnail object-cover"
-    />
-  </section>
+      </>
+    ) : (
+      <nav>
+        <ul>
+          <li>
+            <a href="/roadmap">Intro</a>
+          </li>
+          <li>
+            <a href="/">RoadMap & Projects</a>
+          </li>
+          <li class="li-year">2023</li>
+          <li>
+            <a href="/project01" class="flex justify-between">
+              <p class="flex gap-1 items-end">
+                AgendaeSaude <span class="li-role">System Dev</span>{" "}
+              </p>
+              <p>⟢</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    )
+  }
 </header>

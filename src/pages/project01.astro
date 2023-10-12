@@ -1,16 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Main from "../components/Main.astro";
-import H2ProjectTitle from "../components/H2project-title.astro";
+import ProjectLayout from "../components/ProjectLayout.astro";
 
-import { getCollection } from "astro:content";
+import { getEntry } from "astro:content";
+const project01 = await getEntry("projects", "project01");
+const { Content, headings } = await project01.render();
 
-const projects = await getCollection("projects");
-console.log(projects)
+console.log(project01);
 ---
 
-<Layout title="Hirashiki Rafael's 1st Project">
-  <Main>
-    <H2ProjectTitle text="Project 01 Dance School" />
-  </Main>
-</Layout>
+<ProjectLayout project={project01}></ProjectLayout>
