@@ -1,3 +1,7 @@
-<main class="h-screen col-start-7 col-span-6 grid grid-rows-2 max-md:px-24 w-full max-w-5xl mx-auto">
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<main class={className} {...rest} >
     <slot/>
 </main>

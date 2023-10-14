@@ -1,58 +1,97 @@
 ---
 import { Image } from "astro:assets";
 import H1 from "./H1.astro";
+import RafaPic from "./Rafa-pic.astro";
 
-const { headerIntro } = Astro.props;
+const { headerIntro, class: className, ...rest } = Astro.props;
 ---
 
-<header
-  class="h-screen col-start-1 col-span-5 grid grid-rows-2 max-md:px-24 py-4 w-full max-w-5xl mx-auto clr-bg"
->
-  {
-    headerIntro ? (
-      <>
-        <div class="overflow-hidden">
-          <H1 text="HIRASHIKI RAFAEL" />
-          <p>Casual Dancer</p>
+<header class={className} {...rest} >
+  <div class={`clr-bg grid grid-cols-6 py-16 min-xl:py-10 h-full `}>
+    <Image
+      src="/Images/stars-topleft.svg"
+      width={220}
+      height={40}
+      format="svg"
+      alt="stars bg"
+      class="fixed z-50"
+    />
 
-          <h2>⯁Web Frontend Developer (Junior)</h2>
-          <h3>❍System Developer (graduating)</h3>
-          <p>
-            From Brazil, Based in Tokyo. <br />
-            Passionate for connecting stars, understanding problems, finding
-            solutions, upgrading performances and flows.
-          </p>
-          <p>Special interest in the health, environment and nature fields</p>
-        </div>
-        <nav>
-          <ul>
-            <li class="flex flex-nowrap justify-between gap-4">
-              <a href="/roadmap">RoadMap & Projects</a>
-              <p>⟢</p>
-            </li>
-          </ul>
-        </nav>
-      </>
-    ) : (
-      <nav>
-        <ul>
-          <li>
-            <a href="/roadmap">Intro</a>
-          </li>
-          <li>
-            <a href="/">RoadMap & Projects</a>
-          </li>
-          <li class="li-year">2023</li>
-          <li>
-            <a href="/project01" class="flex justify-between">
-              <p class="flex gap-1 items-end">
-                AgendaeSaude <span class="li-role">System Dev</span>{" "}
+    <div
+      class="col-start-2 col-span-6 flex flex-col justify-between h-full pt-24 pb-12 relative"
+    >
+      <Image
+        src="/Images/stars-bottomleft.svg"
+        width={55}
+        height={40}
+        format="svg"
+        alt="stars bg"
+        class="absolute bottom-0 -left-8 z-50"
+      />
+
+      {
+        headerIntro ? (
+          <>
+            <section class="self-start">
+              <H1 text="HIRASHIKI RAFAEL" />
+              <p>Casual Dancer</p>
+            </section>
+
+            <section class="">
+              <h2 class=" text-3xl font-bold min-xl:text-2xl">
+                ⯁ Web Frontend Developer (Junior)
+              </h2>
+              <br />
+              <h3 class=" text-3xl font-bold min-xl:text-2xl">
+                ❍ System Developer (graduating)
+              </h3>
+            </section>
+
+            <section class="">
+              <p class="pb-6 text-xl min-xl:text-lg">
+                From Brazil, Based in Tokyo. <br />
+                Passionate for connecting stars, understanding problems, finding
+                solutions, upgrading performances and flows.
               </p>
-              <p>⟢</p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    )
-  }
+              <p>Special interest in health, environment and nature fields</p>
+            </section>
+
+            <nav class="self-end justify-self-end relative z-50">
+              <ul>
+                <li class="">
+                  <a href="/roadmap" class="text-4xl min-xl:text-3xl font-bold flex flex-nowrap justify-center items-center gap-4 ">
+                    <p class="underline">RoadMap & Projects</p>
+                    <p class="text-3xl">⟢</p>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </>
+        ) : (
+          <>
+            <RafaPic />
+            <nav>
+              <ul>
+                <li>
+                  <a href="/">Intro</a>
+                </li>
+                <li>
+                  <a href="/roadmap">RoadMap & Projects</a>
+                </li>
+                <li class="li-year">2023</li>
+                <li>
+                  <a href="/project01" class="flex justify-between">
+                    <p class="flex gap-1 items-end">
+                      AgendaeSaude <span class="li-role">System Dev</span>
+                    </p>
+                    <p>⟢</p>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </>
+        )
+      }
+    </div>
+  </div>
 </header>

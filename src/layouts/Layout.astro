@@ -20,6 +20,7 @@ interface Props {
 const { title, description, image, headerIntro } = Astro.props;
 
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 const projects = await getCollection("projects");
 // console.log(projects);
 ---
@@ -35,13 +36,30 @@ const projects = await getCollection("projects");
     <title>{title}</title>
     <ViewTransitions />
 
-	<!-- Font -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
   </head>
 
-  <body class="grid grid-cols-12">
-    <Header headerIntro={headerIntro} />
-    <Main projects={projects}>
+  <body class={`grid grid-cols-12 ${headerIntro && "clr-bg"}`}>
+    <!-- <Image
+      src="/Images/stars-bg.svg"
+      width={1920}
+      height={1080}
+      format="svg"
+      alt="stars bg"
+      class="fixed w-screen z-50"
+    /> -->
+    <Header
+      headerIntro={headerIntro}
+      class="w-full h-screen col-start-1 col-span-5"
+    />
+    <Main
+      projects={projects}
+      class="w-full h-screen col-start-6 col-span-7 max-md:px-24 relative"
+    >
       <slot />
     </Main>
     <!-- <Footer/> -->
@@ -56,12 +74,61 @@ const projects = await getCollection("projects");
           rgb(var(--accent-light)) 30%,
           white 60%
         );
+
         --clr-bg: #0f2132;
       }
+
+      /* reset  */
       html {
-        font-family: system-ui, sans-serif;
-        background-size: 224px;
+        box-sizing: border-box;
+        font-size: 16px;
       }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      ol,
+      ul {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+      }
+
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      /* reset  */
+
+      html,
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      a:hover {
+        cursor: pointer;
+      } 
+
+      /* img {
+        width: 100%;
+      } */
+
       code {
         font-family:
           Menlo,
@@ -84,19 +151,19 @@ const projects = await getCollection("projects");
         font-size: 12px;
       }
 
-	  .photo_div {
-		border-radius: 50%;
-		width: fit-content;
-	  }
+      .photo_div {
+        border-radius: 50%;
+        width: fit-content;
+      }
 
-	  .material-symbols-outlined {
-		background-color:black;
-		width: 40px;
-		height: 40px;
-		border-radius:5px;
-		color: white;
-		font-size: 40px;
-	  }
+      .material-symbols-outlined {
+        background-color: black;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        color: white;
+        font-size: 40px;
+      }
     </style>
   </body>
 </html>

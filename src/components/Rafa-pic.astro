@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class={className} {...rest}>
+  <Image
+    src="/Images/rafa.png"
+    width={450}
+    height={450}
+    format="webp"
+    alt="Japanese looking guy from Brazil wearing stylish clothes"
+    class="rounded-2x1 aspect-thumbnail object-cover rounded-full"
+  />
+</div>
