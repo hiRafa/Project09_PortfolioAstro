@@ -5,7 +5,7 @@ const projectsSchema = defineCollection({
   type: "content", // v2.5.0 and later
   schema: z.object({
     projectURL: z.string(),
-    figmaURL: z.string(),
+    figmaURL: z.string().optional(),
     githubURL: z.string(),
     thumbnail: z.string(),
     technologies: z.array(z.string()),

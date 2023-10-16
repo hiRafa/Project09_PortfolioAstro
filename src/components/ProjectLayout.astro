@@ -1,26 +1,54 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import H2ProjectTitle from "../components/H2project-title.astro";
+import { Image } from "astro:assets";
 
 const { project } = Astro.props;
+
+console.log(project.data.projectBulletList);
 ---
 
 <Layout>
-  <div class="flex flex-col  items-center w-fit gap-4 col-start-2">
-    <a href={project.data.projectURL} class=" flex flex-col items-center w-fit">
-      <span class="material-symbols-outlined"> open_in_new</span>
+  <div class="grid grid-cols-6 w-full items-end absolute -top-40">
+    <Image
+      src="/Images/stars-black-topright.svg"
+      width={744}
+      height={655}
+      format="png"
+      alt="stars bg"
+      class=" col-span-7 w-full"
+    />
+    <a href={project.data.githubURL} class="flex flex-col items-center w-fit col-start-7">
+      <Image
+        src="/Images/logo_github.png"
+        width={144}
+        height={213}
+        format="png"
+        alt="figma logo"
+        class="material-symbols-outlined "
+      />
       <p>Github</p>
     </a>
-    <a href={project.data.projectURL} class=" flex flex-col items-center w-fit">
-      <span class="material-symbols-outlined"> open_in_new</span>
+    <a href={project.data.figmaURL} class="flex flex-col items-center w-fit col-start-7">
+      <Image
+        src="/Images/logo_figma.svg"
+        width={144}
+        height={213}
+        format="svg"
+        alt="figma logo"
+        class="material-symbols-outlined"
+      />
       <p>Figma</p>
     </a>
-    <a href={project.data.projectURL} class=" flex flex-col items-center w-fit">
+    <a href={project.data.projectURL} class="flex flex-col items-center w-fit col-start-7">
       <span class="material-symbols-outlined"> open_in_new</span>
       <p>Project</p>
     </a>
   </div>
   <H2ProjectTitle text={project.data.projectTitle} />
-  <img src={project} />
-  <p></p>
+  <img src={`/Images/${project.data.thumbnail}.jpg`} />
+  <p>{project.data.projectSubtitle}</p>
+  <ul>
+    {project.data.projectBulletList.map((option: string) => <li>❍{option}</li>)}
+  </ul>
 </Layout>

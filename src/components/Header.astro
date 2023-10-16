@@ -6,92 +6,172 @@ import RafaPic from "./Rafa-pic.astro";
 const { headerIntro, class: className, ...rest } = Astro.props;
 ---
 
-<header class={className} {...rest} >
-  <div class={`clr-bg grid grid-cols-6 py-16 min-xl:py-10 h-full `}>
+<header class={className} {...rest}>
+  <div class="grid-start-1 col-span-1">
+    <H1 text="HIRASHIKI RAFAEL" index={false} />
+    <p>powered by Astro</p>
+  </div>
+  <Image
+    src="/Images/stars-topleft.svg"
+    width={220}
+    height={40}
+    format="svg"
+    alt="stars bg"
+    class="fixed z-50"
+  />
+  <div
+    class="col-start-2 col-span-4 flex flex-col justify-between h-full pt-24 pb-12 pr-4 relative"
+  >
     <Image
-      src="/Images/stars-topleft.svg"
-      width={220}
+      src="/Images/stars-bottomleft.svg"
+      width={55}
       height={40}
       format="svg"
       alt="stars bg"
-      class="fixed z-50"
+      class="absolute bottom-0 -left-8 z-50"
     />
 
-    <div
-      class="col-start-2 col-span-6 flex flex-col justify-between h-full pt-24 pb-12 relative"
-    >
-      <Image
-        src="/Images/stars-bottomleft.svg"
-        width={55}
-        height={40}
-        format="svg"
-        alt="stars bg"
-        class="absolute bottom-0 -left-8 z-50"
-      />
+    {
+      headerIntro ? (
+        <>
+          <section class="self-start">
+            <H1 text="HIRASHIKI RAFAEL" index={true} />
+            <p>Casual Dancer</p>
+          </section>
 
-      {
-        headerIntro ? (
-          <>
-            <section class="self-start">
-              <H1 text="HIRASHIKI RAFAEL" />
-              <p>Casual Dancer</p>
-            </section>
+          <section class="">
+            <h2 class=" text-3xl font-bold min-xl:text-2xl">
+              ⯁ Web Frontend Developer (Junior)
+            </h2>
+            <br />
+            <h3 class=" text-3xl font-bold min-xl:text-2xl">
+              ❍ System Developer (graduating)
+            </h3>
+          </section>
 
-            <section class="">
-              <h2 class=" text-3xl font-bold min-xl:text-2xl">
-                ⯁ Web Frontend Developer (Junior)
-              </h2>
-              <br />
-              <h3 class=" text-3xl font-bold min-xl:text-2xl">
-                ❍ System Developer (graduating)
-              </h3>
-            </section>
+          <section class="">
+            <p class="pb-6 text-xl min-xl:text-lg">
+              From Brazil, Based in Tokyo. <br />
+              Passionate for connecting stars, understanding problems, finding
+              solutions, upgrading performances and flows.
+            </p>
+            <p>Special interest in health, environment and nature fields</p>
+          </section>
 
-            <section class="">
-              <p class="pb-6 text-xl min-xl:text-lg">
-                From Brazil, Based in Tokyo. <br />
-                Passionate for connecting stars, understanding problems, finding
-                solutions, upgrading performances and flows.
-              </p>
-              <p>Special interest in health, environment and nature fields</p>
-            </section>
-
-            <nav class="self-end justify-self-end relative z-50">
-              <ul>
-                <li class="">
-                  <a href="/roadmap" class="text-4xl min-xl:text-3xl font-bold flex flex-nowrap justify-center items-center gap-4 ">
-                    <p class="underline">RoadMap & Projects</p>
-                    <p class="text-3xl">⟢</p>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </>
-        ) : (
-          <>
-            <RafaPic />
-            <nav>
-              <ul>
-                <li>
-                  <a href="/">Intro</a>
-                </li>
-                <li>
-                  <a href="/roadmap">RoadMap & Projects</a>
-                </li>
-                <li class="li-year">2023</li>
-                <li>
-                  <a href="/project01" class="flex justify-between">
-                    <p class="flex gap-1 items-end">
-                      AgendaeSaude <span class="li-role">System Dev</span>
-                    </p>
-                    <p>⟢</p>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </>
-        )
-      }
-    </div>
+          <nav class="self-end justify-self-end relative z-50">
+            <ul>
+              <li class="">
+                <a
+                  href="/roadmap"
+                  class="text-4xl min-xl:text-3xl font-bold flex flex-nowrap justify-center items-center gap-4 "
+                >
+                  <p class="underline">RoadMap & Projects</p>
+                  <p class="text-3xl">⟢</p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </>
+      ) : (
+        <>
+          <RafaPic class=" w-4/6 m-auto" />
+          <nav>
+            <ul>
+              <li>
+                <a
+                  href="/"
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                >
+                  <p class="flex gap-1 items-end">
+                    Home <span class="li-role" />
+                  </p>
+                  <p>⟢</p>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/roadmap"
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                >
+                  <p class="flex gap-1 items-end">
+                    RoadMap & Projects <span class="li-role">"to INFINITY and Beyond!"</span>
+                  </p>
+                  <p>⟢</p>
+                </a>
+              </li>
+              <li class="li-year">2023</li>
+              <li>
+                <a
+                  href="/project05"
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                >
+                  <p class="flex gap-1 items-end">
+                    Agendae+ <span class="li-role">System Dev</span>
+                  </p>
+                  <p>⟢</p>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/project04"
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                >
+                  <p class="flex gap-1 items-end">
+                    Medical Records <span class="li-role">Coder Next.js</span>
+                  </p>
+                  <p>⟢</p>
+                </a>
+              </li>
+              <li class="li-year">2022</li>
+              <li>
+                <a
+                  href="/project03"
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                >
+                  <p class="flex gap-1 items-end">
+                    Music Store <span class="li-role">Coder React.js</span>
+                  </p>
+                  <p>⟢</p>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/project02"
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                >
+                  <p class="flex gap-1 items-end">
+                    Bakery LP <span class="li-role">Coder HTML/CSS/JS</span>
+                  </p>
+                  <p>⟢</p>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/project01"
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                >
+                  <p class="flex gap-1 items-end">
+                    Dance School LP
+                    <span class="li-role">Coder HTML/CSS/JS</span>
+                  </p>
+                  <p>⟢</p>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/oldportfolio"
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                >
+                  <p class="flex gap-1 items-end">
+                    Portfolio v1 <span class="li-role">Coder HTML/CSS/JS</span>
+                  </p>
+                  <p>⟢</p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </>
+      )
+    }
   </div>
 </header>
