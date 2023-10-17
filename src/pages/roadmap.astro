@@ -6,9 +6,34 @@ import H2ProjectTitle from "../components/H2project-title.astro";
 import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
-console.log(projects)
+console.log(projects);
 ---
 
 <Layout title="Hirashiki Rafael's 1st Project">
-    <H2ProjectTitle text="RoadMap" />
+  <H2ProjectTitle text="RoadMap" />
+
+  <div class="grid grid-cols-8 w-full">
+    <div class="col-span-3 text-right">
+      <p class="grid-item-ball">
+        <span
+          >Acupuncture + <br />Game Design Video Editing +<br />VFX Design</span
+        ><span>⚫</span>
+      </p>
+      <h3 class="grid-item-ball">
+        <span>Frontend Web<br />Development studies</span><span>⚫</span>
+      </h3>
+      <ul>
+        <li class="grid-item-ball">
+          <span>HTML5/CSS3</span><span>⬤</span>
+        </li>
+        <li class="grid-item-ball">
+          <span>Github Basics</span><span>⬤</span>
+        </li>
+        <li>Sass</li>
+        <li>JS</li>
+        <li>React + Material UI + Firebase</li>
+        <li>Next.js + MongoDB + Vercel</li>
+      </ul>
+    </div>
+  </div>
 </Layout>

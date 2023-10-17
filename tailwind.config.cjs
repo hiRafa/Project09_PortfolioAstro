@@ -25,8 +25,19 @@ module.exports = {
       addComponents({
         ".clr-bg": {
           background: "#0F2132",
-		  color: "white",
+		      color: "white",
         },
+        ".grid-item-ball": {
+          display: "grid",
+          gridTemplateColumns: "1fr 20px",
+          justifyContent: "center",
+          gap: "10px",
+        },
+        ".grid-ball": {
+          display: "block",
+          width: "fit-content",
+          margin: "auto",
+        }
       });
     },
   ],
