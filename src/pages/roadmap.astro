@@ -4,36 +4,271 @@ import Main from "../components/Main.astro";
 import H2ProjectTitle from "../components/H2project-title.astro";
 
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 const projects = await getCollection("projects");
 console.log(projects);
 ---
 
+<style>
+  .grid-item-ball {
+    display: grid;
+    grid-template-columns: 1fr 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .grid-item-ball-reverse {
+    grid-template-columns: 24px 1fr;
+    padding: 0.67rem 0;
+  }
+
+  p {
+    font-style: italic;
+  }
+
+  h3 {
+    font-weight: 700;
+    padding: 2rem 0;
+    font-size: large;
+    font-style: normal;
+  }
+  .grid-item-ball .fa-circle {
+    color: var(--clr-coder);
+    font-style: normal;
+    width: fit-content;
+    margin: auto;
+    font-size: small;
+  }
+  .grid-item-ball-reverse .fa-circle {
+    color: var(--clr-sys);
+  }
+  h3.grid-item-ball .fa-circle {
+    font-size: larger;
+  }
+
+  .bar {
+    position: absolute;
+    width: 4px;
+  }
+  .blue-bar {
+    height: 760px;
+    top: 40px;
+    right: 10px;
+    background-color: var(--clr-coder);
+  }
+  .black-bar-blue {
+    height: 440px;
+    bottom: 0;
+    right: 10px;
+    background-color: #353535;
+    z-index: -1;
+  }
+  .orange-bar {
+    height: 470px;
+    top: 40px;
+    left: 10px;
+    background-color: var(--clr-sys);
+  }
+  .black-bar-orange {
+    height: 440px;
+    bottom: 0;
+    left: 10px;
+    background-color: #000;
+    z-index: -1;
+  }
+</style>
+
 <Layout title="Hirashiki Rafael's 1st Project">
-  <H2ProjectTitle text="RoadMap" />
+  <div class="absolute top-0 right-12 z-50 flex flex-col items-end gap-4">
+    <Image
+      src="/Images/stars-topright-road.png"
+      width={310}
+      height={560}
+      format="png"
+      alt="stars bg"
+      class="pr-2 "
+    />
+    <H2ProjectTitle text="RoadMap" road={true}/>
+
+    <a href="https://github.com/hiRafa" class="flex flex-col items-end w-fit">
+      <Image
+        src="/Images/logo_github.png"
+        width={144}
+        height={213}
+        format="png"
+        alt="github logo"
+        class="url-logo-black"
+      />
+      <p>Github</p>
+    </a>
+    <a href="https://www.linkedin.com/in/rafael-hirashiki-7a5733170/" class="flex flex-col items-end w-fit">
+      <Image
+        src="/Images/logo_linkedin.png"
+        width={144}
+        height={213}
+        format="png"
+        alt="linkedin logo"
+        class="url-logo-black url-logo"
+      />
+      <p>Linkedin</p>
+    </a>
+  </div>
 
   <div class="grid grid-cols-8 w-full">
-    <div class="col-span-3 text-right">
+    <div class="col-span-3 text-right relative -right-4">
+      <div class="bar blue-bar"></div>
+      <div class="bar black-bar-blue"></div>
       <p class="grid-item-ball">
-        <span
-          >Acupuncture + <br />Game Design Video Editing +<br />VFX Design</span
-        ><span>⚫</span>
+        Acupuncture • <br />Game Design Video Editing •<br />VFX Design<i
+          class="fa-solid fa-circle"></i>
       </p>
       <h3 class="grid-item-ball">
-        <span>Frontend Web<br />Development studies</span><span>⚫</span>
+        Frontend Web<br />Development studies<i class="fa-solid fa-circle"></i>
       </h3>
-      <ul>
-        <li class="grid-item-ball">
-          <span>HTML5/CSS3</span><span>⬤</span>
-        </li>
-        <li class="grid-item-ball">
-          <span>Github Basics</span><span>⬤</span>
-        </li>
-        <li>Sass</li>
-        <li>JS</li>
-        <li>React + Material UI + Firebase</li>
-        <li>Next.js + MongoDB + Vercel</li>
-      </ul>
+      <p class="grid-item-ball">
+        HTML5/CSS3<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Github Basics<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">Sass<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">JS<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">
+        React • Material UI • Firebase <i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Next.js • MongoDB • Vercel<i class="fa-solid fa-circle"></i>
+      </p>
+      <h3 class="grid-item-ball">
+        Frontend Engineer (Junior)<i class="fa-solid fa-circle"></i>
+      </h3>
+      <p class="grid-item-ball">JQuery<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">
+        PHP Symfony<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">MVC Models<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">
+        EC-CUBE: e-commerce solution<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">Wordpress<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">
+        Github branching and version control<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Local, Test and Production environments<i class="fa-solid fa-circle"
+        ></i>
+      </p>
+      <p class="grid-item-ball">
+        Docker Containers<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Page Speed Performance<i class="fa-solid fa-circle"></i>
+      </p>
+      <h3 class="grid-item-ball">
+        Level up Frontend •<br />Backend •<br />System Dev Skills
+        <i class="fa-solid fa-circle"></i>
+      </h3>
+      <p class="grid-item-ball">
+        Astro • TailWind • Typescript<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Code Testing<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Project: System Development •<br />Backend (Nest.js Typescript)<i
+          class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Python Project<i class="fa-solid fa-circle"></i>
+      </p>
+      <h3 class="grid-item-ball">
+        Level Up Dev Skills<i class="fa-solid fa-circle"></i>
+      </h3>
+      <p class="grid-item-ball">
+        Keep exploring technologies according to the market.
+        <i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Enhance skills according to work and challenges.<i
+          class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Strengthen planning, problem solving and systematic thinking. <i
+          class="fa-solid fa-circle"></i>
+      </p>
+      <h3 class="grid-item-ball">
+        Explore Data Science<br />Mid Developer (System, Front or Full Stack)
+        <i class="fa-solid fa-circle"></i>
+      </h3>
+    </div>
+    <div class="col-span-1 text-center">
+      <p class="">~2022</p>
+      <p class="pt-24">2022</p>
+      <p class="pt-64">2023</p>
+      <p class="pt-96">2024</p>
+      <p class="pt-40">2025</p>
+    </div>
+    <div class="col-span-3 mt-96 relative -left-4">
+      <div class="bar orange-bar"></div>
+      <div class="bar black-bar-orange"></div>
+      <h3 class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"> </i>
+         System Development<br />
+         2 year Degree
+      </h3>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"> </i>XXI Computer Architecture
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Enterprise Communication
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Career Planning
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Analysis and Requirements for Software
+        and System Development
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Object-Oriented Development
+        (Algorithms+ Java Introduction)
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Software Design
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>More Java
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Object Oriented Programming
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Data Base Management System
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Web Development
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Smart Data Structures
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Mobile Development
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Microservices & Containers
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Compliance, Quality Control and IT
+        Strategies
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>CyberSecurity
+      </p>
+      <h3 class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"> </i>
+         MBA
+      </h3>
     </div>
   </div>
 </Layout>

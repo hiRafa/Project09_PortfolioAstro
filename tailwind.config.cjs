@@ -27,12 +27,19 @@ module.exports = {
           background: "#0F2132",
 		      color: "white",
         },
-        ".grid-item-ball": {
-          display: "grid",
-          gridTemplateColumns: "1fr 20px",
-          justifyContent: "center",
-          gap: "10px",
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none",
         },
+        // ".orange-bar": {
+        //   backgroundColor: "var(--clr-sys)",
+        // },
+        // ".grid-item-ball": {
+        //   display: "grid",
+        //   gridTemplateColumns: "1fr 20px",
+        //   justifyContent: "center",
+        //   alignItems: "center",
+        //   gap: "10px",
+        // },
         ".grid-ball": {
           display: "block",
           width: "fit-content",

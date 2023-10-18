@@ -1,9 +1,12 @@
 ---
 interface Props {
   text?: string;
+  road?: boolean;
 }
 
-const { text } = Astro.props;
+const { text, road } = Astro.props;
 ---
 
-<h2 class="text-6xl text-blue-600 font-bold mb-12">{text}</h2>
+<h2 class:list={[road ? "absolute top-16 left-8 text-3xl font-bold mb-12" : "absolute top-0"]}>
+  {text}
+</h2>
