@@ -30,6 +30,12 @@ module.exports = {
         ".no-scrollbar::-webkit-scrollbar": {
           display: "none",
         },
+        ".brand-blue": {
+          color: "var(--clr-coder)",
+        },
+        ".brand-orange": {
+          color: "var(--clr-sys)",
+        },
         // ".orange-bar": {
         //   backgroundColor: "var(--clr-sys)",
         // },

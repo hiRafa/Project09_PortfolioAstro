@@ -1,31 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Main from "../components/Main.astro";
-import H1 from "../components/H1.astro";
 import { Image } from "astro:assets";
 import RafaPic from "../components/Rafa-pic.astro";
 ---
 
 <Layout title="Hirashiki Rafael's Nifty Journey on the web" headerIntro={true}>
-  <RafaPic class=" absolute z-20 -top-40 bottom-0 right-0 -left-40 photo_div m-auto h-fit w-5/12 "/>
-  <div class="absolute z-30 top-0 bottom-0 m-auto right-20 h-fit w-6/6" >
+  <RafaPic class="css-photo_div absolute z-20 -top-40 bottom-0 left-48 m-auto h-fit w-5/12 "/>
+  <div class="absolute z-30 top-0 bottom-0 left-16 m-auto h-fit max-w-fit w-6/6" >
     <Image
       src="/Images/logos.png"
-      width={2200}
-      height={2200}
+      width={900}
+      height={900}
       format="png"
       alt="web development applications icons and logos"
       class=""
     />
   </div>
-  <div class="absolute z-10 m-auto top-0 -bottom-60 -left-40 right-0 h-fit" >
+  <div class="absolute z-10 top-0 -bottom-60 -left-40 m-auto h-fit w-6/6" >
     <Image
       src="/Images/index-waves.png"
       width={1280}
       height={634}
       format="png"
       alt="stars bg"
-      class=" "
+      class=""
     />
   </div>
 </Layout>

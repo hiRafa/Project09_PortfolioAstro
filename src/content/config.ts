@@ -12,6 +12,7 @@ const projectsSchema = defineCollection({
     projectTitle: z.string(),
     projectSubtitle: z.string(),
     projectBulletList: z.array(z.string()),
+    thumbnail_extra: z.array(z.string()).optional(),
   }),
 });
 // 3. Export a single `collections` object to register your collection(s)

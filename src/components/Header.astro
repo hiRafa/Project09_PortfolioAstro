@@ -7,10 +7,8 @@ const { headerIntro, class: className, ...rest } = Astro.props;
 ---
 
 <header class={className} {...rest}>
-  <div class="grid-start-1 col-span-1">
-    <H1 text="HIRASHIKI RAFAEL" index={false} />
-    <p class="absolute bottom-0">powered by Astro</p>
-  </div>
+  <H1 text="HIRASHIKI RAFAEL" index={false} />
+  <p class="absolute bottom-0">powered by Astro</p>
   <Image
     src="/Images/stars-topleft.svg"
     width={220}
@@ -94,7 +92,8 @@ const { headerIntro, class: className, ...rest } = Astro.props;
                   class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
                 >
                   <p class="flex gap-1 items-end">
-                    RoadMap & Projects <span class="li-role">"to INFINITY and Beyond!"</span>
+                    RoadMap & Projects{" "}
+                    <span class="li-role">"to INFINITY and Beyond!"</span>
                   </p>
                   <p>⟢</p>
                 </a>
