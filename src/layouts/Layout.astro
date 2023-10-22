@@ -8,7 +8,7 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
-  headerIntro?: boolean;
+  headerIndex?: boolean;
 }
 
 // const {
@@ -17,7 +17,7 @@ interface Props {
 // 	image="/images/rafa.jpg"
 // } = Astro.props;
 
-const { title, description, image, headerIntro } = Astro.props;
+const { title, description, image, headerIndex } = Astro.props;
 
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
@@ -45,7 +45,7 @@ const projects = await getCollection("projects");
   </head>
 
   <body
-    class={`grid grid-cols-12 ${headerIntro && "clr-bg"} overflow-y-hidden`}
+    class={`grid grid-cols-12 ${headerIndex && "clr-bg"} overflow-y-hidden`}
   >
     <!-- <Image
       src="/Images/stars-bg.svg"
@@ -56,16 +56,16 @@ const projects = await getCollection("projects");
       class="fixed w-screen z-50"
     /> -->
     <Header
-      headerIntro={headerIntro}
+      headerIndex={headerIndex}
       class={`relative w-full h-screen col-start-1 ${
-        headerIntro ? "col-span-5" : "col-span-4"
-      } clr-bg py-8 grid grid-cols-5`}
+        headerIndex ? "col-span-5" : "col-span-4"
+      } clr-bg pt-8 grid grid-cols-5`}
     />
     <Main
       projects={projects}
       class={`relative w-full h-screen ${
-        headerIntro ? "col-span-7" : "col-span-8 overflow-y-scroll"
-      }  max-md:px-24 css-no-scrollbar grid grid-cols-8 pt-40`}
+        headerIndex ? "col-span-7" : "col-span-8 overflow-y-scroll"
+      }  max-md:px-24 css-no-scrollbar grid grid-cols-8 pt-32`}
     >
       <slot />
     </Main>

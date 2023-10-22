@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import H2ProjectTitle from "../components/H2project-title.astro";
 import { Image } from "astro:assets";
+import ProjectLayoutLinks from "./ProjectLayout-Links.astro";
 
-const { project, road } = Astro.props;
+const { project, road, sysdev } = Astro.props;
 
-console.log(project.data.projectBulletList);
+// console.log(project.data.projectBulletList);
 ---
 
 <style>
@@ -14,75 +14,20 @@ console.log(project.data.projectBulletList);
   }
 </style>
 <Layout>
-  <div
-    class="absolute -top-4 pr-8 pl-4 z-50 flex flex-col items-end gap-4 w-full"
-  >
-    <div class="pr-2 grid grid-flow-col gap-4">
-      <div class="pt-10 flex flex-wrap gap-2 h-fit">
-        {
-          project.data.technologies.map((ele: string, index: number) => (
-            <Image
-              src={`/Images/logo_${ele}.png`}
-              width={30}
-              height={30}
-              format="png"
-              alt="stars bg"
-              class=""
-            />
-          ))
-        }
-      </div>
-      <Image
-        src="/Images/stars-topright-black.png"
-        width={700}
-        height={800}
-        format="png"
-        alt="stars bg"
-      />
-    </div>
-
-    <H2ProjectTitle text={project.data.projectTitle} />
-
-    <a href={project.data.githubURL} class="flex flex-col items-center w-fit">
-      <Image
-        src="/Images/logo_github.png"
-        width={144}
-        height={213}
-        format="png"
-        alt="github logo"
-        class="url-logo-black"
-      />
-      <p>Github</p>
-    </a>
-    <a href={project.data.figmaURL} class="flex flex-col items-center w-fit">
-      <Image
-        src="/Images/logo_figma.svg"
-        width={144}
-        height={213}
-        format="svg"
-        alt="figma logo"
-        class="url-logo-black"
-      />
-      <p>Figma</p>
-    </a>
-    <a href={project.data.projectURL} class="flex flex-col items-center w-fit">
-      <i class="fa-solid fa-arrow-up-right-from-square url-logo-black"></i>
-      <p>Project</p>
-    </a>
-  </div>
-  <div class="col-start-2 col-span-6 relative ">
+  <ProjectLayoutLinks project={project}/>
+  <div class="col-start-2 col-span-6 relative">
     <img src={`/Images/${project.data.thumbnail}.jpg`} />
     <p class="py-4">{project.data.projectSubtitle}</p>
-    <ul class="py-8">
+    <ul class={`font-bold py-8 w-fit m-auto ${!sysdev ? "brand-blue" : "brand-orange"} `}>
       {
         project.data.projectBulletList.map((option: string) => (
-          <li>❍{option}</li>
+          <li>❍ {option}</li>
         ))
       }
     </ul>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-2 gap-4 ">
       {
-        project.data.thumbnail_extra.map((ele: string, index: number) => (
+        project.data.thumbnail_extra?.map((ele: string, index: number) => (
           <Image
             src={`/Images/${ele}.png`}
             width={500}

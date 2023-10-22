@@ -1,0 +1,11 @@
+---
+import ProjectLayout from "../components/ProjectLayout.astro";
+
+import { getEntry } from "astro:content";
+const oldportfolio = await getEntry("projects", "oldportfolio");
+const { Content, headings } = await oldportfolio.render();
+
+console.log(oldportfolio);
+---
+
+<ProjectLayout project={oldportfolio}></ProjectLayout>

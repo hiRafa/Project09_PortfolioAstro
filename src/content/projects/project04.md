@@ -1,10 +1,10 @@
 ---
     projectURL: "https://project07-health-record.vercel.app/"
-    githubURL: "https://github.com/hiRafa/Project04_react_mui_musicstore"
+    githubURL: "https://github.com/hiRafa/Project07_HealthRecord"
     thumbnail: "project04_thumbnail"
     technologies: ["HTML", "CSS", "JS", "REACT",  "NEXT", "FIREBASE", "MONGODB"]
-    projectTitle: "Dance Academy Landing Page"
-    projectSubtitle: "This is where my journey as a developer started. My 1st landing page project with basic HTML, CSS and a bit of Javascript. With a diversity of dance styles and branches. Also different payment plans available."
-    projectBulletList: ["・Slider/Carousel","・Products pagination with React Paginate","・React Hooks","・UseContext","・Fetch API with Firebase and Google Maps (maybe with Spotify)","・Authentication: Login","・User Input Data Form","・Fetch Data only if corresponding user"]
+    projectTitle: "Medical Records Webapp with Next.js"
+    projectSubtitle: "Leveling up to explore the full functionalities of a powerful JS framework with Next.js and building a MVP. First time dealing with backend logic and further understanding the connection between both ends and the database."
+    projectBulletList: ["Nextauth","Firebase & MongoDB for database","Helper functions","useRouter","Forms and User Data", "Back end", "Database manipulation", "Light and Dark mode", "React Calendar", "useContext"]
     thumbnail_extra: ["project04_thumbnail2","project04_thumbnail3"]
 ---

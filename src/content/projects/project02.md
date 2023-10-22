@@ -6,5 +6,5 @@
     technologies: ["HTML", "CSS", "SASS", "JS"]
     projectTitle: "Bakery Chain Landing Page"
     projectSubtitle: "Expanding beyond HTML and CSS with my first programming language: Javascript."
-    projectBulletList: ["・DOM Manipulation", "・Event Listeners Observer", "・JSON file Parse", "・Filters and tabs"]
+    projectBulletList: ["DOM Manipulation", "Event Listeners Observer", "JSON file Parse", "Filters and tabs"]
 ---

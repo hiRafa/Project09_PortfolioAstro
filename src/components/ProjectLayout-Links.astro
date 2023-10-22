@@ -1,0 +1,106 @@
+---
+import H2ProjectTitle from "../components/H2project-title.astro";
+import { Image } from "astro:assets";
+
+const { project, road } = Astro.props;
+---
+
+<div class="absolute -top-4 px-8 z-50 flex flex-col items-start gap-4 w-full">
+  <div class="relative">
+    <Image
+      src={!road
+        ? "/Images/stars-topright-black.png"
+        : "/Images/stars-topright-road.png"}
+      width={!road ? 700 : 260}
+      height={!road ? 800 : 560}
+      format="png"
+      alt="stars bg"
+      class="pl-3"
+    />
+    <H2ProjectTitle text={!road ? project?.data.projectTitle : "RoadMap"} />
+  </div>
+
+  <a
+    href={!road ? project?.data.githubURL : "https://github.com/hiRafa"}
+    class="flex flex-col items-center w-fit"
+    target="_blank"
+  >
+    <Image
+      src="/Images/logo_github.png"
+      width={144}
+      height={213}
+      format="png"
+      alt="github logo"
+      class="url-logo-black"
+    />
+    <p>Github</p>
+  </a>
+
+  {
+    project?.data.figmaURL && (
+      <a
+        href={project?.data.figmaURL}
+        class="flex flex-col items-center w-fit"
+        target="_blank"
+      >
+        <Image
+          src="/Images/logo_figma.svg"
+          width={144}
+          height={213}
+          format="svg"
+          alt="figma logo"
+          class="url-logo-black"
+        />
+        <p>Figma</p>
+      </a>
+    )
+  }
+
+  {
+    project?.data.projectURL && (
+      <a
+        href={project?.data.projectURL}
+        class="flex flex-col items-center w-fit"
+        target="_blank"
+      >
+        <i class="fa-solid fa-arrow-up-right-from-square url-logo-black" />
+        <p>Project</p>
+      </a>
+    )
+  }
+  {
+    project && (
+      <div class="flex flex-col gap-2 h-fit pl-2">
+        {project.data.technologies?.map((ele: string, index: number) => (
+          <Image
+            src={`/Images/logo_${ele}.png`}
+            width={30}
+            height={30}
+            format="png"
+            alt="stars bg"
+            class=""
+          />
+        ))}
+      </div>
+    )
+  }
+
+  {
+    road && (
+      <a
+        href="https://www.linkedin.com/in/rafael-hirashiki-7a5733170/"
+        class="flex flex-col item-center w-fit"
+      >
+        <Image
+          src="/Images/logo_linkedin.png"
+          width={144}
+          height={213}
+          format="png"
+          alt="linkedin logo"
+          class="url-logo-black url-logo"
+        />
+        <p>Linkedin</p>
+      </a>
+    )
+  }
+</div>

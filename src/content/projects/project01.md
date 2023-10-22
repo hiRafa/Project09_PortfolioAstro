@@ -6,5 +6,5 @@
     technologies: ["HTML", "CSS", "JS"]
     projectTitle: "Dance Academy Landing Page"
     projectSubtitle: "This is where my journey as a developer started. My 1st landing page project with basic HTML, CSS and a bit of Javascript. With a diversity of dance styles and branches. Also different payment plans available."
-    projectBulletList: ["・Exploring the basics and fundamentals of HTML5 / CSS3.", "AOS Animate on Scroll Library: https://michalsnik.github.io/aos/"]
+    projectBulletList: ["Exploring the basics and fundamentals of HTML5 / CSS3.", "AOS Animate on Scroll Library: https://michalsnik.github.io/aos/"]
 ---
