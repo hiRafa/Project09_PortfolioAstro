@@ -6,6 +6,38 @@ import RafaPic from "./Rafa-pic.astro";
 const { headerIndex, class: className, ...rest } = Astro.props;
 ---
 
+<style>
+  .star-container {
+    height: fit-content;
+    position: relative;
+  }
+
+  .star-bar {
+    height: 2px;
+    width: 50px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 4px;
+    margin: auto;
+  }
+
+  .fa-diamond {
+    display: block;
+    margin: auto;
+    font-size: 16px;
+  }
+
+  
+  .li-year,
+      .li-role {
+        font-size: 12px;
+        line-height: 1.8;
+        display: block;
+      }
+</style>
+
 <header class={className} {...rest}>
   <H1 text="HIRASHIKI RAFAEL" index={false} />
   <!-- <p class="absolute bottom-0">powered by Astro</p> -->
@@ -20,7 +52,7 @@ const { headerIndex, class: className, ...rest } = Astro.props;
     class="fixed top-8 z-10"
   />
   <div
-    class="relative col-start-2 col-span-4 flex flex-col justify-between h-full pt-24  pr-4 "
+    class="relative col-start-2 col-span-4 flex flex-col justify-between h-full pt-24 pr-4"
   >
     <Image
       src={headerIndex
@@ -42,11 +74,11 @@ const { headerIndex, class: className, ...rest } = Astro.props;
           </section>
 
           <section class="">
-            <h2 class=" text-3xl font-bold min-xl:text-2xl">
+            <h2 class="text-3xl font-bold min-xl:text-2xl">
               ⯁ Web Frontend Developer (Junior)
             </h2>
             <br />
-            <h3 class=" text-3xl font-bold min-xl:text-2xl">
+            <h3 class="text-3xl font-bold min-xl:text-2xl">
               ❍ System Developer (graduating)
             </h3>
           </section>
@@ -65,7 +97,7 @@ const { headerIndex, class: className, ...rest } = Astro.props;
               <li class="">
                 <a
                   href="/roadmap"
-                  class="text-4xl min-xl:text-3xl font-bold flex flex-nowrap justify-center items-center gap-4 "
+                  class="text-4xl min-xl:text-3xl font-bold flex flex-nowrap justify-center items-center gap-4"
                 >
                   <p class="underline">RoadMap & Projects</p>
                   <p class="text-3xl">⟢</p>
@@ -82,93 +114,133 @@ const { headerIndex, class: className, ...rest } = Astro.props;
               <li>
                 <a
                   href="/"
-                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                 >
                   <p class="flex gap-1 items-end">
                     Home <span class="li-role" />
                   </p>
-                  <p>⟢</p>
+                  <div class="star-container">
+                    <>
+                      <div class="star-bar" />
+                      <i class="fa-solid fa-diamond" />
+                    </>
+                  </div>
                 </a>
               </li>
               <li>
                 <a
                   href="/roadmap"
-                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                 >
                   <p class="flex gap-1 items-end">
-                    RoadMap & Projects{" "}
+                    RoadMap & Projects</br>
                     <span class="li-role">"to INFINITY and Beyond!"</span>
                   </p>
-                  <p>⟢</p>
+                  <div class="star-container">
+                    <>
+                      <div class="star-bar" />
+                      <i class="fa-solid fa-diamond" />
+                    </>
+                  </div>
                 </a>
               </li>
               <li class="li-year">2023</li>
               <li>
                 <a
                   href="/project05"
-                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                 >
                   <p class="flex gap-1 items-end">
                     Agendae+ <span class="li-role">System Dev</span>
                   </p>
-                  <p>⟢</p>
+                  <div class="star-container">
+                    <>
+                      <div class="star-bar" />
+                      <i class="fa-solid fa-diamond" />
+                    </>
+                  </div>
                 </a>
               </li>
               <li>
                 <a
                   href="/project04"
-                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                 >
                   <p class="flex gap-1 items-end">
                     Medical Records <span class="li-role">Coder Next.js</span>
                   </p>
-                  <p>⟢</p>
+                  <div class="star-container">
+                    <>
+                      <div class="star-bar" />
+                      <i class="fa-solid fa-diamond" />
+                    </>
+                  </div>
                 </a>
               </li>
               <li class="li-year">2022</li>
               <li>
                 <a
                   href="/project03"
-                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                 >
                   <p class="flex gap-1 items-end">
                     Music Store <span class="li-role">Coder React.js</span>
                   </p>
-                  <p>⟢</p>
+                  <div class="star-container">
+                    <>
+                      <div class="star-bar" />
+                      <i class="fa-solid fa-diamond" />
+                    </>
+                  </div>
                 </a>
               </li>
               <li>
                 <a
                   href="/project02"
-                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                 >
                   <p class="flex gap-1 items-end">
                     Bakery LP <span class="li-role">Coder HTML/CSS/JS</span>
                   </p>
-                  <p>⟢</p>
+                  <div class="star-container">
+                    <>
+                      <div class="star-bar" />
+                      <i class="fa-solid fa-diamond" />
+                    </>
+                  </div>
                 </a>
               </li>
               <li>
                 <a
                   href="/project01"
-                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                 >
                   <p class="flex gap-1 items-end">
                     Dance School LP
                     <span class="li-role">Coder HTML/CSS/JS</span>
                   </p>
-                  <p>⟢</p>
+                  <div class="star-container">
+                    <>
+                      <div class="star-bar" />
+                      <i class="fa-solid fa-diamond" />
+                    </>
+                  </div>
                 </a>
               </li>
               <li>
                 <a
                   href="/oldportfolio"
-                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4 "
+                  class="text-2xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                 >
                   <p class="flex gap-1 items-end">
                     Portfolio v1 <span class="li-role">Coder HTML/CSS/JS</span>
                   </p>
-                  <p>⟢</p>
+                  <div class="star-container">
+                    <>
+                      <div class="star-bar" />
+                      <i class="fa-solid fa-diamond" />
+                    </>
+                  </div>
                 </a>
               </li>
             </ul>
