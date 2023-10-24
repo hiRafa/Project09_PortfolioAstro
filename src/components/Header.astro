@@ -59,7 +59,7 @@ const navObj = [
   }
 
   .star-bar {
-    height: 2px;
+    height: 1px;
     width: 100%;
     background-color: white;
     position: absolute;
@@ -76,6 +76,10 @@ const navObj = [
     margin: auto;
     font-size: 12px;
     transition: 1s ease;
+  }
+
+  .big-bar {
+    height: 2px;
   }
 
   .big-diamond {
@@ -158,7 +162,10 @@ const navObj = [
                   class="text-4xl min-xl:text-3xl font-bold flex flex-nowrap justify-center items-center gap-4"
                 >
                   <p class="underline">RoadMap & Projects</p>
-                  <p class="text-3xl">⟢</p>
+                  <div class="star-container">
+                    <div class="star-bar" />
+                    <i class="fa-solid fa-diamond" />
+                  </div>
                 </a>
               </li>
             </ul>
@@ -178,11 +185,13 @@ const navObj = [
                     class="text-xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                   >
                     <p class="flex gap-1 items-end">
-                      {ele.navTitle}{" "}
+                      {ele.navTitle}
                       <span class="li-role">{ele.navSubtitle} </span>
                     </p>
                     <div class="star-container">
-                      <div class="star-bar" />
+                      <div class={`star-bar ${
+                          pathname === ele.path && "big-bar"
+                        } `} />
                       <i
                         class={`fa-solid fa-diamond ${
                           pathname === ele.path && "big-diamond"

@@ -61,8 +61,8 @@ const projects = await getCollection("projects");
     <Main
       projects={projects}
       class={`relative w-full h-screen ${
-        headerIndex ? "col-span-7" : "col-span-8 overflow-y-scroll"
-      }  max-md:px-24 css-no-scrollbar grid grid-cols-8 pt-32`}
+        headerIndex ? "col-span-7" : "col-span-8 overflow-y-scroll pt-32"
+      }  max-md:px-24 css-no-scrollbar grid grid-cols-8 `}
     >
       <slot />
     </Main>
