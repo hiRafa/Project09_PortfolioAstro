@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import ProjectLayoutLinks from "./ProjectLayout-Links.astro";
 
-const { project, road, sysdev } = Astro.props;
+const { project, sysdev } = Astro.props;
 
 // console.log(project.data.projectBulletList);
 ---
@@ -13,6 +13,7 @@ const { project, road, sysdev } = Astro.props;
     font-size: 50px;
   }
 </style>
+
 <Layout>
   <ProjectLayoutLinks project={project}/>
   <div class="col-start-2 col-span-6 relative">

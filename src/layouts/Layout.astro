@@ -11,16 +11,9 @@ interface Props {
   headerIndex?: boolean;
 }
 
-// const {
-// 	title = 'HIRASHIKI RAFAEL',
-// 	description = 'A Junior Front End Engineer portfolio. Portuguese, Japanese, English and Spanish speaker.',
-// 	image="/images/rafa.jpg"
-// } = Astro.props;
-
-const { title, description, image, headerIndex } = Astro.props;
+const { title, description,headerIndex } = Astro.props;
 
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 const projects = await getCollection("projects");
 // console.log(projects);
 ---
@@ -36,12 +29,16 @@ const projects = await getCollection("projects");
     <title>{title}</title>
     <ViewTransitions />
 
-    <!-- Font -->
     <!-- <script
       src="https://kit.fontawesome.com/2a7d8b909e.js"
       crossorigin="anonymous"></script> -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-      
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+    ></script>
   </head>
 
   <body
@@ -156,7 +153,6 @@ const projects = await getCollection("projects");
         color: "white";
       }
 
-
       .css-photo_div {
         border-radius: 50%;
         width: fit-content;
@@ -194,5 +190,7 @@ const projects = await getCollection("projects");
         display: none;
       } /* Hide scrollbar for IE, Edge, and Firefox */
     </style>
+
+
   </body>
 </html>
