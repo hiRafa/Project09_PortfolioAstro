@@ -18,6 +18,7 @@ const { project, sysdev } = Astro.props;
   <ProjectLayoutLinks project={project}/>
   <div class="col-start-2 col-span-6 relative">
     <img src={`/Images/${project.data.thumbnail}.jpg`} />
+    <slot/>
     <p class="py-4">{project.data.projectSubtitle}</p>
     <ul class={`font-bold py-8 w-fit m-auto ${!sysdev ? "brand-blue" : "brand-orange"} `}>
       {

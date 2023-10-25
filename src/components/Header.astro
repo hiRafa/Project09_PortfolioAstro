@@ -20,32 +20,37 @@ const navObj = [
   {
     path: "/project05",
     navTitle: "Agendae+",
-    navSubtitle: "System Dev",
+    navSubtitle: "System",
   },
   {
     path: "/project04",
     navTitle: "Medical Records",
-    navSubtitle: "Coder Next.js",
+    navSubtitle: "Coder",
+    navTech: "Next.js"
   },
   {
     path: "/project03",
     navTitle: "Music Store",
-    navSubtitle: "Coder React.js",
+    navSubtitle: "Coder",
+    navTech: "React.js"
   },
   {
     path: "/project02",
     navTitle: "Bakery LP",
-    navSubtitle: "Coder HTML/SASS/JS",
+    navSubtitle: "Coder",
+    navTech: "HTML/SASS/JS"
   },
   {
     path: "/project01",
     navTitle: "Dance Academy LP",
-    navSubtitle: "Coder HTML/CSS",
+    navSubtitle: "Coder",
+    navTech: "HTML/CSS"
   },
   {
     path: "/project00",
     navTitle: "Portfolio Old",
-    navSubtitle: "Coder HTML/CSS/JS",
+    navSubtitle: "Coder",
+    navTech: "HTML/CSS/JS"
   },
 ];
 ---
@@ -54,7 +59,7 @@ const navObj = [
   .star-container {
     height: fit-content;
     position: relative;
-    width: 50px;
+    width: 40px;
     height: 100%;
   }
 
@@ -92,16 +97,24 @@ const navObj = [
     transition: 1s ease;
   }
 
-  .li-year,
+  .li-projectTitle {
+    line-height: 1;
+    padding-top: 8px;
+  }
+.li-year,
   .li-role {
     font-size: 12px;
-    line-height: 1.8;
+    line-height: 1;
     display: block;
+    padding-bottom: 8px;
+  }
+  .li-year {
+    text-decoration: underline;
+    padding-top: 16px;
   }
 </style>
 
 <header class={className} {...rest}>
-  <H1 text="HIRASHIKI RAFAEL" index={false} />
   <!-- <p class="absolute bottom-0">powered by Astro</p> -->
   <Image
     src={headerIndex
@@ -114,7 +127,7 @@ const navObj = [
     class="fixed top-8 z-10"
   />
   <div
-    class="relative col-start-2 col-span-4 flex flex-col justify-between h-full pt-24 pr-4"
+    class="relative col-start-2 col-span-full flex flex-col justify-between h-full pt-24 pr-4 max-lg:pt-0 max-lg:col-start-2 max-lg:col-span-10"
   >
     <Image
       src={headerIndex
@@ -135,18 +148,17 @@ const navObj = [
             <p>Casual Dancer</p>
           </section>
 
-          <section class="">
-            <h2 class="text-3xl font-bold min-xl:text-2xl">
+          <section class="text-2xl max-lg:text-lg max-md:text-lg font-bold">
+            <h2 class="pt-4 pb-4">
               ⯁ Web Frontend Developer (Junior)
             </h2>
-            <br />
-            <h3 class="text-3xl font-bold min-xl:text-2xl">
+            <h3 class="pb-4">
               ❍ System Developer (graduating)
             </h3>
           </section>
 
           <section class="">
-            <p class="pb-6 text-xl min-xl:text-lg">
+            <p class="pb-6 text-xl max-lg:text-base max-md:text-sm ">
               From Brazil, Based in Tokyo. <br />
               Passionate for connecting stars, understanding problems, finding
               solutions, upgrading performances and flows.
@@ -159,7 +171,7 @@ const navObj = [
               <li class="">
                 <a
                   href="/roadmap"
-                  class="text-4xl min-xl:text-3xl font-bold flex flex-nowrap justify-center items-center gap-4"
+                  class="text-4xl max-xl:text-3xl max-lg:2xl font-bold flex flex-nowrap justify-center items-center gap-4 text-right"
                 >
                   <p class="underline">RoadMap & Projects</p>
                   <div class="star-container">
@@ -167,6 +179,17 @@ const navObj = [
                     <i class="fa-solid fa-diamond" />
                   </div>
                 </a>
+                <div class="relative z-50 flex justify-end gap-4 pr-16">
+                  <a href="https://www.behance.net/rafael-hiro" target="_blank">
+                    Behance
+                  </a>
+                  <a
+                    href="https://www.artstation.com/hirashiki"
+                    target="_blank"
+                  >
+                    Artstation
+                  </a>
+                </div>
               </li>
             </ul>
           </nav>
@@ -174,24 +197,27 @@ const navObj = [
       ) : (
         <>
           <RafaPic class=" w-4/6 m-auto" />
-          <nav class="pb-24 relative z-50">
+          <H1 text="HIRASHIKI RAFAEL" index={false} />
+          <nav class="pb-16 relative z-50  max-xl:pb-12">
             <ul>
               {navObj.map((ele) => (
                 <li>
-                  {ele.path === "/project05" && <p class="li-role">2023</p>}
-                  {ele.path === "/project03" && <p class="li-role">2022</p>}
+                  {ele.path === "/project05" && <p class="li-year">2023</p>}
+                  {ele.path === "/project03" && <p class="li-year">2022</p>}
                   <a
                     href={ele.path}
-                    class="text-xl min-xl:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
+                    class="text-xl max-xl:text-lg max-lg:text-base font-bold flex flex-nowrap justify-between items-center gap-4"
                   >
-                    <p class="flex gap-1 items-end">
-                      {ele.navTitle}
+                    <p class="flex flex-col items-start">
+                      <span class="li-projectTitle">{ele.navTitle}</span>
                       <span class="li-role">{ele.navSubtitle} </span>
                     </p>
                     <div class="star-container">
-                      <div class={`star-bar ${
+                      <div
+                        class={`star-bar ${
                           pathname === ele.path && "big-bar"
-                        } `} />
+                        } `}
+                      />
                       <i
                         class={`fa-solid fa-diamond ${
                           pathname === ele.path && "big-diamond"

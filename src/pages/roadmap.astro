@@ -52,10 +52,10 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
     background-color: var(--clr-coder);
   }
   .black-bar-blue {
-    height: 440px;
-    bottom: 0;
+    height: 96%;
+    top: 4%;
     right: 10px;
-    background-color: #353535;
+    background-color: var(--clr-charchoal);
     z-index: -1;
   }
   .orange-bar {
@@ -65,10 +65,10 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
     background-color: var(--clr-sys);
   }
   .black-bar-orange {
-    height: 440px;
-    bottom: 0;
+    height: 96%;
+    top: 4%;
     left: 10px;
-    background-color: #000;
+    background-color: var(--clr-charchoal);
     z-index: -1;
   }
 
@@ -80,9 +80,11 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
 <Layout title="Hirashiki Rafael's 1st Project">
   <ProjectLayoutLinks road={true} />
 
-  <div class="col-span-3 text-right relative -right-4">
-    <div class="bar blue-bar"></div>
-    <div class="bar black-bar-blue"></div>
+  <div class="col-start-2 col-span-5 text-right relative -right-4">
+    <div class="flex flex-col">
+      <div class="bar blue-bar"></div>
+      <div class="bar black-bar-blue"></div>
+    </div>
     <p class="grid-item-ball">
       Acupuncture • <br />Game Design Video Editing •<br />VFX Design<i
         class="fa-solid fa-circle"></i>
@@ -165,6 +167,7 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
       <i class="fa-solid fa-circle"></i>
     </h3>
   </div>
+
   <div class="col-span-1 text-center">
     <p class="">~2022</p>
     <p class="pt-24">2022</p>
@@ -172,9 +175,12 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
     <p class="pt-96">2024</p>
     <p class="pt-72">2025</p>
   </div>
-  <div class="col-span-3 mt-96 relative -left-4">
-    <div class="bar orange-bar"></div>
-    <div class="bar black-bar-orange"></div>
+
+  <div class="col-span-5 mt-96 relative -left-4">
+    <div class="flex flex-col">
+      <div class="bar orange-bar"></div>
+      <div class="bar black-bar-orange"></div>
+    </div>
     <h3 class="grid-item-ball grid-item-ball-reverse">
       <i class="fa-solid fa-circle"> </i>
        System Development<br />
@@ -206,19 +212,19 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
     <p class="grid-item-ball grid-item-ball-reverse">
       <i class="fa-solid fa-circle"></i>Object Oriented Programming
     </p>
-    <p class="grid-item-ball grid-item-ball-reverse brand-orange ">
+    <p class="grid-item-ball grid-item-ball-reverse brand-orange">
       <i class="fa-solid fa-circle"></i>Data Base Management System
     </p>
-    <p class="grid-item-ball grid-item-ball-reverse  ball-black">
+    <p class="grid-item-ball grid-item-ball-reverse ball-black">
       <i class="fa-solid fa-circle"></i>Web Development
     </p>
-    <p class="grid-item-ball grid-item-ball-reverse  ball-black">
+    <p class="grid-item-ball grid-item-ball-reverse ball-black">
       <i class="fa-solid fa-circle"></i>Smart Data Structures
     </p>
-    <p class="grid-item-ball grid-item-ball-reverse  ball-black">
+    <p class="grid-item-ball grid-item-ball-reverse ball-black">
       <i class="fa-solid fa-circle"></i>Mobile Development
     </p>
-    <p class="grid-item-ball grid-item-ball-reverse  ball-black">
+    <p class="grid-item-ball grid-item-ball-reverse ball-black">
       <i class="fa-solid fa-circle"></i>Microservices & Containers
     </p>
     <p class="grid-item-ball grid-item-ball-reverse ball-black">

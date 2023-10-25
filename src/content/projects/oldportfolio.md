@@ -4,7 +4,7 @@
     githubURL: "https://github.com/hiRafa/hiRafa_portfolio"
     thumbnail: "project_oldportfolio"
     technologies: ["HTML", "CSS", "JS"]
-    projectTitle: "Dance School Landing Page"
-    projectSubtitle: "This is where my journey as a developer started. My 1st landing page project with basic HTML, CSS and a bit of Javascript"
-    projectBulletList: ["Bullet one", "bullet two"]
+    projectTitle: "Portfolio v1.0"
+    projectSubtitle: "My first portfolio that got me job interviews in Japan"
+    projectBulletList: ["Basic HTML Javascript stuff"]
 ---

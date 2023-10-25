@@ -5,7 +5,6 @@ import { getEntry } from "astro:content";
 const project02 = await getEntry("projects", "project02");
 const { Content, headings } = await project02.render();
 
-console.log(project02);
 ---
 
 <ProjectLayout project={project02}></ProjectLayout>

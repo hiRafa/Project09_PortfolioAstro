@@ -4,8 +4,6 @@ import ProjectLayout from "../components/ProjectLayout.astro";
 import { getEntry } from "astro:content";
 const project01 = await getEntry("projects", "project01");
 const { Content, headings } = await project01.render();
-
-console.log(project01);
 ---
 
 <ProjectLayout project={project01}></ProjectLayout>

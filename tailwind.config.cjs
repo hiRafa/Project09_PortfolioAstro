@@ -4,19 +4,19 @@ module.exports = {
   theme: {
     extend: {},
     screens: {
-      'min-2xl': {'max': '1535px'},
+      'max-2xl': {'max': '1535px'},
       // => @media (max-width: 1535px) { ... }
 
-      'min-xl': {'max': '1279px'},
+      'max-xl': {'max': '1279px'},
       // => @media (max-width: 1279px) { ... }
 
-      'min-lg': {'max': '1023px'},
+      'max-lg': {'max': '1023px'},
       // => @media (max-width: 1023px) { ... }
 
-      'min-md': {'max': '767px'},
+      'max-md': {'max': '767px'},
       // => @media (max-width: 767px) { ... }
 
-      'min-sm': {'max': '639px'},
+      'max-sm': {'max': '639px'},
       // => @media (max-width: 639px) { ... }
     }
   },
