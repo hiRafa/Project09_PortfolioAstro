@@ -26,31 +26,31 @@ const navObj = [
     path: "/project04",
     navTitle: "Medical Records",
     navSubtitle: "Coder",
-    navTech: "Next.js"
+    navTech: "Next.js",
   },
   {
     path: "/project03",
     navTitle: "Music Store",
     navSubtitle: "Coder",
-    navTech: "React.js"
+    navTech: "React.js",
   },
   {
     path: "/project02",
     navTitle: "Bakery LP",
     navSubtitle: "Coder",
-    navTech: "HTML/SASS/JS"
+    navTech: "HTML/SASS/JS",
   },
   {
     path: "/project01",
     navTitle: "Dance Academy LP",
     navSubtitle: "Coder",
-    navTech: "HTML/CSS"
+    navTech: "HTML/CSS",
   },
   {
     path: "/project00",
     navTitle: "Portfolio Old",
     navSubtitle: "Coder",
-    navTech: "HTML/CSS/JS"
+    navTech: "HTML/CSS/JS",
   },
 ];
 ---
@@ -101,7 +101,7 @@ const navObj = [
     line-height: 1;
     padding-top: 8px;
   }
-.li-year,
+  .li-year,
   .li-role {
     font-size: 12px;
     line-height: 1;
@@ -114,7 +114,7 @@ const navObj = [
   }
 </style>
 
-<header class={className} {...rest}>
+<header class={className} {...rest} id="myHeader">
   <!-- <p class="absolute bottom-0">powered by Astro</p> -->
   <Image
     src={headerIndex
@@ -149,12 +149,8 @@ const navObj = [
           </section>
 
           <section class="text-2xl max-lg:text-lg max-md:text-lg font-bold">
-            <h2 class="pt-4 pb-4">
-              ⯁ Web Frontend Developer (Junior)
-            </h2>
-            <h3 class="pb-4">
-              ❍ System Developer (graduating)
-            </h3>
+            <h2 class="pt-4 pb-4">⯁ Web Frontend Developer (Junior)</h2>
+            <h3 class="pb-4">❍ System Developer (graduating)</h3>
           </section>
 
           <section class="">
@@ -196,6 +192,12 @@ const navObj = [
         </>
       ) : (
         <>
+          <button
+            id="toggleButton"
+            class="absolute top-0 bottom-0 -right-6 h-fit w-fit rounded-lg p-2 clr-bg m-auto"
+          >
+          <i class="fa-solid fa-up-right-from-square text-3xl" id="fa-arrowHeader" />
+          </button>
           <RafaPic class=" w-4/6 m-auto" />
           <H1 text="HIRASHIKI RAFAEL" index={false} />
           <nav class="pb-16 relative z-50  max-xl:pb-12">
@@ -234,3 +236,31 @@ const navObj = [
     }
   </div>
 </header>
+
+<script>
+  const header: HTMLElement | null = document.getElementById("myHeader");
+  const toggleButton: HTMLElement | null =
+    document.getElementById("toggleButton");
+  const toggleButtonIcon: HTMLElement | null =
+    document.getElementById("fa-arrowHeader");
+  let isHeaderHidden: boolean = true;
+
+  if (header && toggleButton && toggleButtonIcon) {
+    toggleButton.addEventListener("click", function () {
+      if (!isHeaderHidden) {
+        // console.log("header is not hidden")
+        if (header.style) {
+          header.classList.add("css-hideHeader");
+          toggleButtonIcon.classList.remove("rotate");
+        }
+      } else {
+        // console.log("header is hidden")
+        if (header.style) {
+          header.classList.remove("css-hideHeader");
+          toggleButtonIcon.classList.add("rotate");
+        }
+      }
+      isHeaderHidden = !isHeaderHidden;
+    });
+  }
+</script>

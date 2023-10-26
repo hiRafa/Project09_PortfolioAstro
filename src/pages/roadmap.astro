@@ -73,14 +73,14 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
   }
 
   .ball-black .fa-circle {
-    color: black;
+    color: var(--clr-charchoal);
   }
 </style>
 
 <Layout title="Hirashiki Rafael's 1st Project">
   <ProjectLayoutLinks road={true} />
 
-  <div class="col-start-2 col-span-5 text-right relative -right-4">
+  <div class="col-start-2 col-span-5 text-right relative -right-4 max-md:col-span-10">
     <div class="flex flex-col">
       <div class="bar blue-bar"></div>
       <div class="bar black-bar-blue"></div>
@@ -168,7 +168,7 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
     </h3>
   </div>
 
-  <div class="col-span-1 text-center">
+  <div class="col-span-1 text-center max-md:col-start-11 max-md:col-span-2 max-sm:col-start-11  ">
     <p class="">~2022</p>
     <p class="pt-24">2022</p>
     <p class="pt-64">2023</p>
@@ -176,7 +176,13 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
     <p class="pt-72">2025</p>
   </div>
 
-  <div class="col-span-5 mt-96 relative -left-4">
+  <div class="hidden max-md:block max-md:col-start-1 text-center max-md:col-span-2 ">
+    <p class="pt-4">2023</p>
+    <p class="pt-96">2024</p>
+    <p class="pt-72">2025</p>
+  </div>
+
+  <div class="col-span-5 mt-96 relative -left-4 max-md:col-start-3 max-md:col-span-11 max-md:m-0 ">
     <div class="flex flex-col">
       <div class="bar orange-bar"></div>
       <div class="bar black-bar-orange"></div>

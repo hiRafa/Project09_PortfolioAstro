@@ -55,7 +55,8 @@ const projects = await getCollection("projects");
           />
           <Main
             projects={projects}
-            class={`relative w-full h-fit m-auto col-span-7 css-no-scrollbar max-lg:flex-1`}          >
+            class={`relative w-full h-fit m-auto col-span-7 css-no-scrollbar max-lg:flex-1`}
+          >
             <slot />
           </Main>
         </>
@@ -67,11 +68,11 @@ const projects = await getCollection("projects");
         <>
           <Header
             headerIndex={headerIndex}
-            class={`relative w-full h-screen col-start-1 col-span-3 max-lg:col-span-3 clr-bg pt-8 grid grid-cols-5 max-lg:h-auto`}
+            class={`css-hideHeader max-lg:absolute h-screen col-start-1 col-span-3 max-lg:col-span-3 clr-bg pt-8 grid grid-cols-5 `}
           />
           <Main
             projects={projects}
-            class={`relative w-full h-screen col-span-9 overflow-y-scroll pt-32 max-md:px-24 css-no-scrollbar grid grid-cols-12`}
+            class={`relative w-full h-screen col-span-9 max-lg:col-start-1 max-lg:col-span-full overflow-y-scroll pt-32 css-no-scrollbar grid grid-cols-12`}
           >
             <slot />
           </Main>
@@ -146,9 +147,53 @@ const projects = await getCollection("projects");
         cursor: pointer;
       }
 
-      /* img {
+      header {
         width: 100%;
-      } */
+        position: relative;
+        z-index: 999;
+      }
+
+      #toggleButton {
+        z-index: 999;
+      }
+      #fa-arrowHeader {
+        transform: rotate(45deg);
+        transition: all 0.5s;
+      }
+      .rotate {
+        transform: rotate(225deg) !important;
+        transition: all 0.5s;
+      }
+      @media screen and (max-width: 1023px) {
+        header {
+          width: 50%;
+          inset: 0 0 0 0;
+          transition: all .3s ease-out;
+        }
+        .css-hideHeader {
+          position: absolute;
+          inset: 0 0 0 -50%;
+          transition: all .3s ease-out;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        header {
+          width: 80%;
+        }
+        .css-hideHeader {
+          position: absolute;
+          inset: 0 0 0 -80%;
+        }
+      }
+      @media screen and (max-width: 420px) {
+        header {
+          width: 94%;
+        }
+        .css-hideHeader {
+          position: absolute;
+          inset: 0 0 0 -94%;
+        }
+      }
 
       code {
         font-family:
@@ -204,5 +249,7 @@ const projects = await getCollection("projects");
         display: none;
       } /* Hide scrollbar for IE, Edge, and Firefox */
     </style>
+
+
   </body>
 </html>

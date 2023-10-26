@@ -16,7 +16,7 @@ const { project, sysdev } = Astro.props;
 
 <Layout>
   <ProjectLayoutLinks project={project}/>
-  <div class="col-start-2 col-span-6 relative">
+  <div class="col-start-2 col-span-6 relative max-lg:col-start-3 max-lg:col-span-9">
     <img src={`/Images/${project.data.thumbnail}.jpg`} />
     <slot/>
     <p class="py-4">{project.data.projectSubtitle}</p>
