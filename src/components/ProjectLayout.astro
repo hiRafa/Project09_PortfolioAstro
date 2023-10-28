@@ -5,7 +5,7 @@ import ProjectLayoutLinks from "./ProjectLayout-Links.astro";
 
 const { project, sysdev } = Astro.props;
 
-// console.log(project.data.projectBulletList);
+console.log(project.data.thumbnail_extra);
 ---
 
 <style>
@@ -16,7 +16,7 @@ const { project, sysdev } = Astro.props;
 
 <Layout>
   <ProjectLayoutLinks project={project}/>
-  <div class="col-start-2 col-span-6 relative max-lg:col-start-3 max-lg:col-span-9">
+  <div class="col-start-3 col-span-9 relative">
     <img src={`/Images/${project.data.thumbnail}.jpg`} />
     <slot/>
     <p class="py-4">{project.data.projectSubtitle}</p>
@@ -31,15 +31,16 @@ const { project, sysdev } = Astro.props;
       {
         project.data.thumbnail_extra?.map((ele: string, index: number) => (
           <Image
-            src={`/Images/${ele}.png`}
-            width={500}
-            height={500}
-            format="png"
-            alt="stars bg"
+            src={`/Images/${ele}.jpg`}
+            width={1100}
+            height={1000}
+            format="jpg"
+            alt=""
             class=""
           />
         ))
       }
     </div>
+    <slot />
   </div>
 </Layout>

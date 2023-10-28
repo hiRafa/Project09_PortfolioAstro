@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import H1 from "./H1.astro";
 import RafaPic from "./Rafa-pic.astro";
-
+import ButtonToggleHeader from "./ButtonToggleHeader.tsx";
 const { headerIndex, class: className, ...rest } = Astro.props;
 const { pathname } = Astro.url;
 
@@ -106,11 +106,11 @@ const navObj = [
     font-size: 12px;
     line-height: 1;
     display: block;
-    padding-bottom: 8px;
+    padding-bottom: 0.25rem;
   }
   .li-year {
     text-decoration: underline;
-    padding-top: 16px;
+    padding-top: 1.5rem;
   }
 </style>
 
@@ -192,12 +192,7 @@ const navObj = [
         </>
       ) : (
         <>
-          <button
-            id="toggleButton"
-            class="absolute top-0 bottom-0 -right-6 h-fit w-fit rounded-lg p-2 clr-bg m-auto"
-          >
-          <i class="fa-solid fa-up-right-from-square text-3xl" id="fa-arrowHeader" />
-          </button>
+          <ButtonToggleHeader  client:only/>
           <RafaPic class=" w-4/6 m-auto" />
           <H1 text="HIRASHIKI RAFAEL" index={false} />
           <nav class="pb-16 relative z-50  max-xl:pb-12">
@@ -236,31 +231,3 @@ const navObj = [
     }
   </div>
 </header>
-
-<script>
-  const header: HTMLElement | null = document.getElementById("myHeader");
-  const toggleButton: HTMLElement | null =
-    document.getElementById("toggleButton");
-  const toggleButtonIcon: HTMLElement | null =
-    document.getElementById("fa-arrowHeader");
-  let isHeaderHidden: boolean = true;
-
-  if (header && toggleButton && toggleButtonIcon) {
-    toggleButton.addEventListener("click", function () {
-      if (!isHeaderHidden) {
-        // console.log("header is not hidden")
-        if (header.style) {
-          header.classList.add("css-hideHeader");
-          toggleButtonIcon.classList.remove("rotate");
-        }
-      } else {
-        // console.log("header is hidden")
-        if (header.style) {
-          header.classList.remove("css-hideHeader");
-          toggleButtonIcon.classList.add("rotate");
-        }
-      }
-      isHeaderHidden = !isHeaderHidden;
-    });
-  }
-</script>

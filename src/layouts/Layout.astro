@@ -15,7 +15,6 @@ const { title, description, headerIndex } = Astro.props;
 
 import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
-// console.log(projects);
 ---
 
 <!doctype html>
@@ -29,9 +28,6 @@ const projects = await getCollection("projects");
     <title>{title}</title>
     <ViewTransitions />
 
-    <!-- <script
-      src="https://kit.fontawesome.com/2a7d8b909e.js"
-      crossorigin="anonymous"></script> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -168,12 +164,12 @@ const projects = await getCollection("projects");
         header {
           width: 50%;
           inset: 0 0 0 0;
-          transition: all .3s ease-out;
+          transition: all 0.3s ease-out;
         }
         .css-hideHeader {
           position: absolute;
           inset: 0 0 0 -50%;
-          transition: all .3s ease-out;
+          transition: all 0.3s ease-out;
         }
       }
       @media screen and (max-width: 767px) {
@@ -181,7 +177,6 @@ const projects = await getCollection("projects");
           width: 80%;
         }
         .css-hideHeader {
-          position: absolute;
           inset: 0 0 0 -80%;
         }
       }
@@ -190,7 +185,6 @@ const projects = await getCollection("projects");
           width: 94%;
         }
         .css-hideHeader {
-          position: absolute;
           inset: 0 0 0 -94%;
         }
       }
@@ -221,9 +215,12 @@ const projects = await getCollection("projects");
         width: 40px;
         height: 40px;
         border-radius: 5px;
-        padding: 4px;
-        font-size: 30px;
+        padding: 5px;
+        font-size: 26px;
         color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .url-logo {
@@ -249,7 +246,5 @@ const projects = await getCollection("projects");
         display: none;
       } /* Hide scrollbar for IE, Edge, and Firefox */
     </style>
-
-
   </body>
 </html>
