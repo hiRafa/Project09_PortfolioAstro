@@ -112,6 +112,7 @@ const navObj = [
     text-decoration: underline;
     padding-top: 1.5rem;
   }
+
 </style>
 
 <header class={className} {...rest} id="myHeader">
@@ -193,9 +194,10 @@ const navObj = [
       ) : (
         <>
           <ButtonToggleHeader  client:only/>
-          <RafaPic class=" w-4/6 m-auto" />
+          <p class="absolute bottom-24 -right-5 clr-text z-50 w-fit h-fit m-auto text-base flex flex-col items-center justify-center"><span>M</span><span></span>E</span><span>N</span> <span>U</span></p>
+          <RafaPic class=" w-4/6 m-auto max-lg:w-6/6" />
           <H1 text="HIRASHIKI RAFAEL" index={false} />
-          <nav class="pb-16 relative z-50  max-xl:pb-12">
+          <nav class="pb-16 relative z-50  max-xl:pb-20">
             <ul>
               {navObj.map((ele) => (
                 <li>

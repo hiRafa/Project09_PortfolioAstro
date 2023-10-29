@@ -1,9 +1,9 @@
 ---
-    projectURL: "https://project07-health-record.vercel.app/"
-    githubURL: "https://github.com/hiRafa/Project04_react_mui_musicstore"
+    projectURL: ""
+    githubURL: ""
     thumbnail: "project05_thumbnail"
-    technologies: ["HTML", "CSS", "JS", "REACT",  "NEXT", "FIREBASE", "MONGODB"]
+    technologies: []
     projectTitle: "Agendae+ Webapp"
     projectSubtitle: "Your medical scheduling solution."
-    projectBulletList: ["Nest.js", "System Dev", "Classes Diagramas", "DB diagrams", "System requirements", "Algorythms", "UX/UI user flow"]
+    projectBulletList: ["Backend with Nest.js", "System Dev", "Classes Diagrams", "DB Diagrams", "System requirements", "Algorythms", "UX/UI user flow"]
 ---

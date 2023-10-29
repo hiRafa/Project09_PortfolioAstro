@@ -26,8 +26,11 @@ module.exports = {
     function ({ addComponents, theme }) {
       addComponents({
         ".clr-bg": {
-          background: "#0F2132",
+          background: "var(--clr-bg)",
 		      color: "white",
+        },
+        ".clr-text": {
+		      color: "var(--clr-bg)",
         },
         ".no-scrollbar::-webkit-scrollbar": {
           display: "none",

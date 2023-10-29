@@ -151,15 +151,23 @@ const projects = await getCollection("projects");
 
       #toggleButton {
         z-index: 999;
+        transform: rotate(45deg);
       }
       #fa-arrowHeader {
-        transform: rotate(45deg);
+        display: block;
         transition: all 0.5s;
+        width: 30px;
+        height: 30px;
       }
       .rotate {
         transform: rotate(225deg) !important;
         transition: all 0.5s;
       }
+/* 
+      .css-headerButton-lb {
+        
+      } */
+
       @media screen and (max-width: 1023px) {
         header {
           width: 50%;
