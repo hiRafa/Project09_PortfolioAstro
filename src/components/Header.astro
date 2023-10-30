@@ -18,6 +18,11 @@ const navObj = [
     navSubtitle: "to INFINITY and Beyond!",
   },
   {
+    path: "/a3",
+    navTitle: "A3",
+    navSubtitle: "Frontend",
+  },
+  {
     path: "/project05",
     navTitle: "Agendae+",
     navSubtitle: "System",
@@ -194,7 +199,7 @@ const navObj = [
       ) : (
         <>
           <ButtonToggleHeader  client:only/>
-          <p class="absolute bottom-24 -right-5 clr-text z-50 w-fit h-fit m-auto text-base flex flex-col items-center justify-center"><span>M</span><span></span>E</span><span>N</span> <span>U</span></p>
+          <p class="hidden absolute bottom-24 -right-5 clr-text z-50 text-base max-lg:flex flex-col items-center justify-center"><span>M</span><span></span>E</span><span>N</span> <span>U</span></p>
           <RafaPic class=" w-4/6 m-auto max-lg:w-6/6" />
           <H1 text="HIRASHIKI RAFAEL" index={false} />
           <nav class="pb-16 relative z-50  max-xl:pb-20">
