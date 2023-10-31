@@ -2,11 +2,12 @@
 interface Props {
   text?: string;
   road?: boolean;
+  class?: string;
 }
 
-const { text, road } = Astro.props;
+const { text, class: className, ...rest } = Astro.props;
 ---
 
-<h2 class="absolute italic top-16 left-28 text-2xl font-bold">
+<h2 class={className} {...rest} >
   {text}
 </h2>

@@ -2,8 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import ProjectLayoutLinks from "./ProjectLayout-Links.astro";
+import H2ProjectTitle from "./H2project-title.astro";
 
-const { project, sysdev } = Astro.props;
+const { project, sysdev, road } = Astro.props;
 
 console.log(project.data.thumbnail_extra);
 ---
@@ -21,12 +22,15 @@ console.log(project.data.thumbnail_extra);
   }
   .v-bar {
     width: 3px;
-    height: 98%;
+    height: 100%;
+    animation: animateVertical 0.5s 1 ease-out;
   }
   .h-bar {
-    width: 98%;
+    width: 100%;
     height: 3px;
+    animation: animateHorizontal 0.5s 1 ease-out;
   }
+
   .star {
     position: absolute;
     width: 20px;
@@ -34,37 +38,56 @@ console.log(project.data.thumbnail_extra);
   .star-btm {
     bottom: -8px;
   }
-  .start-top {
-    top: 10px;
+  .star-top {
+    top: -30px;
   }
 
   .star-right {
     right: 2px;
   }
 
-  .start-left {
-    left: -12px;
+  .star-left {
+    left: -40px;
+  }
+
+  @keyframes animateVertical {
+    from {
+      height: 0;
+    }
+    to {
+      height: 100%;
+    }
+  }
+  @keyframes animateHorizontal {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 </style>
 
 <Layout>
   <ProjectLayoutLinks project={project} />
-  <div class="col-start-3 col-span-9 relative">
-    <div class="absolute h-2/3 w-10/12 -bottom-4 -right-8">
-      <img src="/Images/square.svg" class="star start-top star-right" />
-      <div class="v-bar"></div>
-      <div class="h-bar"></div>
-      <img src="/Images/square.svg" class="star star-btm star-left" />
-      <img src="/Images/square.svg" class="star star-btm star-right" />
-    </div>
 
-    <img src={`/Images/${project.data.thumbnail}.jpg`} />
-    <slot />
-    <p class="py-4">{project.data.projectSubtitle}</p>
+  <div class="relative col-start-2 col-span-10 h-fit pl-12">
+    <H2ProjectTitle
+      text={!road ? project?.data.projectTitle : "RoadMap"}
+      class="italic text-2xl font-bold"
+    />
+    <p class=" py-4 ">
+      {project.data.projectSubtitle}
+    </p>
+  </div>
+
+  <div class="relative col-start-3 col-span-9 max-h-screen">
+    <a href={project?.data.projectURL} target="_blank"
+      ><img src={`/Images/${project.data.thumbnail}.jpg`} class="w-full" /></a
+    >
+
     <ul
-      class={`font-bold py-8 w-fit m-auto ${
-        !sysdev ? "brand-blue" : "brand-orange"
-      } `}
+      class={`absolute bottom-0 -right-4 font-bold py-8 w-fit ml-auto text-right  css-glass-bg px-6`}
     >
       {
         project.data.projectBulletList.map((option: string) => (
@@ -72,20 +95,13 @@ console.log(project.data.thumbnail_extra);
         ))
       }
     </ul>
-    <div class="grid grid-cols-2 gap-4">
-      {
-        project.data.thumbnail_extra?.map((ele: string, index: number) => (
-          <Image
-            src={`/Images/${ele}.jpg`}
-            width={1100}
-            height={1000}
-            format="jpg"
-            alt=""
-            class=""
-          />
-        ))
-      }
+
+    <div class="absolute h-2/3 w-10/12 -bottom-4 -right-12">
+      <img src="/Images/square.svg" class="star star-top star-right" />
+      <div class="v-bar"></div>
+      <div class="h-bar"></div>
+      <img src="/Images/square.svg" class="star star-btm star-left" />
+      <img src="/Images/square.svg" class="star star-btm star-right" />
     </div>
-    <slot />
   </div>
 </Layout>

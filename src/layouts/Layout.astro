@@ -68,7 +68,7 @@ const projects = await getCollection("projects");
           />
           <Main
             projects={projects}
-            class={`relative w-full h-screen pb-8  col-span-9 max-lg:col-start-1 max-lg:col-span-full overflow-y-scroll pt-32 css-no-scrollbar grid grid-cols-12`}
+            class={`css-headermain relative w-full h-screen pb-8 col-span-9 max-lg:col-start-1 max-lg:col-span-full overflow-y-scroll pt-16 css-no-scrollbar grid grid-cols-12`}
           >
             <slot />
           </Main>
@@ -90,6 +90,7 @@ const projects = await getCollection("projects");
         );
 
         --clr-bg: #0f2132;
+        --clr-bg-glass: #0f2132c0;
         --clr-charchoal: #333333;
         --clr-coder: #00d9f7;
         --clr-sys: #ff9900;
@@ -163,10 +164,6 @@ const projects = await getCollection("projects");
         transform: rotate(225deg) !important;
         transition: all 0.5s;
       }
-/* 
-      .css-headerButton-lb {
-        
-      } */
 
       @media screen and (max-width: 1023px) {
         header {
@@ -209,11 +206,13 @@ const projects = await getCollection("projects");
           monospace;
       }
 
+      .css-headermain {
+        grid-template-rows: min-content 1fr; 
+      }
       .clr-bg {
         background-color: var(--clr-bg);
         color: "white";
       }
-
       .css-photo_div {
         border-radius: 50%;
         width: fit-content;
@@ -230,7 +229,6 @@ const projects = await getCollection("projects");
         justify-content: center;
         align-items: center;
       }
-
       .url-logo {
         background-color: transparent;
         width: 42px;
@@ -238,14 +236,22 @@ const projects = await getCollection("projects");
         border-radius: 5px;
         padding: 0;
       }
-
       .grid-item-ball > span:nth-child(2) {
         display: block;
         width: fit-content;
         margin: auto;
         color: var(--clr-coder);
       }
-
+      .css-glass-bg {
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.5);;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4.8px);
+        -webkit-backdrop-filter: blur(4.8px);
+        border: 1px solid rgba(255, 255, 255, 1);
+        color: var(--clr-bg);
+      }
       .css-no-scrollbar {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */

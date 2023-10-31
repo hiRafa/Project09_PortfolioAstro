@@ -10,7 +10,7 @@ const { project, road } = Astro.props;
   }
 </style>
 
-<div class="absolute -top-4 px-8 z-50 flex flex-col items-start gap-4 w-full">
+<div class="absolute -top-4 px-8 flex flex-col items-start gap-4 w-full">
   <div class="relative">
     <Image
       src={!road
@@ -22,7 +22,6 @@ const { project, road } = Astro.props;
       alt="stars bg"
       class="pl-2"
     />
-    <H2ProjectTitle text={!road ? project?.data.projectTitle : "RoadMap"} />
   </div>
 
   <a
