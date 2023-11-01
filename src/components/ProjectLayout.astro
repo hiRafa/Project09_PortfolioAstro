@@ -1,89 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import ProjectLayoutLinks from "./ProjectLayout-Links.astro";
 import H2ProjectTitle from "./H2project-title.astro";
+import ProjectLayoutBody from "./ProjectLayout-Body.astro";
+import ProjectLayouHead from "./ProjectLayou-Head.astro";
 
 const { project, sysdev, road } = Astro.props;
 
-console.log(project.data.thumbnail_extra);
 ---
-
-<style>
-  .fa-brands {
-    font-size: 50px;
-  }
-  .v-bar,
-  .h-bar {
-    position: absolute;
-    bottom: 0;
-    right: 10px;
-    background-color: var(--clr-bg);
-  }
-  .v-bar {
-    width: 3px;
-    height: 100%;
-    animation: animateVertical 0.5s 1 ease-out;
-  }
-  .h-bar {
-    width: 100%;
-    height: 3px;
-    animation: animateHorizontal 0.5s 1 ease-out;
-  }
-
-  .star {
-    position: absolute;
-    width: 20px;
-  }
-  .star-btm {
-    bottom: -8px;
-  }
-  .star-top {
-    top: -30px;
-  }
-
-  .star-right {
-    right: 2px;
-  }
-
-  .star-left {
-    left: -40px;
-  }
-
-  @keyframes animateVertical {
-    from {
-      height: 0;
-    }
-    to {
-      height: 100%;
-    }
-  }
-  @keyframes animateHorizontal {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-</style>
-
 <Layout>
   <ProjectLayoutLinks project={project} />
 
-  <div class="relative col-start-2 col-span-10 h-fit pl-12">
-    <H2ProjectTitle
-      text={!road ? project?.data.projectTitle : "RoadMap"}
-      class="italic text-2xl font-bold"
-    />
-    <p class=" py-4 ">
+  <ProjectLayouHead projectTitle={project?.data.projectTitle}>
+    <p class="py-4">
       {project.data.projectSubtitle}
     </p>
-  </div>
+  </ProjectLayouHead>
 
-  <div class="relative col-start-3 col-span-9 max-h-screen">
+  <ProjectLayoutBody>
     <a href={project?.data.projectURL} target="_blank"
-      ><img src={`/Images/${project.data.thumbnail}.jpg`} class="w-full" /></a
+      ><img
+        src={`/Images/${project.data.thumbnail}.webp`}
+        class=""
+      /></a
     >
 
     <ul
@@ -96,12 +35,5 @@ console.log(project.data.thumbnail_extra);
       }
     </ul>
 
-    <div class="absolute h-2/3 w-10/12 -bottom-4 -right-12">
-      <img src="/Images/square.svg" class="star star-top star-right" />
-      <div class="v-bar"></div>
-      <div class="h-bar"></div>
-      <img src="/Images/square.svg" class="star star-btm star-left" />
-      <img src="/Images/square.svg" class="star star-btm star-right" />
-    </div>
-  </div>
+  </ProjectLayoutBody>
 </Layout>

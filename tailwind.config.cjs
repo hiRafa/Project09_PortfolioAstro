@@ -35,10 +35,10 @@ module.exports = {
         ".no-scrollbar::-webkit-scrollbar": {
           display: "none",
         },
-        ".brand-blue": {
+        ".clr-brand-blue": {
           color: "var(--clr-coder)",
         },
-        ".brand-orange": {
+        ".clr-brand-orange": {
           color: "var(--clr-sys)",
         },
         // ".orange-bar": {

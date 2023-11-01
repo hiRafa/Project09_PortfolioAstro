@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
+import ProjectLayouHead from "../components/ProjectLayou-Head.astro";
 ---
 
 <style>
@@ -46,7 +47,7 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
     width: 4px;
   }
   .blue-bar {
-    height: 760px;
+    height: 94%;
     top: 40px;
     right: 10px;
     background-color: var(--clr-coder);
@@ -59,7 +60,7 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
     z-index: -1;
   }
   .orange-bar {
-    height: 470px;
+    height: 90%;
     top: 40px;
     left: 10px;
     background-color: var(--clr-sys);
@@ -79,96 +80,103 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
 
 <Layout title="Hirashiki Rafael's 1st Project">
   <ProjectLayoutLinks road={true} />
-
-  <div class="col-start-2 col-span-5 text-right relative -right-4 max-md:col-span-10">
-    <div class="flex flex-col">
+  <ProjectLayouHead projectTitle="RoadMap" />
+  <div
+    class="col-start-2 col-span-5 text-right relative -right-4 max-md:col-span-10"
+  >
+    <div class="relative flex flex-col h-fit">
       <div class="bar blue-bar"></div>
-      <div class="bar black-bar-blue"></div>
+      <p class="grid-item-ball">
+        Acupuncture • <br />Game Design Video Editing •<br />VFX Design<i
+          class="fa-solid fa-circle"></i>
+      </p>
+      <h3 class="grid-item-ball">
+        Frontend Web<br />Development studies<i class="fa-solid fa-circle"></i>
+      </h3>
+      <p class="grid-item-ball">
+        HTML5/CSS3<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Github Basics<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">Sass<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">JS<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">
+        React • Material UI • Firebase <i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Next.js • MongoDB • Vercel<i class="fa-solid fa-circle"></i>
+      </p>
+      <h3 class="grid-item-ball">
+        Frontend Engineer (Junior)<i class="fa-solid fa-circle"></i>
+      </h3>
+      <p class="grid-item-ball">JQuery<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">
+        PHP Symfony<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">MVC Models<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">
+        EC-CUBE: e-commerce solution<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">Wordpress<i class="fa-solid fa-circle"></i></p>
+      <p class="grid-item-ball">
+        Github branching and version control<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Local, Test and Production environments<i class="fa-solid fa-circle"
+        ></i>
+      </p>
+      <p class="grid-item-ball">
+        Docker Containers<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball">
+        Page Speed Performance<i class="fa-solid fa-circle"></i>
+      </p>
+      <h3 class="grid-item-ball">
+        Level up Frontend •<br />Backend •<br />System Dev Skills
+        <i class="fa-solid fa-circle"></i>
+      </h3>
+      <p class="grid-item-ball">
+        Astro • TailWind • Typescript<i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball clr-brand-blue">
+        Code Testing<i class="fa-solid fa-circle"></i>
+      </p>
     </div>
-    <p class="grid-item-ball">
-      Acupuncture • <br />Game Design Video Editing •<br />VFX Design<i
-        class="fa-solid fa-circle"></i>
-    </p>
-    <h3 class="grid-item-ball">
-      Frontend Web<br />Development studies<i class="fa-solid fa-circle"></i>
-    </h3>
-    <p class="grid-item-ball">
-      HTML5/CSS3<i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball">
-      Github Basics<i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball">Sass<i class="fa-solid fa-circle"></i></p>
-    <p class="grid-item-ball">JS<i class="fa-solid fa-circle"></i></p>
-    <p class="grid-item-ball">
-      React • Material UI • Firebase <i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball">
-      Next.js • MongoDB • Vercel<i class="fa-solid fa-circle"></i>
-    </p>
-    <h3 class="grid-item-ball">
-      Frontend Engineer (Junior)<i class="fa-solid fa-circle"></i>
-    </h3>
-    <p class="grid-item-ball">JQuery<i class="fa-solid fa-circle"></i></p>
-    <p class="grid-item-ball">
-      PHP Symfony<i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball">MVC Models<i class="fa-solid fa-circle"></i></p>
-    <p class="grid-item-ball">
-      EC-CUBE: e-commerce solution<i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball">Wordpress<i class="fa-solid fa-circle"></i></p>
-    <p class="grid-item-ball">
-      Github branching and version control<i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball">
-      Local, Test and Production environments<i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball">
-      Docker Containers<i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball">
-      Page Speed Performance<i class="fa-solid fa-circle"></i>
-    </p>
-    <h3 class="grid-item-ball">
-      Level up Frontend •<br />Backend •<br />System Dev Skills
-      <i class="fa-solid fa-circle"></i>
-    </h3>
-    <p class="grid-item-ball">
-      Astro • TailWind • Typescript<i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball brand-blue">
-      Code Testing<i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball ball-black">
-      Project: System Development •<br />Backend (Nest.js Typescript)<i
-        class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball ball-black">
-      Python Project<i class="fa-solid fa-circle"></i>
-    </p>
-    <h3 class="grid-item-ball ball-black">
-      Level Up Dev Skills<i class="fa-solid fa-circle"></i>
-    </h3>
-    <p class="grid-item-ball ball-black">
-      Keep exploring technologies according to the market.
-      <i class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball ball-black">
-      Enhance skills according to work and challenges.<i
-        class="fa-solid fa-circle"></i>
-    </p>
-    <p class="grid-item-ball ball-black">
-      Strengthen planning, problem solving and systematic thinking. <i
-        class="fa-solid fa-circle"></i>
-    </p>
-    <h3 class="grid-item-ball ball-black">
-      Explore Data Science<br />Mid Developer (System, Front or Full Stack)
-      <i class="fa-solid fa-circle"></i>
-    </h3>
+    <div>
+      <div class="bar black-bar-blue"></div>
+      <p class="grid-item-ball ball-black">
+        Project: System Development •<br />Backend (Nest.js Typescript)<i
+          class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball ball-black">
+        Python Project<i class="fa-solid fa-circle"></i>
+      </p>
+      <h3 class="grid-item-ball ball-black">
+        Level Up Dev Skills<i class="fa-solid fa-circle"></i>
+      </h3>
+      <p class="grid-item-ball ball-black">
+        Keep exploring technologies according to the market.
+        <i class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball ball-black">
+        Enhance skills according to work and challenges.<i
+          class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball ball-black">
+        Strengthen planning, problem solving and systematic thinking. <i
+          class="fa-solid fa-circle"></i>
+      </p>
+      <h3 class="grid-item-ball ball-black">
+        Explore Data Science<br />Mid Developer (System, Front or Full Stack)
+        <i class="fa-solid fa-circle"></i>
+      </h3>
+    </div>
   </div>
 
-  <div class="col-span-1 text-center max-md:col-start-11 max-md:col-span-2 max-sm:col-start-11  ">
+  <div
+    class="col-span-1 text-center max-md:col-start-11 max-md:col-span-2 max-sm:col-start-11"
+  >
     <p class="">~2022</p>
     <p class="pt-24">2022</p>
     <p class="pt-64">2023</p>
@@ -176,73 +184,79 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
     <p class="pt-72">2025</p>
   </div>
 
-  <div class="hidden max-md:block max-md:col-start-1 text-center max-md:col-span-2 ">
+  <div
+    class="hidden max-md:block max-md:col-start-1 text-center max-md:col-span-2"
+  >
     <p class="pt-4">2023</p>
     <p class="pt-96">2024</p>
     <p class="pt-72">2025</p>
   </div>
 
-  <div class="col-span-5 mt-96 relative -left-4 max-md:col-start-3 max-md:col-span-11 max-md:m-0 ">
-    <div class="flex flex-col">
+  <div
+    class="col-span-5 mt-96 relative -left-4 max-md:col-start-3 max-md:col-span-11 max-md:m-0"
+  >
+    <div class=" relative flex flex-col">
       <div class="bar orange-bar"></div>
-      <div class="bar black-bar-orange"></div>
+      <h3 class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"> </i>
+         System Development<br />
+         2 year Degree
+      </h3>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"> </i>XXI Computer Architecture
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Enterprise Communication
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Career Planning
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Analysis and Requirements for Software
+        and System Development
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Object-Oriented Development
+        (Algorithms+ Java Introduction)
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Software Design
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>More Java
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Object Oriented Programming
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse ">
+        <i class="fa-solid fa-circle"></i>Data Base Management System
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse">
+        <i class="fa-solid fa-circle"></i>Web Development
+      </p>
     </div>
-    <h3 class="grid-item-ball grid-item-ball-reverse">
-      <i class="fa-solid fa-circle"> </i>
-       System Development<br />
-       2 year Degree
-    </h3>
-    <p class="grid-item-ball grid-item-ball-reverse">
-      <i class="fa-solid fa-circle"> </i>XXI Computer Architecture
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse">
-      <i class="fa-solid fa-circle"></i>Enterprise Communication
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse">
-      <i class="fa-solid fa-circle"></i>Career Planning
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse">
-      <i class="fa-solid fa-circle"></i>Analysis and Requirements for Software
-      and System Development
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse">
-      <i class="fa-solid fa-circle"></i>Object-Oriented Development (Algorithms+
-      Java Introduction)
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse">
-      <i class="fa-solid fa-circle"></i>Software Design
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse">
-      <i class="fa-solid fa-circle"></i>More Java
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse">
-      <i class="fa-solid fa-circle"></i>Object Oriented Programming
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse brand-orange">
-      <i class="fa-solid fa-circle"></i>Data Base Management System
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse ball-black">
-      <i class="fa-solid fa-circle"></i>Web Development
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse ball-black">
-      <i class="fa-solid fa-circle"></i>Smart Data Structures
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse ball-black">
-      <i class="fa-solid fa-circle"></i>Mobile Development
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse ball-black">
-      <i class="fa-solid fa-circle"></i>Microservices & Containers
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse ball-black">
-      <i class="fa-solid fa-circle"></i>Compliance, Quality Control and IT
-      Strategies
-    </p>
-    <p class="grid-item-ball grid-item-ball-reverse ball-black">
-      <i class="fa-solid fa-circle"></i>CyberSecurity
-    </p>
-    <h3 class="grid-item-ball grid-item-ball-reverse ball-black">
-      <i class="fa-solid fa-circle"> </i>
-       MBA
-    </h3>
+    <div>
+      <div class="bar black-bar-orange"></div>
+      <p class="grid-item-ball grid-item-ball-reverse ball-black">
+        <i class="fa-solid fa-circle"></i>Smart Data Structures
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse ball-black">
+        <i class="fa-solid fa-circle"></i>Mobile Development
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse ball-black">
+        <i class="fa-solid fa-circle"></i>Microservices & Containers
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse ball-black">
+        <i class="fa-solid fa-circle"></i>Compliance, Quality Control and IT
+        Strategies
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse ball-black">
+        <i class="fa-solid fa-circle"></i>CyberSecurity
+      </p>
+      <h3 class="grid-item-ball grid-item-ball-reverse ball-black">
+        <i class="fa-solid fa-circle"> </i>
+         MBA
+      </h3>
+    </div>
   </div>
 </Layout>

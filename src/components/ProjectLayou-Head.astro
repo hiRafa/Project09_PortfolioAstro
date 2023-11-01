@@ -1,0 +1,12 @@
+---
+import H2ProjectTitle from "./H2project-title.astro";
+const { projectTitle } = Astro.props;
+---
+
+<div class="relative col-start-2 col-span-10 h-fit pl-12">
+  <H2ProjectTitle
+    text={projectTitle}
+    class="italic text-2xl font-bold clr-brand-blue"
+  />
+  <slot />
+</div>

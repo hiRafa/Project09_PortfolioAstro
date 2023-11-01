@@ -3,8 +3,84 @@ import { Image } from "astro:assets";
 import ProjectLayout from "../components/ProjectLayout.astro";
 import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
 import Layout from "../layouts/Layout.astro";
+import ProjectLayoutBody from "../components/ProjectLayout-Body.astro";
+import H2ProjectTitle from "../components/H2project-title.astro";
 
+interface Project {
+  title?: string;
+  url?: string;
+  thumbnail?: string;
+  problems?: string[];
+}
+
+const a3Projects: Project[] = [
+  {
+    title: "eeo Stage Branding Renewal Page 2023",
+    url: "https://eeo.today/stage/",
+    thumbnail: "a3_project01",
+    problems: [
+        "Solved Twitter Widget Interfering in the Page Performance Loading.",
+        "Adapted Design Concepts to Better Solutions on The Frontend for FCP, LCP, etc.",
+        "Reached Above 90 Points in Performance During the Release Time.",
+        "Applied Downloaded Fonts in WOFF2 Format to Improve Page Performance.",
+        "Reached Above 90 Points in Performance During the Release Time.",
+    ],
+  },
+  {
+    title: "eeo Cafe Branding Renewal Page 2023",
+    url: "https://eeo.today/graffartcafe/",
+    thumbnail: "a3_project02",
+    problems: [
+        "My First Optimized Page Creation as a Frontend Engineer.",
+        "Customized Splide.js to Enable Only the Currently Centered Carousel Slide.",
+        "Stacked Images Vertically: Separation of Collaborative and Child Carousels within a Parent Carousel.",
+        "Optimized Heavy Images by Resizing to WebP Format.",
+        "Maximized Page Speed Considering the Presence of Numerous Large Images and Carousels.",
+        "Implemented Proper HTML Tags, Especially H1, to Enhance Search Engine Rankings.",
+        "Adhered to HTML Best Practices for SEO and Accessibility.",
+        "Adapted Design to Ensure Functionality, Responsiveness, and Performance.",
+        "Contributed to the Design Process.",
+    ],
+  },
+  {
+    title: "eeo Store e-commerce UI Renewal",
+    url: "https://eeo.today/store/101/",
+    thumbnail: "a3_project03",
+    problems: [
+        "My First Big Challenge At A3 as a Frontend Engineer.",
+        "With Little Instructions Learned to Navigate And Understand The Project Folders Built in PHP/Symfony and How the Pieces Were Connected To Attend All Requested Updates.",
+        "Made Code More Maintainable (HTML, CSS/SASS, JS/JQuery Code) by Drying it.",
+        "Elimated a Huge Amount of Unnecessary HTML Elements and CSS Rules and Classes.", 
+        "Slick Carousel > Splide Carousel Better Performance and More Customization Options.", 
+        "First Time With Github Branches, Local, Test and Production Environments.", 
+        "Figured Out on My Own Why Certain Configurations Were Not Working on My PC End After The Initial Set Up With The Infra Engineer.", 
+    ],
+  }]
 ---
-<Layout title="Hirashiki Rafael's 1st Project">
-    <ProjectLayoutLinks />
+
+<Layout title="Hirashiki Rafael's Main Projects at A3">
+  <ProjectLayoutLinks />
+
+  <ProjectLayoutBody>
+    <p class="italic text-2xl clr-brand-orange">Solo Frontend Coder For All Projects</p>
+    {a3Projects?.map((proj, i) => (
+        <H2ProjectTitle text={`${i+1}.${proj.title}`} class="italic text-2xl font-bold pt-20 pb-4"/>
+        <a href={proj.url} target="_blank">
+        <Image
+            src={`/Images/${proj.thumbnail}.webp`}
+            width={1100}
+            height={940}
+            format="webp"
+            alt=""
+            class="w-auto"
+        />
+        </a>
+        <div class="css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8">
+            <h3>Solved Challenges</h3>
+            <ul>
+                {proj.problems?.map(bullet => <li>❍ {bullet}</li> )}
+            </ul>
+        </div>
+        ))}
+  </ProjectLayoutBody>
 </Layout>
