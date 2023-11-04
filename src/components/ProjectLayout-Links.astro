@@ -1,5 +1,4 @@
 ---
-import H2ProjectTitle from "../components/H2project-title.astro";
 import { Image } from "astro:assets";
 
 const { project, road } = Astro.props;
@@ -7,105 +6,195 @@ const { project, road } = Astro.props;
 
 <style>
   a p {
-    font-size: 12px;
+    font-size: 11px;
+  }
+
+  .bars-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    padding-left: 18px;
+  }
+  .h-bar-container {
+    width: calc(100% - 50px);
+    left: 50px;
+  }
+  .v-bar-container {
+    height: calc(100% - 50px);
+    top: 50px;
+  }
+
+  .v-bar,
+  .h-bar {
+    position: absolute;
+    background-color: var(--clr-bg);
+  }
+  .v-bar {
+    height: 100%;
+    width: 3px;
+    top: 0;
+    animation: animateVertical 0.8s 1 ease-in-out;
+  }
+  .h-bar {
+    width: 100%;
+    height: 3px;
+    left: 0;
+    animation: animateHorizontal 0.8s 1 ease-in-out;
+  }
+  .d-bar {
+    height: 70px;
+    width: 3px;
+    rotate: 45deg;
+    position: absolute;
+    top: -55px;
+    left: 25px;
+    background-color: var(--clr-bg);
+  }
+  .d-barup {
+    height: 70px;
+    width: 3px;
+    rotate: 30deg;
+    position: absolute;
+    top: -65px;
+    left: 20px;
+    background-color: var(--clr-bg);
+  }
+
+  .star {
+    position: absolute;
+    width: 20px;
+    z-index: 50;
+  }
+  .star-btm {
+    bottom: -8px;
+  }
+  .star-top {
+    top: -8px;
+  }
+  .star-right {
+    right: -8px;
+  }
+  .star-left {
+    left: -8px;
+  }
+
+  @keyframes animateVertical {
+    from {
+      height: 0;
+    }
+    to {
+      height: 100%;
+    }
+  }
+  @keyframes animateHorizontal {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 </style>
 
-<div class="absolute -top-4 px-8 flex flex-col items-start gap-4 w-full">
-  <div class="relative">
-    <Image
-      src={!road
-        ? "/Images/stars-topright-black.svg"
-        : "/Images/stars-topright-road.svg"}
-      width={!road ? 700 : 260}
-      height={!road ? 800 : 560}
-      format="png"
-      alt="stars bg"
-      class="pl-2"
-    />
+<div class="absolute top-8 px-8 gap-y-4 w-6/6 grid grid-cols-12">
+  <div class="bars-container col-start-1 col-span-full">
+    <div class="relative h-bar-container">
+      <i class="fa-solid fa-circle star -top-3 -left-1 text-xl opacity-100"></i>
+      <div class="h-bar"></div>
+      <i class="fa-solid fa-circle star -top-3 -right-4 text-xl opacity-100"></i>
+      <div class="d-barup"></div>
+    </div>
+    <div class="relative v-bar-container">
+      <i class="fa-solid fa-circle star -top-2 -left-2 text-xl opacity-100"></i>
+      <div class="v-bar"></div>
+      <i class="fa-solid fa-circle star -bottom-2 -left-2 text-xl opacity-100"></i>
+      <div class="d-bar"></div>
+    </div>
   </div>
 
-      <a
-        href={!road ? project?.data.githubURL : "https://github.com/hiRafa"}
-        class="flex flex-col items-center w-fit"
-        target="_blank"
-      >
-        <Image
-          src="/Images/logo_github.png"
-          width={144}
-          height={213}
-          format="png"
-          alt="github logo"
-          class="url-logo-black"
-        />
-        <p>Github</p>
-      </a>
+  <div class="flex flex-col gap-2 justify-center items-center">
+    <a
+      href={!road ? project?.data.githubURL : "https://github.com/hiRafa"}
+      class="flex flex-col items-center w-fit"
+      target="_blank"
+    >
+      <Image
+        src="/Images/logo_github.png"
+        width={144}
+        height={213}
+        format="png"
+        alt="github logo"
+        class="url-logo-black"
+      />
+      <p>Github</p>
+    </a>
 
-  {
-    project?.data.figmaURL && (
-      <a
-        href={project?.data.figmaURL}
-        class="flex flex-col items-center w-fit"
-        target="_blank"
-      >
-        <Image
-          src="/Images/logo_figma.svg"
-          width={144}
-          height={213}
-          format="svg"
-          alt="figma logo"
-          class="url-logo-black"
-        />
-        <p>Figma</p>
-      </a>
-    )
-  }
-
-  {
-    project?.data.projectURL && (
-      <a
-        href={project?.data.projectURL}
-        class="flex flex-col items-center w-fit"
-        target="_blank"
-      >
-        <i class="fa-solid fa-arrow-up-right-from-square url-logo-black" />
-        <p>Project</p>
-      </a>
-    )
-  }
-  {
-    project && (
-      <div class="flex flex-col gap-2 h-fit pl-1">
-        {project.data.technologies?.map((ele: string, index: number) => (
+    {
+      project?.data.figmaURL && (
+        <a
+          href={project?.data.figmaURL}
+          class="flex flex-col items-center w-fit"
+          target="_blank"
+        >
           <Image
-            src={`/Images/logo_${ele}.png`}
-            width={30}
-            height={30}
-            format="png"
-            alt="stars bg"
-            class=""
+            src="/Images/logo_figma.svg"
+            width={144}
+            height={213}
+            format="svg"
+            alt="figma logo"
+            class="url-logo-black"
           />
-        ))}
-      </div>
-    )
-  }
+          <p>Figma</p>
+        </a>
+      )
+    }
 
-  {
-    road && (
-      <a
-        href="https://www.linkedin.com/in/rafael-hirashiki-7a5733170/"
-        class="flex flex-col items-center w-fit"
-      >
-        <Image
-          src="/Images/logo_linkedin.png"
-          width={144}
-          height={213}
-          format="png"
-          alt="linkedin logo"
-          class="url-logo"
-        />
-        <p>Linkedin</p>
-      </a>
-    )
-  }
+    {
+      project?.data.projectURL && (
+        <a
+          href={project?.data.projectURL}
+          class="flex flex-col items-center w-fit"
+          target="_blank"
+        >
+          <i class="fa-solid fa-arrow-up-right-from-square url-logo-black" />
+          <p>Project</p>
+        </a>
+      )
+    }
+    {
+      project && (
+        <div class="flex flex-col gap-2 h-fit ">
+          {project.data.technologies?.map((ele: string, index: number) => (
+            <Image
+              src={`/Images/logo_${ele}.png`}
+              width={30}
+              height={30}
+              format="png"
+              alt="stars bg"
+              class=""
+            />
+          ))}
+        </div>
+      )
+    }
+
+    {
+      road && (
+        <a
+          href="https://www.linkedin.com/in/rafael-hirashiki-7a5733170/"
+          class="flex flex-col items-center w-fit"
+        >
+          <Image
+            src="/Images/logo_linkedin.png"
+            width={144}
+            height={213}
+            format="png"
+            alt="linkedin logo"
+            class="url-logo"
+          />
+          <p>Linkedin</p>
+        </a>
+      )
+    }
+  </div>
 </div>
