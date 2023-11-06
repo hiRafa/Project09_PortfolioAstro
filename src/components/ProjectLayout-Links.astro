@@ -15,6 +15,12 @@ const { project, road } = Astro.props;
     height: 500px;
     padding-left: 18px;
   }
+  @media screen and (max-width: 600px) {
+    .bars-container {
+      width: clamp(200px, 90%, 500px);
+    }
+  }
+
   .h-bar-container {
     width: calc(100% - 50px);
     left: 50px;
@@ -103,7 +109,7 @@ const { project, road } = Astro.props;
       class="flex flex-col items-center w-fit"
       target="_blank"
     >
-      <i class="fa-brands fa-github url-logo-black url-logo-github "></i>
+      <i class="fa-brands fa-github url-logo-black url-logo-github"></i>
       <p>Github</p>
     </a>
 

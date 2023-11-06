@@ -2,36 +2,31 @@
 import Layout from "../layouts/Layout.astro";
 import ProjectLayoutLinks from "./ProjectLayout-Links.astro";
 import ProjectLayoutBody from "./ProjectLayout-Body.astro";
-import ProjectLayouHead from "./ProjectLayou-Head.astro";
+import ProjectLayoutHead from "./ProjectLayout-Head.astro";
 
-const { project  } = Astro.props;
+const { project } = Astro.props;
 ---
-<Layout title="Hirashiki Rafael's Portfolio Project" description={project?.data.projectSubtitle}>
+
+<Layout
+  title="Hirashiki Rafael's Portfolio Project"
+  description={project?.data.projectSubtitle}
+>
   <ProjectLayoutLinks project={project} />
-
-  <ProjectLayouHead projectTitle={project?.data.projectTitle}>
-    <p class="py-4">
-      {project.data.projectSubtitle}
-    </p>
-  </ProjectLayouHead>
-
+  <ProjectLayoutHead project={project} />
+  
   <ProjectLayoutBody>
-    <a href={project?.data.projectURL} target="_blank"
-      ><img
-        src={`/Images/${project.data.thumbnail}.webp`}
-        class=""
-      /></a
-    >
+    <a href={project?.data.projectURL} target="_blank">
+      <img src={`/Images/${project?.data.thumbnail}.webp`} class="" />
+    </a>
 
     <ul
-      class={`absolute bottom-0 -right-8 font-bold py-8 w-fit ml-auto text-right  css-glass-bg px-6`}
+      class={`absolute bottom-0 -right-8 font-bold py-8 w-fit ml-auto text-right css-glass-bg px-6`}
     >
       {
-        project.data.projectBulletList.map((option: string) => (
+        project?.data.projectBulletList.map((option: string) => (
           <li>❍ {option}</li>
         ))
       }
     </ul>
-
   </ProjectLayoutBody>
 </Layout>

@@ -52,14 +52,14 @@ const projects = await getCollection("projects");
   <body
     class={`grid grid-cols-12 ${
       headerIndex && "clr-bg max-lg:flex max-lg:flex-col-reverse"
-    } overflow-y-hidden h-screen`}
+    } overflow-y-hidden `}
   >
     {
       headerIndex && (
         <>
           <Header
             headerIndex={headerIndex}
-            class={`relative w-full h-screen col-start-1 col-span-5 clr-bg pt-8 grid grid-cols-8 max-lg:h-auto max-lg:flex-1 max-lg:grid-cols-12 max-lg:bg-transparent`}
+            class={`relative w-full h-screen col-start-1 col-span-5 pt-8 grid grid-cols-8 max-lg:h-auto max-lg:flex-1 max-lg:grid-cols-12`}
           />
           <Main
             projects={projects}
@@ -76,7 +76,7 @@ const projects = await getCollection("projects");
         <>
           <Header
             headerIndex={headerIndex}
-            class={`css-hideHeader max-lg:absolute h-screen col-start-1 col-span-3 max-lg:col-span-3 clr-bg pt-8 grid grid-cols-5 `}
+            class={`css-hideHeader max-lg:absolute col-start-1 col-span-3 max-lg:col-span-3 clr-bg pt-8 grid grid-cols-5 `}
           />
           <Main
             projects={projects}
@@ -115,9 +115,9 @@ const projects = await getCollection("projects");
       }
 
       *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
+      *::before,
+      *::after {
+        box-sizing: border-box;
       }
 
       body,
@@ -166,6 +166,7 @@ const projects = await getCollection("projects");
         width: 100%;
         position: relative;
         z-index: 999;
+        height: 100dvh;
       }
 
       #toggleButton {
@@ -186,29 +187,31 @@ const projects = await getCollection("projects");
       @media screen and (max-width: 1200px) {
         header {
           width: 50%;
-          inset: 0 0 0 0;
+          left: 0;
           transition: all 0.3s ease-out;
+          height: 100dvh;
         }
         .css-hideHeader {
           position: absolute;
-          inset: 0 0 0 -50%;
+          left: -50%;
           transition: all 0.3s ease-out;
+          height: 100dvh;
         }
       }
       @media screen and (max-width: 767px) {
         header {
-          width: 80%;
+          width: 80vw;
         }
         .css-hideHeader {
-          inset: 0 0 0 -80%;
+          left: -80%;
         }
       }
       @media screen and (max-width: 420px) {
         header {
-          width: 94%;
+          width: 100vw;
         }
         .css-hideHeader {
-          inset: 0 0 0 -94%;
+          left: -100%;
         }
       }
 
