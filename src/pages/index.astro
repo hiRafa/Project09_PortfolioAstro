@@ -4,13 +4,23 @@ import { Image } from "astro:assets";
 import RafaPic from "../components/Rafa-pic.astro";
 ---
 
-<Layout title="Hirashiki Rafael's Nifty Journey on the web" headerIndex={true}>
-    <Image
-      src="/Images/index-rafa2.webp"
-      width={1100}
-      height={940}
-      format="webp"
-      alt="web development applications icons and logos"
-      class="m-auto w-full max-lg:max-w-2xl max-lg:mr-0 max-md:w-6/6"
-    />
+<Layout
+  title="Hirashiki Rafael's Nifty Journey on the web"
+  description=` My second portfolio after my first year as a Frontend Developer. Shooting for the stars. 
+    "If I give it my all, will it pay off?
+    Workin' overtime, no days off
+    All these shootin' stars in the dark (Yeah)
+    All these shootin' stars in the dark, make a wish (Yeah)
+    Takin' off from the ground, it's amazin'
+    So outta this world, I'm in space"` 
+  headerIndex={true}
+>
+  <Image
+    src="/Images/index-rafa2.webp"
+    width={1100}
+    height={940}
+    format="webp"
+    alt="web development applications icons and logos"
+    class="m-auto w-full max-lg:w-9/12 max-lg:absolute top-0 right-0 max-md:w-11/12 max-sm:w-full"
+  />
 </Layout>

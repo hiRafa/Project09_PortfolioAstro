@@ -2,17 +2,12 @@
 interface Props {
   text?: string;
   index?: boolean;
+  class?: string;
 }
 
-const { text, index } = Astro.props;
+const { text, class: className, ...rest  } = Astro.props;
 ---
 
-<h1
-  class:list={[
-    index
-      ? "text-5xl max-lg:text-4xl max-md:text-3xl font-bold"
-      : "text-3xl max-lg:text-xl max-md:text-lg font-bold max-xl:text-2xl m-auto ",
-  ]}
->
+<h1 class={className} {...rest}>
   {text}
 </h1>

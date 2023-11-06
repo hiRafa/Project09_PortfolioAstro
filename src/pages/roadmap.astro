@@ -29,14 +29,14 @@ import ProjectLayouHead from "../components/ProjectLayou-Head.astro";
     font-style: normal;
   }
   .grid-item-ball .fa-circle {
-    color: var(--clr-coder);
+    color: var(--clr-brand-blue);
     font-style: normal;
     width: fit-content;
     margin: auto;
     font-size: small;
   }
   .grid-item-ball-reverse .fa-circle {
-    color: var(--clr-sys);
+    color: var(--clr-brand-orange);
   }
   h3.grid-item-ball .fa-circle {
     font-size: larger;
@@ -50,27 +50,29 @@ import ProjectLayouHead from "../components/ProjectLayou-Head.astro";
     height: 94%;
     top: 40px;
     right: 10px;
-    background-color: var(--clr-coder);
+    background-color: var(--clr-brand-blue);
+    animation: animateVertical 2.5s 1 ease-out;
   }
   .black-bar-blue {
-    height: 96%;
-    top: 4%;
+    height: 100%;
+    top: -2%;
     right: 10px;
     background-color: var(--clr-charchoal);
-    z-index: -1;
+    z-index: 1;
   }
   .orange-bar {
     height: 90%;
     top: 40px;
     left: 10px;
-    background-color: var(--clr-sys);
+    background-color: var(--clr-brand-orange);
+    animation: animateVertical 2.5s 1 ease-out;
   }
   .black-bar-orange {
-    height: 96%;
-    top: 4%;
+    height: 100%;
+    top: -6%;
     left: 10px;
     background-color: var(--clr-charchoal);
-    z-index: -1;
+    z-index: 1;
   }
 
   .ball-black .fa-circle {
@@ -143,7 +145,8 @@ import ProjectLayouHead from "../components/ProjectLayou-Head.astro";
         Code Testing<i class="fa-solid fa-circle"></i>
       </p>
     </div>
-    <div>
+
+    <div class="relative">
       <div class="bar black-bar-blue"></div>
       <p class="grid-item-ball ball-black">
         Project: System Development •<br />Backend (Nest.js Typescript)<i
@@ -171,6 +174,18 @@ import ProjectLayouHead from "../components/ProjectLayou-Head.astro";
         Explore Data Science<br />Mid Developer (System, Front or Full Stack)
         <i class="fa-solid fa-circle"></i>
       </h3>
+      <p class="grid-item-ball ball-black">
+        ???<i
+          class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball ball-black">
+        ???<i
+          class="fa-solid fa-circle"></i>
+      </p>
+      <p class="grid-item-ball ball-black">
+        ???<i
+          class="fa-solid fa-circle"></i>
+      </p>
     </div>
   </div>
 
@@ -235,7 +250,8 @@ import ProjectLayouHead from "../components/ProjectLayou-Head.astro";
         <i class="fa-solid fa-circle"></i>Web Development
       </p>
     </div>
-    <div>
+
+    <div class="relative">
       <div class="bar black-bar-orange"></div>
       <p class="grid-item-ball grid-item-ball-reverse ball-black">
         <i class="fa-solid fa-circle"></i>Smart Data Structures
@@ -257,6 +273,12 @@ import ProjectLayouHead from "../components/ProjectLayou-Head.astro";
         <i class="fa-solid fa-circle"> </i>
          MBA
       </h3>
+      <p class="grid-item-ball grid-item-ball-reverse ball-black">
+        <i class="fa-solid fa-circle"></i>???
+      </p>
+      <p class="grid-item-ball grid-item-ball-reverse ball-black">
+        <i class="fa-solid fa-circle"></i>???
+      </p>
     </div>
   </div>
 </Layout>

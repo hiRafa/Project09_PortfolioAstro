@@ -10,7 +10,7 @@ module.exports = {
       'max-xl': {'max': '1279px'},
       // => @media (max-width: 1279px) { ... }
 
-      'max-lg': {'max': '1023px'},
+      'max-lg': {'max': '1200px'},
       // => @media (max-width: 1023px) { ... }
 
       'max-md': {'max': '767px'},
@@ -36,13 +36,13 @@ module.exports = {
           display: "none",
         },
         ".clr-brand-blue": {
-          color: "var(--clr-coder)",
+          color: "var(--clr-brand-blue)",
         },
         ".clr-brand-orange": {
-          color: "var(--clr-sys)",
+          color: "var(--clr-brand-orange)",
         },
         // ".orange-bar": {
-        //   backgroundColor: "var(--clr-sys)",
+        //   backgroundColor: "var(--clr-brand-orange)",
         // },
         // ".grid-item-ball": {
         //   display: "grid",

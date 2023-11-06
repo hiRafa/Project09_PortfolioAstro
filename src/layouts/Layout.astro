@@ -26,6 +26,18 @@ const projects = await getCollection("projects");
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website portfolio" />
+    <meta
+      property="og:url"
+      content="https://hirashiki-rafael-portfolio.netlify.app/"
+    />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content="https://ia.media-imdb.com/images/rock.jpg"
+    />
     <ViewTransitions />
 
     <link
@@ -47,7 +59,7 @@ const projects = await getCollection("projects");
         <>
           <Header
             headerIndex={headerIndex}
-            class={`relative w-full h-screen col-start-1 col-span-5 clr-bg pt-8 grid grid-cols-8 max-lg:h-auto max-lg:flex-1 max-lg:grid-cols-12`}
+            class={`relative w-full h-screen col-start-1 col-span-5 clr-bg pt-8 grid grid-cols-8 max-lg:h-auto max-lg:flex-1 max-lg:grid-cols-12 max-lg:bg-transparent`}
           />
           <Main
             projects={projects}
@@ -92,8 +104,8 @@ const projects = await getCollection("projects");
         --clr-bg: #0f2132;
         --clr-bg-glass: #0f2132c0;
         --clr-charchoal: #333333;
-        --clr-coder: #00d9f7;
-        --clr-sys: #ff9900;
+        --clr-brand-blue: #00d9f7;
+        --clr-brand-orange: #ff9900;
       }
 
       /* reset  */
@@ -142,6 +154,12 @@ const projects = await getCollection("projects");
 
       a:hover {
         cursor: pointer;
+        color: var(--clr-brand-blue);
+        transition: all 0.3s;
+      }
+      a:active {
+        color: var(--clr-bg);
+        transition: all 0.2s;
       }
 
       header {
@@ -165,7 +183,7 @@ const projects = await getCollection("projects");
         transition: all 0.5s;
       }
 
-      @media screen and (max-width: 1023px) {
+      @media screen and (max-width: 1200px) {
         header {
           width: 50%;
           inset: 0 0 0 0;
@@ -207,7 +225,7 @@ const projects = await getCollection("projects");
       }
 
       .css-headermain {
-        grid-template-rows: min-content 1fr; 
+        grid-template-rows: min-content 1fr;
       }
       .clr-bg {
         background-color: var(--clr-bg);
@@ -243,16 +261,16 @@ const projects = await getCollection("projects");
         display: block;
         width: fit-content;
         margin: auto;
-        color: var(--clr-coder);
+        color: var(--clr-brand-blue);
       }
       .css-glass-bg {
         /* From https://css.glass */
-        background: rgba(255, 255, 255, 0.5);;
+        background: rgba(255, 255, 255, 0.5);
         border-radius: 16px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(4.8px);
         -webkit-backdrop-filter: blur(4.8px);
-        border: 2px solid var(--clr-coder);
+        border: 2px solid var(--clr-brand-blue);
         color: var(--clr-bg);
       }
       .css-no-scrollbar {
@@ -262,6 +280,23 @@ const projects = await getCollection("projects");
       .css-no-scrollbar::-webkit-scrollbar {
         display: none;
       } /* Hide scrollbar for IE, Edge, and Firefox */
+
+      @keyframes animateVertical {
+        from {
+          height: 0;
+        }
+        to {
+          height: 100%;
+        }
+      }
+      @keyframes animateHorizontal {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
     </style>
   </body>
 </html>

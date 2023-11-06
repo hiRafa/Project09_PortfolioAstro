@@ -5,9 +5,8 @@ import ProjectLayoutBody from "./ProjectLayout-Body.astro";
 import ProjectLayouHead from "./ProjectLayou-Head.astro";
 
 const { project  } = Astro.props;
-
 ---
-<Layout>
+<Layout title="Hirashiki Rafael's Portfolio Project" description={project?.data.projectSubtitle}>
   <ProjectLayoutLinks project={project} />
 
   <ProjectLayouHead projectTitle={project?.data.projectTitle}>
