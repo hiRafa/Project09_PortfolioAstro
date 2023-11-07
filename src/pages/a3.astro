@@ -1,10 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import ProjectLayout from "../components/ProjectLayout.astro";
 import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
 import Layout from "../layouts/Layout.astro";
-import ProjectLayoutBody from "../components/ProjectLayout-Body.astro";
 import H2ProjectTitle from "../components/H2project-title.astro";
+import ProjectLayoutBottomStars from "../components/ProjectLayout-BottomStars.astro";
 
 interface Project {
   title?: string;
@@ -59,36 +58,35 @@ const a3Projects: Project[] = [
 
 <Layout title="Hirashiki Rafael's Main Projects at A3">
   <ProjectLayoutLinks />
-
-  <ProjectLayoutBody>
+  <div class=" col-start-3 col-span-8">
     <p class="italic text-2xl clr-brand-orange">Solo Frontend Coder For All Projects</p>
     {a3Projects?.map((proj, i) => (
-        <div class="flex items-center pt-20 pb-4 gap-3">
+      <div class="flex items-center pt-20 pb-4 gap-3">
         <H2ProjectTitle text={`${i+1}.${proj.title}`} class="italic text-2xl font-bold"/>      
         <a
         href={proj.url}
         class="flex flex-col items-center w-fit"
         target="_blank"
-      >
-        <i class="fa-solid fa-arrow-up-right-from-square" />
-      </a>
-    </div>
-        <a href={proj.url} target="_blank">
-        <Image
-            src={`/Images/${proj.thumbnail}.webp`}
-            width={1100}
-            height={940}
-            format="webp"
-            alt=""
-            class="w-auto"
-        />
+        >
+          <i class="fa-solid fa-arrow-up-right-from-square" />
         </a>
-        <div class="css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8">
-            <h3>Solved Challenges</h3>
-            <ul>
-                {proj.problems?.map(bullet => <li>❍ {bullet}</li> )}
-            </ul>
-        </div>
-        ))}
-  </ProjectLayoutBody>
+      </div>
+      <a href={proj.url} target="_blank">
+      <Image
+          src={`/Images/${proj.thumbnail}.webp`}
+          width={1100}
+          height={940}
+          format="webp"
+          alt=""
+          class="w-auto"
+      />
+      </a>
+      <div class="css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8">
+          <h3>Solved Challenges</h3>
+          <ul>
+              {proj.problems?.map(bullet => <li>❍ {bullet}</li> )}
+          </ul>
+      </div>
+    ))}
+  </div>
 </Layout>

@@ -39,11 +39,9 @@
     left: -40px;
   }
 </style>
-
-<div class="relative col-start-3 col-span-9">
-  <slot />
-
-  <div class="absolute h-2/3 w-10/12 -bottom-4 -right-16 -z-10">
+<div class="absolute col-start-5 col-span-full right-4 bottom-4 h-2/3 w-10/12">
+  <slot/>
+  <div class="">
     <img src="/Images/shape-square.svg" class="star star-top star-right" />
     <div class="v-bar"></div>
     <div class="h-bar"></div>
