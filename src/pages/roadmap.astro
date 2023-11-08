@@ -34,6 +34,8 @@ import ProjectLayouHead from "../components/ProjectLayout-Head.astro";
     width: fit-content;
     margin: auto;
     font-size: small;
+    position: relative;
+    z-index: 2;
   }
   .grid-item-ball-reverse .fa-circle {
     color: var(--clr-brand-orange);
@@ -58,7 +60,7 @@ import ProjectLayouHead from "../components/ProjectLayout-Head.astro";
     top: -2%;
     right: 10px;
     background-color: var(--clr-charchoal);
-    z-index: -1;
+    z-index: 1;
   }
   .orange-bar {
     height: 90%;
@@ -72,7 +74,7 @@ import ProjectLayouHead from "../components/ProjectLayout-Head.astro";
     top: -6%;
     left: 10px;
     background-color: var(--clr-charchoal);
-    z-index: -1;
+    z-index: 1;
   }
 
   .ball-black .fa-circle {
