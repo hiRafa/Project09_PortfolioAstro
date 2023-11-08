@@ -51,7 +51,7 @@ const projects = await getCollection("projects");
 
   <body
     class={`grid grid-cols-12 ${
-      headerIndex && "clr-bg max-lg:css-body-index-small"
+      headerIndex && "clr-bg css-body-index-small"
     } overflow-hidden `}
   >
     {
@@ -59,11 +59,11 @@ const projects = await getCollection("projects");
         <>
           <Header
             headerIndex={headerIndex}
-            class={`relative w-full h-screen col-start-1 col-span-5 pt-8 grid grid-cols-8 max-lg:h-auto max-lg:grid-cols-12 max-lg:row-start-2 max-lg:col-span-full`}
+            class={`relative w-full h-screen col-start-1 col-span-5 pt-8 grid grid-cols-8 max-lg:h-auto max-lg:grid-cols-12 css-body-row-2 max-lg:col-span-full`}
           />
           <Main
             projects={projects}
-            class={`relative w-full h-fit m-auto col-span-7 css-no-scrollbar max-lg:row-start-1 max-lg:col-span-full `}
+            class={`relative w-full h-fit m-auto col-span-7 css-no-scrollbar css-body-row-1 max-lg:col-span-full max-lg:mx-auto max-lg:my-0 `}
           >
             <slot />
           </Main>
@@ -152,7 +152,7 @@ const projects = await getCollection("projects");
         color: var(--clr-charchoal);
       }
       .css-body-index-small {
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto;
       }
 
       a:hover {
@@ -199,6 +199,18 @@ const projects = await getCollection("projects");
           left: -50%;
           transition: all 0.3s ease-out;
           height: 100dvh;
+        }
+        
+        .css-body-index-small {
+          grid-template-rows: 1fr 1fr;
+        }
+        .css-body-row-1 {
+          grid-row-start: 1 !important;
+          grid-row-end: 2 !important;
+        }
+        .css-body-row-2 {
+          grid-row-start: 2 !important;
+          grid-row-end: 3 !important;
         }
       }
       @media screen and (max-width: 767px) {
