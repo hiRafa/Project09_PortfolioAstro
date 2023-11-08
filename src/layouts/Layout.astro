@@ -51,7 +51,7 @@ const projects = await getCollection("projects");
 
   <body
     class={`grid grid-cols-12 ${
-      headerIndex && "clr-bg max-lg:flex max-lg:flex-col-reverse"
+      headerIndex && "clr-bg max-lg:css-body-index-small"
     } overflow-y-hidden `}
   >
     {
@@ -59,11 +59,11 @@ const projects = await getCollection("projects");
         <>
           <Header
             headerIndex={headerIndex}
-            class={`relative w-full h-screen col-start-1 col-span-5 pt-8 grid grid-cols-8 max-lg:h-auto max-lg:flex-1 max-lg:grid-cols-12`}
+            class={`relative w-full h-screen col-start-1 col-span-5 pt-8 grid grid-cols-8 max-lg:h-auto max-lg:grid-cols-12 max-lg:row-start-2 max-lg:col-span-full`}
           />
           <Main
             projects={projects}
-            class={`relative w-full h-fit m-auto col-span-7 css-no-scrollbar max-lg:flex-1`}
+            class={`relative w-full h-fit m-auto col-span-7 css-no-scrollbar max-lg:row-start-1 max-lg:col-span-full  max-sm:right-1/4`}
           >
             <slot />
           </Main>
@@ -150,6 +150,9 @@ const projects = await getCollection("projects");
       body {
         font-family: "Roboto", sans-serif;
         color: var(--clr-charchoal);
+      }
+      .css-body-index-small {
+        grid-template-rows: 1fr 1fr;
       }
 
       a:hover {
