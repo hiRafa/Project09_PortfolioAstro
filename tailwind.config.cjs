@@ -6,19 +6,17 @@ module.exports = {
     screens: {
       'max-2xl': {'max': '1535px'},
       // => @media (max-width: 1535px) { ... }
-
       'max-xl': {'max': '1279px'},
       // => @media (max-width: 1279px) { ... }
-
       'max-lg': {'max': '1200px'},
       // => @media (max-width: 1023px) { ... }
-
       'max-md': {'max': '767px'},
       // => @media (max-width: 767px) { ... }
-
-      'max-sm': {'max': '500px'},
+      'max-sm': {'max': '420px'},
       // => @media (max-width: 639px) { ... }
       'max-s': {'max': '375px'},
+      // => @media (max-width: 639px) { ... }
+      'min-lg': {'max': '1201px'},
       // => @media (max-width: 639px) { ... }
     }
   },

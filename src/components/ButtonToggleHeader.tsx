@@ -39,7 +39,7 @@ export const ButtonToggleHeader = () => {
   return (
     <button
       id="toggleButton"
-      className="hidden absolute bottom-9 -right-6 h-fit w-fit rounded-lg p-2 clr-bg m-auto max-lg:block"
+      className="hidden absolute top-0 bottom-0 -right-5 h-fit w-fit rounded-lg p-2 clr-bg m-auto max-lg:block"
       onClick={() => toggleHeader()}
     >
       <p class="hidden absolute bottom-10 right-16 clr-text z-50 text-base max-lg:flex flex-col items-center justify-center -rotate-45">
