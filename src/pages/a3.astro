@@ -58,11 +58,11 @@ const a3Projects: Project[] = [
 
 <Layout title="Hirashiki Rafael's Main Projects at A3">
   <ProjectLayoutLinks />
-  <div class=" col-start-3 col-span-8">
+  <div class=" col-start-3 col-span-8 max-sm:col-start-4">
     <p class="italic text-2xl clr-brand-orange">Solo Frontend Coder For All Projects</p>
     {a3Projects?.map((proj, i) => (
-      <div class="flex items-center pt-20 pb-4 gap-3">
-        <H2ProjectTitle text={`${i+1}.${proj.title}`} class="italic text-2xl font-bold"/>      
+      <div class="flex items-center pt-20 pb-4 gap-3  max-md:pt-10">
+        <H2ProjectTitle text={`${i+1}.${proj.title}`} class="italic text-2xl font-bold max-md:text-lg"/>      
         <a
         href={proj.url}
         class="flex flex-col items-center w-fit"

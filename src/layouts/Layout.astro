@@ -76,7 +76,7 @@ const projects = await getCollection("projects");
         <>
           <Header
             headerIndex={headerIndex}
-            class={`css-hideHeader max-lg:absolute col-start-1 col-span-3 max-lg:col-span-3 clr-bg pt-8 grid grid-cols-5 `}
+            class={`css-hideHeader max-lg:absolute col-start-1 col-span-3 max-lg:col-span-3 clr-bg pt-8 grid grid-cols-5 max-md:min-h-screen`}
           />
           <Main
             projects={projects}
@@ -185,17 +185,23 @@ const projects = await getCollection("projects");
       }
       #toggleButton {
         z-index: 999;
-        transform: rotate(45deg);
+        position: absolute;
+        top: 0;
+        right: -1.5rem;
+        width: fit-content;
+        height: fit-content;
       }
       #fa-arrowHeader {
-        display: block;
         transition: all 0.5s;
-        width: 30px;
-        height: 30px;
+      }
+      .movebutton {
+        right: 2rem !important;
+        transition: all 0.5s;
       }
       .rotate {
-        transform: rotate(180deg) !important;
+        transform: rotate(225deg) !important;
         transition: all 0.5s;
+        border: 1px solid white;
       }
 
       @media screen and (min-width: 1201px) {

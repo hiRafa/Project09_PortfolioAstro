@@ -5,6 +5,8 @@ export const ButtonToggleHeader = () => {
 
   const toggleHeader = () => {
     const header: HTMLElement | null = document.getElementById("myHeader");
+    const toggleButton: HTMLElement | null =
+      document.getElementById("toggleButton");
     const toggleButtonIcon: HTMLElement | null =
       document.getElementById("fa-arrowHeader");
 
@@ -12,11 +14,13 @@ export const ButtonToggleHeader = () => {
     if (!isHeaderHidden) {
       // Your logic to hide the header
       header.classList.add("css-hideHeader");
+      toggleButton?.classList.remove("movebutton");
       toggleButtonIcon?.classList.remove("rotate");
       // toggleButtonIcon?.classList.remove("rotate");
     } else {
       // Your logic to show the header
       header.classList.remove("css-hideHeader");
+      toggleButton?.classList.add("movebutton");
       toggleButtonIcon?.classList.add("rotate");
     }
     setIsHeaderHidden(!isHeaderHidden);
@@ -39,10 +43,10 @@ export const ButtonToggleHeader = () => {
   return (
     <button
       id="toggleButton"
-      className="hidden absolute top-0 bottom-0 -right-5 h-fit w-fit rounded-lg p-2 clr-bg m-auto max-lg:block"
+      className="hidden  max-lg:block  m-auto  "
       onClick={() => toggleHeader()}
     >
-      <p class="hidden absolute bottom-10 right-16 clr-text z-50 text-base max-lg:flex flex-col items-center justify-center -rotate-45">
+      <p class="hidden absolute top-16 right-2 clr-text z-50 text-base max-lg:flex flex-col items-center justify-center">
         <span>M</span>
         <span>E</span>
         <span>N</span> 
@@ -50,6 +54,7 @@ export const ButtonToggleHeader = () => {
       </p>
 
       <svg
+        className="rounded-lg p-2 clr-bg rotate-45 w-12 h-12"
         width="307"
         height="306"
         viewBox="0 0 307 306"
