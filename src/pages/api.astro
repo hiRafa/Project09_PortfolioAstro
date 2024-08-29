@@ -1,0 +1,8 @@
+---
+import ProjectLayout from "../components/ProjectLayout.astro";
+
+import { getEntry } from "astro:content";
+const api = await getEntry("projects", "api");
+---
+
+<ProjectLayout project={api} sysdev={true}></ProjectLayout>

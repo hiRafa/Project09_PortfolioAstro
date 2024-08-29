@@ -1,3 +1,7 @@
+---
+const { positionAbsolute } = Astro.props;
+---
+
 <style>
   .fa-brands {
     font-size: 50px;
@@ -39,8 +43,12 @@
     left: -40px;
   }
 </style>
-<div class="absolute col-start-5 col-span-full right-4 bottom-4 h-2/3 w-10/12 max-md:col-start-3">
-  <slot/>
+<div
+  class={`${
+    positionAbsolute ? "right-4 bottom-4" : "-right-10 -bottom-16"
+  } absolute col-start-5 col-span-full right-4 bottom-4 h-2/3 w-10/12 max-md:col-start-3 z-0`}
+>
+  <slot />
   <div class="">
     <img src="/Images/shape-square.svg" class="star star-top star-right" />
     <div class="v-bar"></div>

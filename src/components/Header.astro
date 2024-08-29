@@ -18,44 +18,20 @@ const navObj = [
     navSubtitle: "to INFINITY and Beyond!",
   },
   {
+    path: "/api",
+    navTitle: "Works at Agendae+",
+    navSubtitle: "System Engineer (Backend)",
+  },
+  {
     path: "/a3",
     navTitle: "Works at A3",
-    navSubtitle: "Frontend",
+    navSubtitle: "Frontend Engineer",
   },
   {
-    path: "/project05",
-    navTitle: "Agendae+",
-    navSubtitle: "System",
-  },
-  {
-    path: "/project04",
-    navTitle: "Medical Records",
-    navSubtitle: "Coder",
-    navTech: "Next.js",
-  },
-  {
-    path: "/project03",
-    navTitle: "Music Store",
-    navSubtitle: "Coder",
-    navTech: "React.js",
-  },
-  {
-    path: "/project02",
-    navTitle: "Bakery LP",
-    navSubtitle: "Coder",
-    navTech: "HTML/SASS/JS",
-  },
-  {
-    path: "/project01",
-    navTitle: "Dance Academy LP",
-    navSubtitle: "Coder",
-    navTech: "HTML/CSS",
-  },
-  {
-    path: "/project00",
-    navTitle: "Portfolio Old",
-    navSubtitle: "Coder",
-    navTech: "HTML/CSS/JS",
+    path: "/projects2022",
+    navTitle: "Projects 2022",
+    navSubtitle: "Frontend Coder",
+    navTech: "HTML/CSS/JS/Next.js",
   },
 ];
 ---
@@ -207,8 +183,7 @@ const navObj = [
             <ul class="pr-4">
               {navObj.map((ele) => (
                 <li>
-                  {ele.path === "/project05" && <p class="li-year">2023</p>}
-                  {ele.path === "/project03" && <p class="li-year">2022</p>}
+                  {ele.path === "/projects2022" && <p class="li-year">2022 & 2023</p>}
                   <a
                     href={ele.path}
                     class="text-xl max-xl:text-lg max-lg:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"

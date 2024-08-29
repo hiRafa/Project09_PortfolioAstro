@@ -1,9 +1,0 @@
----
-import ProjectLayout from "../components/ProjectLayout.astro";
-
-import { getEntry } from "astro:content";
-const project05 = await getEntry("projects", "project05");
-const { Content, headings } = await project05.render();
----
-
-<ProjectLayout project={project05} sysdev={true}></ProjectLayout>
