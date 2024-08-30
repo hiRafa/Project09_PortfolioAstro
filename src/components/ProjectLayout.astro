@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectLayoutLinks from "./ProjectLayout-Links.astro";
-import ProjectLayoutHead from "./ProjectLayout-Head.astro";
 import Card from "./Card.astro";
-import ProjectLayoutBottomStars from "./ProjectLayout-BottomStars.astro";
 
 const icons = false;
 const { projects } = Astro.props;
@@ -12,9 +10,9 @@ const { projects } = Astro.props;
 <Layout title="Hirashiki Rafael's Portfolio Project" description={}>
   <ProjectLayoutLinks project={icons} />
   {
-    projects.map((project: any) => (
+    projects.map((project: any, i:any) => (
       <>
-        <Card project={project} />
+        <Card project={project} i={i}/>
       </>
     ))
   }

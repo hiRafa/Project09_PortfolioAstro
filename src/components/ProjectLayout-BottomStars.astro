@@ -45,8 +45,8 @@ const { positionAbsolute } = Astro.props;
 </style>
 <div
   class={`${
-    positionAbsolute ? "right-4 bottom-4" : "-right-10 -bottom-16"
-  } absolute col-start-5 col-span-full right-4 bottom-4 h-2/3 w-10/12 max-md:col-start-3 z-0`}
+    positionAbsolute ? "absolute right-4 bottom-4" : "absolute -bottom-10 -right-10"
+  }  col-start-5 col-span-full h-2/3 w-10/12 max-md:col-start-3 z-0`}
 >
   <slot />
   <div class="">

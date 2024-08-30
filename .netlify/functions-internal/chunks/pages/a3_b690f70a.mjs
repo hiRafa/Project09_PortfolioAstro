@@ -2,7 +2,7 @@ import { prependForwardSlash } from '@astrojs/internal-helpers/path';
 /* empty css                        */import { e as createAstro, f as createComponent, A as AstroError, g as ImageMissingAlt, r as renderTemplate, m as maybeRenderHead, h as addAttribute, s as spreadAttributes, i as renderComponent, F as Fragment, j as renderSlot, k as UnknownContentCollectionError, l as renderUniqueStylesheet, n as renderScriptElement, o as createHeadAndContent, u as unescapeHTML, p as renderHead } from '../astro_3bb9ff26.mjs';
 import { i as isESMImportedImage, g as getImage$1 } from '../astro-assets-services_3d5f1d40.mjs';
 import 'clsx';
-/* empty css                         *//* empty css                         */
+/* empty css                             *//* empty css                             */
 const $$Astro$c = createAstro();
 const $$Image = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$c, $$props, $$slots);
@@ -99,14 +99,14 @@ const $$Header = createComponent(async ($$result, $$props, $$slots) => {
       navSubtitle: "to INFINITY and Beyond!"
     },
     {
-      path: "/api",
-      navTitle: "Works at Agendae+",
-      navSubtitle: "System Engineer (Backend)"
-    },
-    {
       path: "/a3",
       navTitle: "Works at A3",
       navSubtitle: "Frontend Engineer"
+    },
+    {
+      path: "/agendae",
+      navTitle: "Works at Agendae+",
+      navSubtitle: "System Engineer (Backend)"
     },
     {
       path: "/projects2022",
@@ -119,7 +119,7 @@ const $$Header = createComponent(async ($$result, $$props, $$slots) => {
 From Brazil, Based in Tokyo. <br data-astro-cid-3ef6ksr2>
 Passionate for connecting stars, understanding problems, finding
               solutions, upgrading performances and flows.
-</p><p data-astro-cid-3ef6ksr2>Special interest in health, environment and nature fields</p></section><nav class="self-end justify-self-end relative z-50 pb-20 max-md:pb-10 max-md:pt-4" data-astro-cid-3ef6ksr2><ul data-astro-cid-3ef6ksr2><li class="" data-astro-cid-3ef6ksr2><a href="/roadmap" class="text-4xl max-xl:text-3xl max-lg:text-2xl max-md:text-xl font-bold flex flex-nowrap justify-center items-center gap-4 text-right" data-astro-cid-3ef6ksr2><p class="underline" data-astro-cid-3ef6ksr2>RoadMap & Projects</p><div class="star-container" data-astro-cid-3ef6ksr2><div class="star-bar" data-astro-cid-3ef6ksr2></div><i class="fa-solid fa-diamond" data-astro-cid-3ef6ksr2></i></div></a><div class="relative z-50 flex justify-end gap-4 pr-16" data-astro-cid-3ef6ksr2><a href="https://www.behance.net/rafael-hiro" target="_blank" data-astro-cid-3ef6ksr2>
+</p><p data-astro-cid-3ef6ksr2>Special interest in health and nature fields</p></section><nav class="self-end justify-self-end relative z-50 pb-20 max-md:pb-10 max-md:pt-4" data-astro-cid-3ef6ksr2><ul data-astro-cid-3ef6ksr2><li class="" data-astro-cid-3ef6ksr2><a href="/roadmap" class="text-4xl max-xl:text-3xl max-lg:text-2xl max-md:text-xl font-bold flex flex-nowrap justify-center items-center gap-4 text-right" data-astro-cid-3ef6ksr2><p class="underline" data-astro-cid-3ef6ksr2>RoadMap & Projects</p><div class="star-container" data-astro-cid-3ef6ksr2><div class="star-bar" data-astro-cid-3ef6ksr2></div><i class="fa-solid fa-diamond" data-astro-cid-3ef6ksr2></i></div></a><div class="relative z-50 flex justify-end gap-4 pr-16" data-astro-cid-3ef6ksr2><a href="https://www.behance.net/rafael-hiro" target="_blank" data-astro-cid-3ef6ksr2>
 Behance
 </a><a href="https://www.artstation.com/hirashiki" target="_blank" data-astro-cid-3ef6ksr2>
 Artstation
@@ -349,7 +349,7 @@ function isPropagatedAssetsModule(module) {
 
 const contentDir = '/src/content/';
 
-const contentEntryGlob = /* #__PURE__ */ Object.assign({"/src/content/projects/api.md": () => import('../api_14a1b67d.mjs'),"/src/content/projects/oldportfolio.md": () => import('../oldportfolio_ee50dd27.mjs'),"/src/content/projects/project01.md": () => import('../project01_8a7fdf4e.mjs'),"/src/content/projects/project02.md": () => import('../project02_f0364fd4.mjs'),"/src/content/projects/project03.md": () => import('../project03_caa5f1f6.mjs'),"/src/content/projects/project04.md": () => import('../project04_8620dde2.mjs')
+const contentEntryGlob = /* #__PURE__ */ Object.assign({"/src/content/projects/agendae.md": () => import('../agendae_b50e7425.mjs'),"/src/content/projects/oldportfolio.md": () => import('../oldportfolio_fbd78ef6.mjs'),"/src/content/projects/project01.md": () => import('../project01_33450e75.mjs'),"/src/content/projects/project02.md": () => import('../project02_1ffc48fe.mjs'),"/src/content/projects/project03.md": () => import('../project03_b30cca35.mjs'),"/src/content/projects/project04.md": () => import('../project04_2a5029c1.mjs'),"/src/content/projects/stw.md": () => import('../stw_f3ab2f1f.mjs')
 
 });
 const contentCollectionToEntryMap = createCollectionToGlobResultMap({
@@ -370,7 +370,7 @@ const collectionToEntryMap = createCollectionToGlobResultMap({
 });
 
 let lookupMap = {};
-lookupMap = {"projects":{"type":"content","entries":{"oldportfolio":"/src/content/projects/oldportfolio.md","api":"/src/content/projects/api.md","project03":"/src/content/projects/project03.md","project01":"/src/content/projects/project01.md","project02":"/src/content/projects/project02.md","project04":"/src/content/projects/project04.md"}}};
+lookupMap = {"projects":{"type":"content","entries":{"agendae":"/src/content/projects/agendae.md","project01":"/src/content/projects/project01.md","oldportfolio":"/src/content/projects/oldportfolio.md","project02":"/src/content/projects/project02.md","project03":"/src/content/projects/project03.md","project04":"/src/content/projects/project04.md","stw":"/src/content/projects/stw.md"}}};
 
 function createGlobLookup(glob) {
 	return async (collection, lookupId) => {
@@ -381,7 +381,7 @@ function createGlobLookup(glob) {
 	};
 }
 
-const renderEntryGlob = /* #__PURE__ */ Object.assign({"/src/content/projects/api.md": () => import('../api_0657e35c.mjs'),"/src/content/projects/oldportfolio.md": () => import('../oldportfolio_99920b80.mjs'),"/src/content/projects/project01.md": () => import('../project01_1dd6db0b.mjs'),"/src/content/projects/project02.md": () => import('../project02_07e56ff9.mjs'),"/src/content/projects/project03.md": () => import('../project03_410e4573.mjs'),"/src/content/projects/project04.md": () => import('../project04_674e5a49.mjs')
+const renderEntryGlob = /* #__PURE__ */ Object.assign({"/src/content/projects/agendae.md": () => import('../agendae_3235af0e.mjs'),"/src/content/projects/oldportfolio.md": () => import('../oldportfolio_4dc10ed2.mjs'),"/src/content/projects/project01.md": () => import('../project01_3ca3f746.mjs'),"/src/content/projects/project02.md": () => import('../project02_a5c8c800.mjs'),"/src/content/projects/project03.md": () => import('../project03_0b2cb4f0.mjs'),"/src/content/projects/project04.md": () => import('../project04_7ded36b7.mjs'),"/src/content/projects/stw.md": () => import('../stw_3bd14d6a.mjs')
 
 });
 const collectionToRenderEntryMap = createCollectionToGlobResultMap({
@@ -406,14 +406,16 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
   Astro2.self = $$Layout;
   const { title, description, headerIndex } = Astro2.props;
   const projects = await getCollection("projects");
-  return renderTemplate`<html lang="en"><head><meta charset="UTF-8"><meta name="description" content="My second portfolio after my first year as a Frontend Engineer made with Astro, Tailwind and Typescript. 
+  return renderTemplate`<html lang="en"><head><meta charset="UTF-8"><title>Hirashiki Rafael, Frontend Engineer's Nifty Journey</title><meta name="description" content=" 
+    Working to be a FullStack Engineer, specialized as a Frontend for now.
     Shooting for the stars. 
     \`If I give it my all, will it pay off?
     Workin' overtime, no days off
     All these shootin' stars in the dark (Yeah)
     All these shootin' stars in the dark, make a wish (Yeah)
     Takin' off from the ground, it's amazin'
-    So outta this world, I'm in space\`"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>Hirashiki Rafael, Frontend Engineer Nifty Journey</title><meta property="og:title" content="Hirashiki Rafael, Frontend Engineer Nifty Journey"><meta property="og:type" content="website portfolio"><meta property="og:url" content="https://hirashiki-rafael-portfolio.netlify.app/"><meta property="og:description" content="My second portfolio after my first year as a Frontend Engineer made with Astro, Tailwind and Typescript. 
+    So outta this world, I'm in space\`"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}><!-- OGP --><meta property="og:title" content="Hirashiki Rafael, a Frontend Engineer's Nifty Journey"><meta property="og:type" content="website portfolio"><meta property="og:url" content="https://hirashiki-rafael-portfolio.netlify.app/"><meta property="og:description" content="
+    Working to be a FullStack Engineer, specialized as a Frontend for now.
     Shooting for the stars. 
     \`If I give it my all, will it pay off?
     Workin' overtime, no days off
@@ -444,35 +446,51 @@ const $$ProjectLayoutLinks = createComponent(async ($$result, $$props, $$slots) 
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$ProjectLayoutLinks;
   const { project, road, icons } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<div class="fixed top-8 pl-4 gap-y-4 w-6/6 z-50" data-astro-cid-icmde3tq><div class="bars-container col-start-1 col-span-full" data-astro-cid-icmde3tq><div class="relative h-bar-container" data-astro-cid-icmde3tq><i class="fa-solid fa-circle star -top-3 -left-1 text-xl opacity-100" data-astro-cid-icmde3tq></i><div class="h-bar" data-astro-cid-icmde3tq></div><i class="fa-solid fa-circle star -top-3 -right-4 text-xl opacity-100" data-astro-cid-icmde3tq></i><div class="d-barup" data-astro-cid-icmde3tq></div></div><div class="relative v-bar-container" data-astro-cid-icmde3tq><i class="fa-solid fa-circle star -top-2 -left-2 text-xl opacity-100" data-astro-cid-icmde3tq></i><div class="v-bar" data-astro-cid-icmde3tq></div><i class="fa-solid fa-circle star -bottom-2 -left-2 text-xl opacity-100" data-astro-cid-icmde3tq></i></div><div class="d-bar-container" data-astro-cid-icmde3tq><div class="d-bar" data-astro-cid-icmde3tq></div></div></div>${icons && renderTemplate`<div class="flex flex-col w-fit pt-4 gap-2 justify-center items-center" data-astro-cid-icmde3tq>${renderComponent($$result, "ProjectGithubIcon", $$ProjectGithubIcon, { "url": !road ? project?.data.githubURL : "https://github.com/hiRafa", "data-astro-cid-icmde3tq": true })}${project?.data.figmaURL && renderTemplate`${renderComponent($$result, "ProjectFigmaIcon", $$ProjectFigmaIcon, { "url": project?.data.figmaURL, "data-astro-cid-icmde3tq": true })}`}${project?.data.projectURL && renderTemplate`${renderComponent($$result, "ProjectGithubIcon", $$ProjectGithubIcon, { "url": project?.data.projectURL, "data-astro-cid-icmde3tq": true })}`}${project && renderTemplate`<div class="flex flex-col gap-2 h-fit " data-astro-cid-icmde3tq>${project.data.technologies?.map((ele, index) => renderTemplate`${renderComponent($$result, "Image", $$Image, { "src": `/Images/logo_${ele}.png`, "width": 30, "height": 30, "format": "png", "alt": "stars bg", "class": "", "data-astro-cid-icmde3tq": true })}`)}</div>`}${road && renderTemplate`<a href="https://www.linkedin.com/in/rafael-hirashiki-7a5733170/" class="flex flex-col items-center w-fit" data-astro-cid-icmde3tq>${renderComponent($$result, "Image", $$Image, { "src": "/Images/logo_linkedin.png", "width": 144, "height": 213, "format": "png", "alt": "linkedin logo", "class": "url-logo", "data-astro-cid-icmde3tq": true })}<p data-astro-cid-icmde3tq>Linkedin</p></a>`}</div>`}</div>`;
+  return renderTemplate`${maybeRenderHead()}<div class=" absolute top-8 pl-4 gap-y-4 w-6/6" data-astro-cid-icmde3tq><div class="bars-container col-start-1 col-span-full" data-astro-cid-icmde3tq><div class="relative h-bar-container" data-astro-cid-icmde3tq><i class="fa-solid fa-circle star -top-3 -left-1 text-xl opacity-100" data-astro-cid-icmde3tq></i><div class="h-bar" data-astro-cid-icmde3tq></div><i class="fa-solid fa-circle star -top-3 -right-4 text-xl opacity-100" data-astro-cid-icmde3tq></i><div class="d-barup" data-astro-cid-icmde3tq></div></div><div class="relative v-bar-container" data-astro-cid-icmde3tq><i class="fa-solid fa-circle star -top-2 -left-2 text-xl opacity-100" data-astro-cid-icmde3tq></i><div class="v-bar" data-astro-cid-icmde3tq></div><i class="fa-solid fa-circle star -bottom-2 -left-2 text-xl opacity-100" data-astro-cid-icmde3tq></i></div><div class="d-bar-container" data-astro-cid-icmde3tq><div class="d-bar" data-astro-cid-icmde3tq></div></div></div>${icons && renderTemplate`<div class="flex flex-col w-fit pt-4 gap-2 justify-center items-center" data-astro-cid-icmde3tq>${renderComponent($$result, "ProjectGithubIcon", $$ProjectGithubIcon, { "url": !road ? project?.data.githubURL : "https://github.com/hiRafa", "data-astro-cid-icmde3tq": true })}${project?.data.figmaURL && renderTemplate`${renderComponent($$result, "ProjectFigmaIcon", $$ProjectFigmaIcon, { "url": project?.data.figmaURL, "data-astro-cid-icmde3tq": true })}`}${project?.data.projectURL && renderTemplate`${renderComponent($$result, "ProjectGithubIcon", $$ProjectGithubIcon, { "url": project?.data.projectURL, "data-astro-cid-icmde3tq": true })}`}${project && renderTemplate`<div class="flex flex-col gap-2 h-fit " data-astro-cid-icmde3tq>${project.data.technologies?.map((ele, index) => renderTemplate`${renderComponent($$result, "Image", $$Image, { "src": `/Images/logo_${ele}.png`, "width": 30, "height": 30, "format": "png", "alt": "stars bg", "class": "", "data-astro-cid-icmde3tq": true })}`)}</div>`}${road && renderTemplate`<a href="https://www.linkedin.com/in/rafael-hirashiki-7a5733170/" class="flex flex-col items-center w-fit" data-astro-cid-icmde3tq>${renderComponent($$result, "Image", $$Image, { "src": "/Images/logo_linkedin.png", "width": 144, "height": 213, "format": "png", "alt": "linkedin logo", "class": "url-logo", "data-astro-cid-icmde3tq": true })}<p data-astro-cid-icmde3tq>Linkedin</p></a>`}</div>`}</div>`;
 }, "C:/Users/rafae/OneDrive/\xC1rea de Trabalho/Programming/Projects_Year3/Project09_PortfolioAstro/src/components/ProjectLayout-Links.astro", void 0);
 
 const $$Astro$1 = createAstro();
-const $$H2ProjectTitle = createComponent(async ($$result, $$props, $$slots) => {
+const $$CardTitle = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
-  Astro2.self = $$H2ProjectTitle;
-  const { text, class: className, ...rest } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<h2${addAttribute(className, "class")}${spreadAttributes(rest)}>${text}</h2>`;
-}, "C:/Users/rafae/OneDrive/\xC1rea de Trabalho/Programming/Projects_Year3/Project09_PortfolioAstro/src/components/H2project-title.astro", void 0);
+  Astro2.self = $$CardTitle;
+  return renderTemplate``;
+}, "C:/Users/rafae/OneDrive/\xC1rea de Trabalho/Programming/Projects_Year3/Project09_PortfolioAstro/src/components/CardTitle.astro", void 0);
 
 const $$Astro = createAstro();
 const $$A3 = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$A3;
-  const a3Projects = [
+  const projects = [
     {
-      title: "eeo Stage Branding Renewal Page 2023",
-      url: "https://eeo.today/stage/",
-      thumbnail: "a3_project01",
+      tech: "Laravel",
+      title: "eeo Plataform Page Renewal",
+      year: "2024",
+      url: "https://eeo.today/",
+      thumbnail: "a3_2024-02",
       problems: [
-        "Solved Twitter Widget Interfering in the Page Performance Loading.",
-        "Adapted Design Concepts to Better Solutions on The Frontend for FCP, LCP, etc.",
-        "Reached Above 90 Points in Performance During the Release Time.",
-        "Applied Downloaded Fonts in WOFF2 Format to Improve Page Performance."
+        "Created and planned all pages, components, and structures for future updates from scratch.",
+        "Developed reusable components to ensure consistency across multiple pages.",
+        "Created custom fields for easy content updates by admins.",
+        "Maintained consistent design and CSS variables across all pages."
       ]
     },
     {
-      title: "eeo Cafe Branding Renewal Page 2023",
+      tech: "Wordpress",
+      title: "A3 corporate site Renewal",
+      year: "2024",
+      url: "https://athree3.com/",
+      thumbnail: "a3_2024-01",
+      problems: [
+        "Created and planned all pages, components, and structures for future updates from scratch.",
+        "Developed reusable components to ensure consistency across multiple pages.",
+        "Created custom fields for easy content updates by admins.",
+        "Maintained consistent design and CSS variables across all pages."
+      ]
+    },
+    {
+      tech: "Astro.js",
+      title: "eeo Cafe Branding Renewal Page",
+      year: "2023",
       url: "https://eeo.today/graffartcafe/",
       thumbnail: "a3_project02",
       problems: [
@@ -488,21 +506,36 @@ const $$A3 = createComponent(async ($$result, $$props, $$slots) => {
       ]
     },
     {
-      title: "eeo Store e-commerce UI Renewal",
+      tech: "HTML, CSS, JQuery",
+      title: "eeo Stage Page Branding Renewal",
+      year: "2023",
+      url: "https://eeo.today/stage/",
+      thumbnail: "a3_project01",
+      problems: [
+        "Solved Twitter Widget Interfering in the Page Performance Loading.",
+        "Adapted Design Concepts to Better Solutions on The Frontend for FCP, LCP, etc.",
+        "Reached Above 90 Points in Performance During the Release Time.",
+        "Applied Downloaded Fonts in WOFF2 Format to Improve Page Performance."
+      ]
+    },
+    {
+      tech: "HTML, CSS, Symfony",
+      title: "eeo Store e-commerce UI Renewal, Major update",
+      year: "2023",
       url: "https://eeo.today/store/101/",
       thumbnail: "a3_project03",
       problems: [
-        "My First Big Challenge At A3 as a Frontend Engineer.",
-        "With Little Instructions Learned to Navigate And Understand The Project Folders Built in PHP/Symfony and How the Pieces Were Connected To Attend All Requested Updates.",
-        "Made Code More Maintainable (HTML, CSS/SASS, JS/JQuery Code) by Drying it.",
-        "Elimated a Huge Amount of Unnecessary HTML Elements and CSS Rules and Classes.",
-        "Slick Carousel > Splide Carousel Better Performance and More Customization Options.",
-        "First Time With Github Branches, Local, Test and Production Environments.",
-        "Figured Out on My Own Why Certain Configurations Were Not Working on My PC End After The Initial Set Up With The Infra Engineer."
+        "Tackled my first major project at A3 as a Frontend Engineer.",
+        "Quickly learned to navigate and understand a PHP/Symfony project with minimal guidance, successfully implementing all requested updates.",
+        "Improved code maintainability by refactoring HTML, CSS/SASS, and JS/jQuery to eliminate redundancy.",
+        "Removed a significant number of unnecessary HTML elements and CSS rules.",
+        "Upgraded from Slick Carousel to Swiper Carousel for better performance and customization.",
+        "Gained experience working with GitHub branches, as well as local, test, and production environments.",
+        "Independently resolved configuration issues on my local environment after initial setup instructions"
       ]
     }
   ];
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Hirashiki Rafael's Main Projects at A3" }, { "default": ($$result2) => renderTemplate`${renderComponent($$result2, "ProjectLayoutLinks", $$ProjectLayoutLinks, {})}${maybeRenderHead()}<div class=" col-start-3 col-span-8 max-sm:col-start-3 max-sm:col-span-9"><p class="italic text-2xl clr-brand-orange">Solo Frontend Coder For All Projects</p>${a3Projects?.map((proj, i) => renderTemplate`<div class="flex items-center pt-20 pb-4 gap-3  max-md:pt-10">${renderComponent($$result2, "H2ProjectTitle", $$H2ProjectTitle, { "text": `${i + 1}.${proj.title}`, "class": "italic text-2xl font-bold max-md:text-lg" })}<a${addAttribute(proj.url, "href")} class="flex flex-col items-center w-fit" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div><a${addAttribute(proj.url, "href")} target="_blank">${renderComponent($$result2, "Image", $$Image, { "src": `/Images/${proj.thumbnail}.webp`, "width": 1100, "height": 940, "format": "webp", "alt": "", "class": "w-auto" })}</a><div class="css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8"><h3>Solved Challenges</h3><ul>${proj.problems?.map((bullet) => renderTemplate`<li>❍ ${bullet}</li>`)}</ul></div>`)}</div>` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Hirashiki Rafael's Main Projects at A3" }, { "default": ($$result2) => renderTemplate`${renderComponent($$result2, "ProjectLayoutLinks", $$ProjectLayoutLinks, {})}${maybeRenderHead()}<div class=" col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"><p class="italic text-2xl clr-brand-orange">Solo Frontend Coder For All Projects</p>${projects?.map((project, i) => renderTemplate`${renderComponent($$result2, "CardTitle", $$CardTitle, { "i": i, "project": project })}<a${addAttribute(project.url, "href")} target="_blank" class="relative z-50">${renderComponent($$result2, "Image", $$Image, { "src": `/Images/${project.thumbnail}.webp`, "width": 1100, "height": 940, "format": "webp", "alt": "", "class": "w-auto" })}</a><div class="css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8"><h3>Solved Challenges</h3><ul>${project.problems?.map((bullet) => renderTemplate`<li>❍ ${bullet}</li>`)}</ul></div>`)}</div>` })}`;
 }, "C:/Users/rafae/OneDrive/\xC1rea de Trabalho/Programming/Projects_Year3/Project09_PortfolioAstro/src/pages/a3.astro", void 0);
 
 const $$file = "C:/Users/rafae/OneDrive/Área de Trabalho/Programming/Projects_Year3/Project09_PortfolioAstro/src/pages/a3.astro";
@@ -515,4 +548,4 @@ const a3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { $$Image as $, $$ProjectLayoutLinks as a, $$Layout as b, $$H2ProjectTitle as c, a3 as d, getEntry as g, imageConfig as i };
+export { $$Image as $, $$ProjectLayoutLinks as a, $$Layout as b, a3 as c, getEntry as g, imageConfig as i };

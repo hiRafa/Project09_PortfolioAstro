@@ -5,6 +5,7 @@
     thumbnail: "project_oldportfolio"
     technologies: ["HTML", "CSS", "JS"]
     projectTitle: "Portfolio v1.0"
+    year: "2022"
     projectSubtitle: "My first portfolio that got me job interviews in Japan"
     projectBulletList: ["Basic HTML Javascript stuff"]
     thumbnail_extra: ["project_oldportfolio01", "project_oldportfolio02", "project_oldportfolio03"]

@@ -1,0 +1,10 @@
+---
+import ProjectLayout from "../components/ProjectLayout.astro";
+
+import { getEntry } from "astro:content";
+const agendae = await getEntry("projects", "agendae");
+const stw = await getEntry("projects", "stw");
+const projects = [stw, agendae];
+---
+
+<ProjectLayout projects={projects}></ProjectLayout>

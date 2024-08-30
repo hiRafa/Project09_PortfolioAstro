@@ -1,10 +1,11 @@
 /* empty css                        */import { e as createAstro, f as createComponent, r as renderTemplate, m as maybeRenderHead, i as renderComponent } from '../astro_3bb9ff26.mjs';
 import 'clsx';
-import { c as $$H2ProjectTitle, a as $$ProjectLayoutLinks, b as $$Layout } from './a3_9ed5507f.mjs';
+import { a as $$ProjectLayoutLinks, b as $$Layout } from './a3_b690f70a.mjs';
+import { a as $$H2ProjectTitle } from './agendae_85cf2946.mjs';
 /* empty css                             */import 'html-escaper';
 import '@astrojs/internal-helpers/path';
 import '../astro-assets-services_3d5f1d40.mjs';
-/* empty css                         *//* empty css                         */
+/* empty css                             *//* empty css                             *//* empty css                             */
 const $$Astro$1 = createAstro();
 const $$ProjectLayoutHead = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
@@ -18,7 +19,7 @@ const $$Roadmap = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Roadmap;
   return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Hirashiki Rafael's 1st Project", "data-astro-cid-khueswxm": true }, { "default": ($$result2) => renderTemplate`${renderComponent($$result2, "ProjectLayoutLinks", $$ProjectLayoutLinks, { "road": true, "data-astro-cid-khueswxm": true })}${renderComponent($$result2, "ProjectLayouHead", $$ProjectLayoutHead, { "projectTitle": "RoadMap", "data-astro-cid-khueswxm": true })}${maybeRenderHead()}<div class="col-start-2 col-span-5 text-right relative -right-4 max-md:col-span-10" data-astro-cid-khueswxm><div class="relative flex flex-col h-fit" data-astro-cid-khueswxm><div class="bar blue-bar" data-astro-cid-khueswxm></div><p class="grid-item-ball" data-astro-cid-khueswxm>
-Acupuncture • <br data-astro-cid-khueswxm>Game Design Video Editing •<br data-astro-cid-khueswxm>VFX Design<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></p><h3 class="grid-item-ball" data-astro-cid-khueswxm>
+Acupuncture <br data-astro-cid-khueswxm>Game Design Video Editing<br data-astro-cid-khueswxm>VFX Design<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></p><h3 class="grid-item-ball" data-astro-cid-khueswxm>
 Frontend Web<br data-astro-cid-khueswxm>Development studies<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></h3><p class="grid-item-ball" data-astro-cid-khueswxm>
 HTML5/CSS3<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></p><p class="grid-item-ball" data-astro-cid-khueswxm>
 Github Basics<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></p><p class="grid-item-ball" data-astro-cid-khueswxm>Sass<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></p><p class="grid-item-ball" data-astro-cid-khueswxm>JS<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></p><p class="grid-item-ball" data-astro-cid-khueswxm>

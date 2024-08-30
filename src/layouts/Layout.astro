@@ -21,7 +21,9 @@ const projects = await getCollection("projects");
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="My second portfolio after my first year as a Frontend Developer made with Astro, Tailwind and Typescript. 
+    <title>Hirashiki Rafael, Frontend Engineer's Nifty Journey</title>
+    <meta name="description" content=" 
+    Working to be a FullStack Engineer, specialized as a Frontend for now.
     Shooting for the stars. 
     `If I give it my all, will it pay off?
     Workin' overtime, no days off
@@ -29,18 +31,20 @@ const projects = await getCollection("projects");
     All these shootin' stars in the dark, make a wish (Yeah)
     Takin' off from the ground, it's amazin'
     So outta this world, I'm in space`" />
+
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Hirashiki Rafael, Frontend Developer Nifty Journey</title>
 
-    <meta property="og:title" content="Hirashiki Rafael, Frontend Developer Nifty Journey" />
+    <!-- OGP -->
+    <meta property="og:title" content="Hirashiki Rafael, a Frontend Engineer's Nifty Journey" />
     <meta property="og:type" content="website portfolio" />
     <meta
       property="og:url"
       content="https://hirashiki-rafael-portfolio.netlify.app/"
     />
-    <meta property="og:description" content="My second portfolio after my first year as a Frontend Developer made with Astro, Tailwind and Typescript. 
+    <meta property="og:description" content="
+    Working to be a FullStack Engineer, specialized as a Frontend for now.
     Shooting for the stars. 
     `If I give it my all, will it pay off?
     Workin' overtime, no days off
@@ -58,9 +62,7 @@ const projects = await getCollection("projects");
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
-    ></script>
+
   </head>
 
   <body
@@ -331,7 +333,7 @@ const projects = await getCollection("projects");
       }
       .css-glass-bg {
         /* From https://css.glass */
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.8);
         border-radius: 16px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(4.8px);
@@ -347,6 +349,9 @@ const projects = await getCollection("projects");
         display: none;
       } /* Hide scrollbar for IE, Edge, and Firefox */
 
+      .card-height {
+        min-height: 500px;
+      }
       @keyframes animateVertical {
         from {
           height: 0;

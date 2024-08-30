@@ -10,6 +10,7 @@ const projectsSchema = defineCollection({
     thumbnail: z.string(),
     technologies: z.array(z.string()),
     projectTitle: z.string(),
+    year: z.string(),
     projectSubtitle: z.string(),
     projectBulletList: z.array(z.string()),
     thumbnail_extra: z.array(z.string()).optional(),

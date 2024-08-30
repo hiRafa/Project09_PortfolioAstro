@@ -4,17 +4,66 @@ import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
 import Layout from "../layouts/Layout.astro";
 import H2ProjectTitle from "../components/H2project-title.astro";
 import ProjectLayoutBottomStars from "../components/ProjectLayout-BottomStars.astro";
+import CardTitle from "../components/CardTitle.astro";
 
 interface Project {
+  tech?: string
   title?: string;
+  year?: string;
   url?: string;
   thumbnail?: string;
   problems?: string[];
 }
 
-const a3Projects: Project[] = [
+const projects: Project[] = [
   {
-    title: "eeo Stage Branding Renewal Page 2023",
+    tech: "Laravel",
+    title: "eeo Plataform Page Renewal",
+    year: "2024",
+    url: "https://eeo.today/",
+    thumbnail: "a3_2024-02",
+    problems: [
+      "Created and planned all pages, components, and structures for future updates from scratch.",
+      "Developed reusable components to ensure consistency across multiple pages.",
+      "Created custom fields for easy content updates by admins.",
+      "Maintained consistent design and CSS variables across all pages.",
+    ],
+  },
+  {
+    tech: "Wordpress",
+    title: "A3 corporate site Renewal",
+    year: "2024",
+    url: "https://athree3.com/",
+    thumbnail: "a3_2024-01",
+    problems: [
+      "Created and planned all pages, components, and structures for future updates from scratch.",
+      "Developed reusable components to ensure consistency across multiple pages.",
+      "Created custom fields for easy content updates by admins.",
+      "Maintained consistent design and CSS variables across all pages.",
+    ],
+  },
+  {
+    tech: "Astro.js",
+    title: "eeo Cafe Branding Renewal Page",
+    year: "2023",
+    url: "https://eeo.today/graffartcafe/",
+    thumbnail: "a3_project02",
+    problems: [
+        "Optimized My First Page as a Frontend Engineer.",
+        "Customized Splide.js to Focus Only on the Centered Carousel Slide.",
+        "Vertically Stacked Images: Separated Child and Collaborative Carousels Within a Parent Carousel.",
+        "Resized and Converted Heavy Images to WebP for Optimization.",
+        "Maximized Page Speed Despite Numerous Large Images and Carousels.",
+        "Enhanced SEO with Proper HTML Tags, Especially H1.",
+        "Followed HTML Best Practices for SEO and Accessibility.",
+        "Ensured Design Functionality, Responsiveness, and Performance.",
+        "Contributed to the Design Process.",
+    ],
+  },
+  {
+    tech: "HTML, CSS, JQuery",
+    title: "eeo Stage Page Branding Renewal",
+    year: "2023",
     url: "https://eeo.today/stage/",
     thumbnail: "a3_project01",
     problems: [
@@ -25,68 +74,45 @@ const a3Projects: Project[] = [
     ],
   },
   {
-    title: "eeo Cafe Branding Renewal Page 2023",
-    url: "https://eeo.today/graffartcafe/",
-    thumbnail: "a3_project02",
-    problems: [
-        "My First Optimized Page Creation as a Frontend Engineer.",
-        "Customized Splide.js to Enable Only the Currently Centered Carousel Slide.",
-        "Stacked Images Vertically: Separation of Collaborative and Child Carousels within a Parent Carousel.",
-        "Optimized Heavy Images by Resizing to WebP Format.",
-        "Maximized Page Speed Considering the Presence of Numerous Large Images and Carousels.",
-        "Implemented Proper HTML Tags, Especially H1, to Enhance Search Engine Rankings.",
-        "Adhered to HTML Best Practices for SEO and Accessibility.",
-        "Adapted Design to Ensure Functionality, Responsiveness, and Performance.",
-        "Contributed to the Design Process.",
-    ],
-  },
-  {
-    title: "eeo Store e-commerce UI Renewal",
+    tech: "HTML, CSS, Symfony",
+    title: "eeo Store e-commerce UI Renewal, Major update",
+    year: "2023",
     url: "https://eeo.today/store/101/",
     thumbnail: "a3_project03",
     problems: [
-        "My First Big Challenge At A3 as a Frontend Engineer.",
-        "With Little Instructions Learned to Navigate And Understand The Project Folders Built in PHP/Symfony and How the Pieces Were Connected To Attend All Requested Updates.",
-        "Made Code More Maintainable (HTML, CSS/SASS, JS/JQuery Code) by Drying it.",
-        "Elimated a Huge Amount of Unnecessary HTML Elements and CSS Rules and Classes.", 
-        "Slick Carousel > Splide Carousel Better Performance and More Customization Options.", 
-        "First Time With Github Branches, Local, Test and Production Environments.", 
-        "Figured Out on My Own Why Certain Configurations Were Not Working on My PC End After The Initial Set Up With The Infra Engineer.", 
+      "Tackled my first major project at A3 as a Frontend Engineer.",
+      "Quickly learned to navigate and understand a PHP/Symfony project with minimal guidance, successfully implementing all requested updates.",
+      "Improved code maintainability by refactoring HTML, CSS/SASS, and JS/jQuery to eliminate redundancy.",
+      "Removed a significant number of unnecessary HTML elements and CSS rules.",
+      "Upgraded from Slick Carousel to Swiper Carousel for better performance and customization.",
+      "Gained experience working with GitHub branches, as well as local, test, and production environments.",
+      "Independently resolved configuration issues on my local environment after initial setup instructions",
     ],
   }]
 ---
 
 <Layout title="Hirashiki Rafael's Main Projects at A3">
   <ProjectLayoutLinks />
-  <div class=" col-start-3 col-span-8 max-sm:col-start-4">
+  <div class=" col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9">
     <p class="italic text-2xl clr-brand-orange">Solo Frontend Coder For All Projects</p>
-    {a3Projects?.map((proj, i) => (
-      <div class="flex items-center pt-20 pb-4 gap-3  max-md:pt-10">
-        <H2ProjectTitle text={`${i+1}.${proj.title}`} class="italic text-2xl font-bold max-md:text-lg"/>      
-        <a
-        href={proj.url}
-        class="flex flex-col items-center w-fit"
-        target="_blank"
-        >
-          <i class="fa-solid fa-arrow-up-right-from-square" />
-        </a>
-      </div>
-      <a href={proj.url} target="_blank">
-      <Image
-          src={`/Images/${proj.thumbnail}.webp`}
-          width={1100}
-          height={940}
-          format="webp"
-          alt=""
-          class="w-auto"
-      />
+    {projects?.map((project, i) => (
+      <CardTitle i={i} project={project} />
+      <a href={project.url} target="_blank" class="relative z-50 card-height block">
+        <Image
+            src={`/Images/${project.thumbnail}.webp`}
+            width={1100}
+            height={940}
+            format="webp"
+            alt=""
+            class="w-auto"
+        />
+        <div class="relative -bottom-4 -right-4 css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8">
+            <h3>Solved Challenges</h3>
+            <ul>
+                {project.problems?.map(bullet => <li>❍ {bullet}</li> )}
+            </ul>
+        </div>
       </a>
-      <div class="css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8">
-          <h3>Solved Challenges</h3>
-          <ul>
-              {proj.problems?.map(bullet => <li>❍ {bullet}</li> )}
-          </ul>
-      </div>
     ))}
   </div>
 </Layout>

@@ -4,6 +4,7 @@
     githubURL: "https://github.com/hiRafa/Project02_BatataPan"
     thumbnail: "project02_thumbnail"
     technologies: ["HTML", "CSS", "SASS", "JS"]
+    year: "2022"
     projectTitle: "Bakery Chain Landing Page"
     projectSubtitle: "Expanding beyond HTML and CSS with my first programming language: Javascript."
     projectBulletList: ["DOM Manipulation", "Event Listeners Observer", "JSON file Parse", "Filters and tabs"]
