@@ -8,98 +8,103 @@ const { project, i } = Astro.props;
 ---
 
 <div
-  class="relative col-start-2 col-span-10 mb-20 max-sm:col-start-3 max-sm:col-span-9"
+  class="relative col-start-2 col-span-10 mb-28 max-sm:col-start-3 max-sm:col-span-9"
 >
-
-  <div class="relative card-height">
-    <div
-      class="absolute top-0 bottom-0 right-0 m-auto h-full w-full overflow-hidden flex justify-center"
-    >
-      <img
-        src={`/Images/${project?.data.thumbnail}.webp`}
-        class="object-cover max-h-none max-w-none"
-      />
-    </div>
-    <div
-      class="absolute z-50 -bottom-4 -right-4 flex flex-col gap-5 font-bold py-4 w-11/12 text-right css-glass-bg px-6"
-    >
-      <ul class={``}>
-        {
-          project?.data.projectBulletList.map((option: string) => (
-            <li class="font-semibold">✦ {option}</li>
-          ))
-        }
-      </ul>
-
-      <div class="flex justify-end">
-        {
-          project && (
-            <div class="flex gap-2 h-fit ">
-              {project.data.technologies?.map((ele: string, index: number) => (
-                <div class="w-8 h-8 flex justify-center">
-                  <Image
-                    src={`/Images/logo_${ele}.png`}
-                    width={30}
-                    height={30}
-                    format="png"
-                    alt="stars bg"
-                    class="h-full w-auto"
-                  />
-                </div>
-              ))}
-            </div>
-          )
-        }
+  <div class="mt-10 mb-10">
+    <CardTitle project={project} i={i} />
+    <p class="italic">{project?.data.projectSubtitle}</p>
+    <div class="relative card-height mt-4">
+      <div
+        class="absolute top-0 bottom-0 right-0 m-auto h-full w-full overflow-hidden flex justify-center"
+      >
+        <img
+          src={`/Images/${project?.data.thumbnail}.webp`}
+          class="object-cover max-h-none max-w-none"
+        />
       </div>
+      <div
+        class="absolute z-50 -bottom-4 -right-4 flex flex-col gap-5 font-bold py-4 w-11/12 text-right css-glass-bg px-6 max-md:bottom-4 max-md:right-4"
+      >
+        <ul class={``}>
+          {
+            project?.data.projectBulletList.map((option: string) => (
+              <li class="font-semibold">✦ {option}</li>
+            ))
+          }
+        </ul>
 
-      <div class="flex justify-end gap-4">
-        {
-          project?.data.githubURL && (
-            <a
-              href={project?.data.githubURL}
-              class="flex flex-col items-center w-fit"
-              target="_blank"
-            >
-              <i class="fa-brands fa-github url-logo-black url-logo-github" />
-              <p>Github</p>
-            </a>
-          )
-        }
+        <div class="flex justify-end">
+          {
+            project && (
+              <div class="flex gap-2 h-fit ">
+                {project.data.technologies?.map(
+                  (ele: string, index: number) => (
+                    <div class="w-8 h-8 flex justify-center">
+                      <Image
+                        src={`/Images/logo_${ele}.png`}
+                        width={30}
+                        height={30}
+                        format="png"
+                        alt="stars bg"
+                        class="h-full w-auto"
+                      />
+                    </div>
+                  )
+                )}
+              </div>
+            )
+          }
+        </div>
 
-        {
-          project?.data.figmaURL && (
-            <a
-              href={project?.data.figmaURL}
-              class="flex flex-col items-center w-fit"
-              target="_blank"
-            >
-              <Image
-                src="/Images/logo_figma.svg"
-                width={144}
-                height={213}
-                format="svg"
-                alt="figma logo"
-                class="url-logo-black"
-              />
-              <p>Figma</p>
-            </a>
-          )
-        }
+        <div class="flex justify-end gap-4">
+          {
+            project?.data.githubURL && (
+              <a
+                href={project?.data.githubURL}
+                class="flex flex-col items-center w-fit"
+                target="_blank"
+              >
+                <i class="fa-brands fa-github url-logo-black url-logo-github" />
+                <p>Github</p>
+              </a>
+            )
+          }
 
-        {
-          project?.data.projectURL && (
-            <a
-              href={project?.data.projectURL}
-              class="flex flex-col items-center w-fit"
-              target="_blank"
-            >
-              <i class="fa-solid fa-arrow-up-right-from-square url-logo-black" />
-              <p>Project</p>
-            </a>
-          )
-        }
+          {
+            project?.data.figmaURL && (
+              <a
+                href={project?.data.figmaURL}
+                class="flex flex-col items-center w-fit"
+                target="_blank"
+              >
+                <Image
+                  src="/Images/logo_figma.svg"
+                  width={144}
+                  height={213}
+                  format="svg"
+                  alt="figma logo"
+                  class="url-logo-black"
+                />
+                <p>Figma</p>
+              </a>
+            )
+          }
+
+          {
+            project?.data.projectURL && (
+              <a
+                href={project?.data.projectURL}
+                class="flex flex-col items-center w-fit"
+                target="_blank"
+              >
+                <i class="fa-solid fa-arrow-up-right-from-square url-logo-black" />
+                <p>Project</p>
+              </a>
+            )
+          }
+        </div>
       </div>
     </div>
+    <ProjectLayoutBottomStars positionAbsolute={positionAbsolute} />
   </div>
-  <ProjectLayoutBottomStars positionAbsolute={positionAbsolute} />
 </div>

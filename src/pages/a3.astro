@@ -2,12 +2,10 @@
 import { Image } from "astro:assets";
 import ProjectLayoutLinks from "../components/ProjectLayout-Links.astro";
 import Layout from "../layouts/Layout.astro";
-import H2ProjectTitle from "../components/H2project-title.astro";
-import ProjectLayoutBottomStars from "../components/ProjectLayout-BottomStars.astro";
 import CardTitle from "../components/CardTitle.astro";
 
 interface Project {
-  tech?: string
+  tech?: string;
   title?: string;
   year?: string;
   url?: string;
@@ -23,10 +21,8 @@ const projects: Project[] = [
     url: "https://eeo.today/",
     thumbnail: "a3_2024-02",
     problems: [
-      "Created and planned all pages, components, and structures for future updates from scratch.",
-      "Developed reusable components to ensure consistency across multiple pages.",
-      "Created custom fields for easy content updates by admins.",
-      "Maintained consistent design and CSS variables across all pages.",
+      "Worked with an overseas team to migrate the front end from Astro.js to a Laravel project.",
+      "Reestructured components and file queueing to improve performance.",
     ],
   },
   {
@@ -43,21 +39,31 @@ const projects: Project[] = [
     ],
   },
   {
+    tech: "Symfony",
+    title: "eeo Store Special Products Page",
+    year: "2024",
+    url: "https://eeo.today/store/101/specialfeature/oshiplus",
+    thumbnail: "a3_projectoshipura",
+    problems: [
+      "Complex design, and big design differences between Mobile and Desktop",
+      "Ensured Design Functionality, Responsiveness, and Performance.",
+    ],
+  },
+  {
     tech: "Astro.js",
     title: "eeo Cafe Branding Renewal Page",
     year: "2023",
     url: "https://eeo.today/graffartcafe/",
     thumbnail: "a3_project02",
     problems: [
-        "Optimized My First Page as a Frontend Engineer.",
-        "Customized Splide.js to Focus Only on the Centered Carousel Slide.",
-        "Vertically Stacked Images: Separated Child and Collaborative Carousels Within a Parent Carousel.",
-        "Resized and Converted Heavy Images to WebP for Optimization.",
-        "Maximized Page Speed Despite Numerous Large Images and Carousels.",
-        "Enhanced SEO with Proper HTML Tags, Especially H1.",
-        "Followed HTML Best Practices for SEO and Accessibility.",
-        "Ensured Design Functionality, Responsiveness, and Performance.",
-        "Contributed to the Design Process.",
+      "Optimized My First Page as a Frontend Engineer.",
+      "Customized Splide.js library to allow sliders within each slide of a slider",
+      "Resized and Converted Heavy Images to WebP for Optimization.",
+      "Maximized Page Speed Despite Numerous Large Images and Carousels.",
+      "Enhanced SEO with Proper HTML Tags, Especially H1.",
+      "Followed HTML Best Practices for SEO and Accessibility.",
+      "Ensured Design Functionality, Responsiveness, and Performance.",
+      "Contributed to the Design Process.",
     ],
   },
   {
@@ -67,10 +73,10 @@ const projects: Project[] = [
     url: "https://eeo.today/stage/",
     thumbnail: "a3_project01",
     problems: [
-        "Solved Twitter Widget Interfering in the Page Performance Loading.",
-        "Adapted Design Concepts to Better Solutions on The Frontend for FCP, LCP, etc.",
-        "Reached Above 90 Points in Performance During the Release Time.",
-        "Applied Downloaded Fonts in WOFF2 Format to Improve Page Performance.",
+      "Solved Twitter Widget Interfering in the Page Performance Loading.",
+      "Adapted Design Concepts to Better Solutions on The Frontend for FCP, LCP, etc.",
+      "Reached Above 90 Points in Performance During the Release Time.",
+      "Applied Downloaded Fonts in WOFF2 Format to Improve Page Performance.",
     ],
   },
   {
@@ -88,31 +94,46 @@ const projects: Project[] = [
       "Gained experience working with GitHub branches, as well as local, test, and production environments.",
       "Independently resolved configuration issues on my local environment after initial setup instructions",
     ],
-  }]
+  },
+];
 ---
 
-<Layout title="Hirashiki Rafael's Main Projects at A3">
+<Layout title="Rafael Hirashiki's Main Projects at A3">
   <ProjectLayoutLinks />
-  <div class=" col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9">
-    <p class="italic text-2xl clr-brand-orange">Solo Frontend Coder For All Projects</p>
-    {projects?.map((project, i) => (
-      <CardTitle i={i} project={project} />
-      <a href={project.url} target="_blank" class="relative z-50 card-height block">
-        <Image
-            src={`/Images/${project.thumbnail}.webp`}
-            width={1100}
-            height={940}
-            format="webp"
-            alt=""
-            class="w-auto"
-        />
-        <div class="relative -bottom-4 -right-4 css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8">
-            <h3>Solved Challenges</h3>
-            <ul>
-                {project.problems?.map(bullet => <li>❍ {bullet}</li> )}
-            </ul>
+  <div
+    class="relative z-50 col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"
+  >
+    <p class="italic text-2xl clr-brand-orange">Works at A3</p>
+    {
+      projects?.map((project, i) => (
+        <div class="mt-10 mb-20">
+          <CardTitle i={i} project={project} />
+          <a
+            href={project.url}
+            target="_blank"
+            class="relative z-50 card-height block"
+          >
+            <Image
+              src={`/Images/${project.thumbnail}.webp`}
+              width={1100}
+              height={940}
+              format="webp"
+              alt=""
+              class="w-auto"
+            />
+            <div class="relative -bottom-4 -right-4 css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8">
+              <h3>{project.tech}</h3>
+              <br />
+              <h3>Solved Challenges</h3>
+              <ul>
+                {project.problems?.map((bullet) => (
+                  <li>❍ {bullet}</li>
+                ))}
+              </ul>
+            </div>
+          </a>
         </div>
-      </a>
-    ))}
+      ))
+    }
   </div>
 </Layout>

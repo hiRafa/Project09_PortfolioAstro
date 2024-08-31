@@ -25,7 +25,7 @@ const $$ProjectLayout = createComponent(async ($$result, $$props, $$slots) => {
   Astro2.self = $$ProjectLayout;
   const icons = false;
   const { projects } = Astro2.props;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Hirashiki Rafael's Portfolio Project", "description": void 0 }, { "default": ($$result2) => renderTemplate`${renderComponent($$result2, "ProjectLayoutLinks", $$ProjectLayoutLinks, { "project": icons })}${projects.map((project) => renderTemplate`${renderComponent($$result2, "Fragment", Fragment, {}, { "default": ($$result3) => renderTemplate`${renderComponent($$result3, "Card", $$Card, { "project": project })}` })}`)}` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Rafael Hirashiki's Portfolio Project", "description": void 0 }, { "default": ($$result2) => renderTemplate`${renderComponent($$result2, "ProjectLayoutLinks", $$ProjectLayoutLinks, { "project": icons })}${projects.map((project) => renderTemplate`${renderComponent($$result2, "Fragment", Fragment, {}, { "default": ($$result3) => renderTemplate`${renderComponent($$result3, "Card", $$Card, { "project": project })}` })}`)}` })}`;
 }, "C:/Users/rafae/OneDrive/\xC1rea de Trabalho/Programming/Projects_Year3/Project09_PortfolioAstro/src/components/ProjectLayout.astro", void 0);
 
 const $$Astro = createAstro();

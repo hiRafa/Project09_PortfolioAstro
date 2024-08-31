@@ -3,7 +3,7 @@ import H2ProjectTitle from "./H2project-title.astro";
 const { project, projectTitle } = Astro.props;
 ---
 
-<div class="relative col-start-2 col-span-10 h-fit pl-12 max-md:pl-20">
+<div class="relative col-start-2 col-span-10 h-fit">
   <H2ProjectTitle
     text={project?.data.projectTitle || projectTitle}
     class="italic text-2xl font-bold clr-brand-blue"
