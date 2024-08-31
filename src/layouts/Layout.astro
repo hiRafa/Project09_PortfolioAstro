@@ -121,6 +121,8 @@ const projects = await getCollection("projects");
         --clr-charchoal: #333333;
         --clr-brand-blue: #00d9f7;
         --clr-brand-orange: #ff9900;
+
+        --logo-size: 36px;
       }
 
       /* reset  */
@@ -305,8 +307,8 @@ const projects = await getCollection("projects");
       }
       .url-logo-black {
         background-color: black;
-        width: 36px;
-        height: 36px;
+        width: var(--logo-size);
+        height: var(--logo-size);
         border-radius: 5px;
         padding: 5px;
         font-size: 26px;
@@ -320,8 +322,8 @@ const projects = await getCollection("projects");
       }
       .url-logo {
         background-color: transparent;
-        width: 42px;
-        height: 42px;
+        width: var(--logo-size);
+        height: var(--logo-size);
         border-radius: 5px;
         padding: 0;
       }

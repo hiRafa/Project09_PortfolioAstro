@@ -1,5 +1,9 @@
 ---
 import { Image } from "astro:assets";
+import ProjectGithubIcon from "./ProjectGithubIcon.astro";
+import ProjectLinkedin from "./ProjectLinkedin.astro";
+import ProjectEmailIcon from "./ProjectEmailIcon.astro";
+import ContactIcons from "./ContactIcons.astro";
 const { class: className, ...rest } = Astro.props;
 ---
 
@@ -12,4 +16,5 @@ const { class: className, ...rest } = Astro.props;
     alt="Japanese looking guy from Brazil wearing stylish clothes"
     class="rounded-2x1 aspect-thumbnail object-cover rounded-full m-auto"
   />
+  <ContactIcons classp={"text-center"} class={"justify-center"} />
 </div>

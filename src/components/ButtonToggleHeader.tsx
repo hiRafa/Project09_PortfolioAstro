@@ -3,39 +3,43 @@ import { useState, useEffect } from "preact/hooks";
 export const ButtonToggleHeader = () => {
   const [isHeaderHidden, setIsHeaderHidden] = useState(true);
 
-  const toggleHeader = () => {
-    const header: HTMLElement | null = document.getElementById("myHeader");
-    const toggleButton: HTMLElement | null =
-      document.getElementById("toggleButton");
-    const toggleButtonIcon: HTMLElement | null =
-      document.getElementById("fa-arrowHeader");
-
+  const toggleHeader = (forceClose = false) => {
+    const header = document.getElementById("myHeader");
+    const toggleButton = document.getElementById("toggleButton");
+    const toggleButtonIcon = document.getElementById("fa-arrowHeader");
+  
     if (!header) return; // Ensure header exists
-    if (!isHeaderHidden) {
-      // Your logic to hide the header
+  
+    if (!isHeaderHidden || forceClose) {
       header.classList.add("css-hideHeader");
       toggleButton?.classList.remove("movebutton");
       toggleButtonIcon?.classList.remove("rotate");
-      // toggleButtonIcon?.classList.remove("rotate");
+      setIsHeaderHidden(true);
     } else {
-      // Your logic to show the header
       header.classList.remove("css-hideHeader");
       toggleButton?.classList.add("movebutton");
       toggleButtonIcon?.classList.add("rotate");
+      setIsHeaderHidden(false);
     }
-    setIsHeaderHidden(!isHeaderHidden);
   };
-
+  
+  const handleClickArea = () => {
+    if (!isHeaderHidden) {
+      toggleHeader(true);
+    }
+  };
+  
   useEffect(() => {
     const toggleButton = document.getElementById("toggleButton");
-    const toggleButtonIcon = document.getElementById("fa-arrowHeader");
-
-    if (toggleButton && toggleButtonIcon) {
-      toggleButton.addEventListener("click", toggleHeader);
-
+    const clickArea = document.getElementById("main");
+  
+    if (toggleButton && clickArea) {
+      toggleButton.addEventListener("click", () => toggleHeader());
+      clickArea.addEventListener("click", handleClickArea);
+  
       return () => {
-        // Clean up the event listener when the component unmounts
-        toggleButton.removeEventListener("click", toggleHeader);
+        toggleButton.removeEventListener("click", () => toggleHeader());
+        clickArea.removeEventListener("click", handleClickArea);
       };
     }
   }, [isHeaderHidden]);

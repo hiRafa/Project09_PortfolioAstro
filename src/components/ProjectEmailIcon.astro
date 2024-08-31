@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+---
+<script>
+  function openEmail() {
+    const email = "hirashiki.rafa@gmail.com";
+    window.location.href = `mailto:${email}`;
+  }
+
+  // Attach the click event when the page loads
+  document.addEventListener("DOMContentLoaded", function() {
+    const emailIcon = document.getElementById("email-icon");
+    emailIcon.onclick = openEmail;
+  });
+</script>
+
+<a
+  class="flex flex-col items-center w-fit"
+  id="email-icon"
+  target="_blank"
+>
+  <Image
+    src="/Images/logo_GMAIL.png"
+    width={144}
+    height={213}
+    format="png"
+    alt="gmail logo"
+    class="url-logo"
+  />
+</a>
+
