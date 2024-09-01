@@ -21,18 +21,18 @@ const navObj = [
     navSubtitle: "to INFINITY and Beyond!",
   },
   {
-    path: "/a3",
-    navTitle: "Works at A3",
-    navSubtitle: "Frontend Engineer",
-  },
-  {
     path: "/agendae",
-    navTitle: "Works at Agendae+",
+    navTitle: "Works at Agendae+ (2024→)",
     navSubtitle: "System Engineer (Backend)",
   },
   {
+    path: "/a3",
+    navTitle: "Works at A3 (2023→)",
+    navSubtitle: "Frontend Engineer",
+  },
+  {
     path: "/projects2022",
-    navTitle: "Projects 2022",
+    navTitle: "Projects 2022→2023",
     navSubtitle: "Frontend Coder",
     navTech: "HTML/CSS/JS/Next.js",
   },
@@ -198,9 +198,6 @@ const navObj = [
             <ul class="pr-4">
               {navObj.map((ele) => (
                 <li>
-                  {ele.path === "/projects2022" && (
-                    <p class="li-year">2022 & 2023</p>
-                  )}
                   <a
                     href={ele.path}
                     class="text-xl max-xl:text-lg max-lg:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
