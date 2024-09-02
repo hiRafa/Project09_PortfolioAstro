@@ -195,7 +195,7 @@ const navObj = [
             class="absolute bottom-1/4 -left-10 -rotate-90 w-0 whitespace-nowrap text-3xl  max-xl:text-2xl max-lg:text-3xl max-md:text-2xl font-bold  m-auto"
           />
           <nav class="pb-16 relative z-50  max-xl:pb-20 self-end">
-            <ul class="pr-4">
+            <ul class="pr-4 flex flex-col gap-2">
               {navObj.map((ele) => (
                 <li>
                   <a
@@ -203,7 +203,7 @@ const navObj = [
                     class="text-xl max-xl:text-lg max-lg:text-xl font-bold flex flex-nowrap justify-between items-center gap-4"
                   >
                     <p
-                      class={`flex flex-col items-start ${pathname === ele.path && "clr-brand-orange"}`}
+                      class={`flex flex-col items-start text-lg ${pathname === ele.path && "clr-brand-orange"}`}
                     >
                       <span class="li-projectTitle">{ele.navTitle}</span>
                       <span class="li-role">{ele.navSubtitle} </span>

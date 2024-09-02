@@ -4,18 +4,16 @@ import H2ProjectTitle from "./H2project-title.astro";
 const { project, i } = Astro.props;
 const date = project.data ? project.data.year : project.year;
 const title = project.data ? project.data.projectTitle : project.title;
-const url = project.data ? project.data.url : project.url;
+const url = project.data ? project.data.projectURL : project.url;
 
 ---
 
-<a
+<div
   class="flex items-center mb-4 gap-3"
-  href={url}
-  target="_blank"
 >
   <H2ProjectTitle
     text={`${i + 1}.${title} ${date}`}
     class="italic text-2xl font-bold max-md:text-lg"
   />
   <i class="fa-solid fa-arrow-up-right-from-square"></i>
-</a>
+</div>

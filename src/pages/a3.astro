@@ -101,27 +101,25 @@ const projects: Project[] = [
 <Layout title="Rafael Hirashiki's Main Projects at A3">
   <ProjectLayoutLinks />
   <div
-    class="relative z-50 col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"
+    class="col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"
   >
     <p class="italic text-2xl clr-brand-orange">Works at A3</p>
     {
       projects?.map((project, i) => (
-        <div class="mt-10 mb-20">
+        <a class="block mt-10 mb-20 relative z-50" href={project.url} target="_blank">
           <CardTitle i={i} project={project} />
-          <a
-            href={project.url}
-            target="_blank"
-            class="relative z-50 card-height block"
-          >
-            <Image
-              src={`/Images/${project.thumbnail}.webp`}
-              width={1100}
-              height={940}
-              format="webp"
-              alt=""
-              class="w-auto"
-            />
-            <div class="relative -bottom-4 -right-4 css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8">
+          <div class="">
+            <div class="card-height w-full overflow-hidden flex justify-center">
+              <Image
+                src={`/Images/${project.thumbnail}.webp`}
+                width={1100}
+                height={940}
+                format="webp"
+                alt=""
+                class="object-cover"
+              />
+            </div>
+            <div class="absolute -bottom-4 -right-4 css-glass-bg font-bold w-fit ml-auto text-right css-glass-bg px-6 py-8 mt-8">
               <h3>{project.tech}</h3>
               <br />
               <h3>Solved Challenges</h3>
@@ -131,8 +129,8 @@ const projects: Project[] = [
                 ))}
               </ul>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       ))
     }
   </div>

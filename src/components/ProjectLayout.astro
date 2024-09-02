@@ -13,12 +13,6 @@ const { projects } = Astro.props;
     class="relative z-50 col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"
   >
     <p class="italic text-2xl clr-brand-orange">Works at Agendae+</p>
-    {
-      projects.map((project: any, i: any) => (
-        <>
-          <Card project={project} i={i} />
-        </>
-      ))
-    }
+    {projects.map((project: any, i: any) => <Card project={project} i={i} />)}
   </div>
 </Layout>
