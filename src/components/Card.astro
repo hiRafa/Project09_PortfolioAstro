@@ -21,7 +21,7 @@ const { project, i } = Astro.props;
       class="card-height w-full overflow-hidden flex justify-center"
     >
       <img
-        src={`/Images/${project?.data.thumbnail}.webp`}
+        src={`/images/${project?.data.thumbnail}.webp`}
         class="object-cover max-h-none max-w-none"
       />
     </div>
@@ -43,7 +43,7 @@ const { project, i } = Astro.props;
             {project.data.technologies?.map((ele: string, index: number) => (
               <div class="w-8 h-8 flex justify-center">
                 <Image
-                  src={`/Images/logo_${ele}.png`}
+                  src={`/images/logo_${ele}.png`}
                   width={30}
                   height={30}
                   format="png"
@@ -77,7 +77,7 @@ const { project, i } = Astro.props;
             target="_blank"
           >
             <Image
-              src="/Images/logo_figma.svg"
+              src="/images/logo_figma.svg"
               width={144}
               height={213}
               format="svg"

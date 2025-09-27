@@ -21,20 +21,14 @@ const navObj = [
     navSubtitle: "to INFINITY and Beyond!",
   },
   {
-    path: "/agendae",
-    navTitle: "Works at Agendae+ (2024→)",
-    navSubtitle: "System Engineer (Backend)",
+    path: "/performance",
+    navTitle: "Performance & Results",
+    navSubtitle: "",
   },
   {
-    path: "/a3",
-    navTitle: "Works at A3 (2023→)",
-    navSubtitle: "Frontend Engineer",
-  },
-  {
-    path: "/projects2022",
-    navTitle: "Projects 2022→2023",
-    navSubtitle: "Frontend Coder",
-    navTech: "HTML/CSS/JS/Next.js",
+    path: "/solutions",
+    navTitle: "Systems & Solutions",
+    navSubtitle: "",
   },
 ];
 ---
@@ -105,8 +99,8 @@ const navObj = [
   <!-- <p class="absolute bottom-0">powered by Astro</p> -->
   <Image
     src={headerIndex
-      ? "/Images/stars-topleft-index.svg"
-      : "/Images/stars-topleft.svg"}
+      ? "/images/stars-topleft-index.svg"
+      : "/images/stars-topleft.svg"}
     width={220}
     height={40}
     format="svg"
@@ -118,8 +112,8 @@ const navObj = [
   >
     <img
       src={headerIndex
-        ? "/Images/stars-bottomleft-index.svg"
-        : "/Images/stars-bottomleft.svg"}
+        ? "/images/stars-bottomleft-index.svg"
+        : "/images/stars-bottomleft.svg"}
       width={440}
       height={450}
       alt="stars bg"
@@ -131,19 +125,21 @@ const navObj = [
         <>
           <section class="self-start">
             <H1
-              text="Rafael Hirashiki"
+              text="RAFAEL HIRASHIKI"
               index={true}
               class="text-5xl max-xl:text-4xl max-md:text-3xl max-sm:text-2xl font-bold"
             />
             <p class="max-lg: text-sm">Casual Dancer</p>
           </section>
 
-          <section class="text-2xl max-lg:text-lg max-md:text-lg max-sm:text-base font-bold">
-            <h2 class="pt-4 pb-4">
-              <i class="fa-regular fa-circle" /> Web Frontend Engineer
+          <section class="text-3xl max-lg:text-lg max-md:text-lg max-sm:text-base font-bold">
+            <h2 class="pt-4 pb-2 flex justify-start items-center gap-4">
+              <i class="fa-regular fa-circle w-5" /> 
+              <span>Software Engineer with Systems Focus</span>
             </h2>
-            <h3 class="pb-4">
-              <i class="fa-solid fa-moon" /> System Engineer (graduating)
+            <h3 class="pb-4 flex justify-start items-center gap-4">
+              <i class="fa-solid fa-moon w-5" />
+              <span>Associate Solutions Architect</span>
             </h3>
           </section>
 
@@ -190,7 +186,7 @@ const navObj = [
           <ButtonToggleHeader client:only />
           <RafaPic class="relative z-50 w-4/6 m-auto h-fit max-lg:w-6/6 " />
           <H1
-            text="Rafael Hirashiki"
+            text="RAFAEL HIRASHIKI"
             index={false}
             class="absolute bottom-1/4 -left-10 -rotate-90 w-0 whitespace-nowrap text-3xl  max-xl:text-2xl max-lg:text-3xl max-md:text-2xl font-bold  m-auto"
           />

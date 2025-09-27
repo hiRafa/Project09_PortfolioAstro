@@ -1,0 +1,169 @@
+---
+import project from "../content/projects_data/stwstw.json";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div
+    class="relative z-50 col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"
+  >
+    <header class="project-header">
+      <h1>{project.projectTitle}</h1>
+      <h2>{project.projectSubtitle}</h2>
+      <p><strong>Year:</strong> {project.year}</p>
+      <p><strong>Technologies:</strong> {project.technologies.join(", ")}</p>
+      <img
+        src={project.thumbnail}
+        alt="Project Thumbnail"
+        class="project-thumbnail"
+      />
+    </header>
+
+    <section class="overview">
+      <h2>Project Overview</h2>
+      <p>{project.overview}</p>
+      <img src={project.visuals.overview} alt="Overview Diagram" />
+    </section>
+
+    <section class="reflection">
+      <h2>Reflection</h2>
+      <p>{project.reflection}</p>
+      <img src={project.visuals.moduleDiagram} alt="Module Diagram" />
+    </section>
+
+    <section class="challenges">
+      <h2>The Challenge</h2>
+      <ul>
+        {
+          project.challenges.map((ch) => (
+            <li>
+              <strong>{ch.title}:</strong> {ch.description}
+            </li>
+          ))
+        }
+      </ul>
+      <img
+        src={project.visuals.challengeWorkflow}
+        alt="Challenge Workflow Diagram"
+      />
+    </section>
+
+    <section class="decisions">
+      <h2>Decision & Rationale</h2>
+      <ul>
+        {
+          project.decisions.map((d) => (
+            <li>
+              <strong>{d.decision}:</strong> {d.rationale}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="architecture">
+      <h2>Solution Architecture</h2>
+      <img src={project.architecture.diagram} alt="Architecture Diagram" />
+      <img src={project.architecture.workflowDiagram} alt="Workflow Diagram" />
+      <p>{project.architecture.narrative}</p>
+    </section>
+
+    <section class="implementation">
+      <h2>Implementation Process</h2>
+      <ol>
+        {project.implementation.map((step) => <li>{step}</li>)}
+      </ol>
+    </section>
+
+    <section class="outcome">
+      <h2>Outcome / Impact</h2>
+      <ul>
+        {project.outcome.map((item) => <li>{item}</li>)}
+      </ul>
+      <img src={project.visuals.dashboard} alt="Dashboard / Results" />
+    </section>
+
+    <footer class="project-links">
+      {
+        project.projectURL && (
+          <a href={project.projectURL} target="_blank">
+            Live Project
+          </a>
+        )
+      }
+      {
+        project.githubURL && (
+          <a href={project.githubURL} target="_blank">
+            GitHub Repository
+          </a>
+        )
+      }
+    </footer>
+  </div>
+
+  <style>
+    .project-page {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      font-family: system-ui, sans-serif;
+    }
+
+    .project-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-header h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .project-thumbnail {
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+
+    section {
+      margin-top: 3rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    ul,
+    ol {
+      margin-left: 1.5rem;
+    }
+
+    ul li,
+    ol li {
+      margin-bottom: 0.5rem;
+    }
+
+    img {
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 6px;
+    }
+
+    .project-links {
+      margin-top: 3rem;
+    }
+
+    .project-links a {
+      margin-right: 1.5rem;
+      color: #0070f3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</Layout>

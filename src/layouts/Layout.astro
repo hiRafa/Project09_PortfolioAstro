@@ -21,48 +21,41 @@ const projects = await getCollection("projects");
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Rafael Hirashiki, Frontend Engineer's Nifty Journey</title>
-    <meta name="description" content=" 
+    <title>RAFAEL HIRASHIKI, Frontend Engineer's Nifty Journey</title>
+    <meta
+      name="description"
+      content=" 
     Working to be a FullStack Engineer, specialized as a Frontend for now.
-    Shooting for the stars. 
-    `If I give it my all, will it pay off?
-    Workin' overtime, no days off
-    All these shootin' stars in the dark (Yeah)
-    All these shootin' stars in the dark, make a wish (Yeah)
-    Takin' off from the ground, it's amazin'
-    So outta this world, I'm in space`" />
+    Rearranging stars and creating new constellations"
+    />
 
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- OGP -->
-    <meta property="og:title" content="Rafael Hirashiki, a Frontend Engineer's Nifty Journey" />
+    <meta
+      property="og:title"
+      content="RAFAEL HIRASHIKI, a Frontend Engineer's Nifty Journey"
+    />
     <meta property="og:type" content="website portfolio" />
     <meta
       property="og:url"
       content="https://hirashiki-rafael-portfolio.netlify.app/"
     />
-    <meta property="og:description" content="
-    Working to be a FullStack Engineer, specialized as a Frontend for now.
-    Shooting for the stars. 
-    `If I give it my all, will it pay off?
-    Workin' overtime, no days off
-    All these shootin' stars in the dark (Yeah)
-    All these shootin' stars in the dark, make a wish (Yeah)
-    Takin' off from the ground, it's amazin'
-    So outta this world, I'm in space`" />
     <meta
-      property="og:image"
-      content="../../public/Images/index-rafa2.webp"
+      property="og:description"
+      content="
+    Working to be a FullStack Engineer, specialized as a Frontend for now.
+    Rearranging stars and creating new constellations"
     />
+    <meta property="og:image" content="../../public/images/index-rafa2.webp" />
     <ViewTransitions />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-
   </head>
 
   <body
@@ -70,23 +63,24 @@ const projects = await getCollection("projects");
       headerIndex && "clr-bg body-rows"
     } overflow-x-hidden css-no-scrollbar`}
   >
+    <!-- Home page -->
     {
       headerIndex && (
         <>
           <Header
             headerIndex={headerIndex}
-            class={`relative w-full css-min-h100 col-start-1 col-span-5 grid grid-cols-8 max-lg:min-h-min max-lg:grid-cols-12 css-body-row-2 max-lg:col-span-full`}
+            class={`relative w-full css-min-h100 col-start-1 col-span-6 grid grid-cols-8 max-lg:min-h-min max-lg:grid-cols-12 css-body-row-2 max-lg:col-span-full`}
           />
           <Main
             projects={projects}
-            class={`w-full h-fit m-auto col-span-7 css-no-scrollbar css-body-row-1 max-lg:w-12/12 max-lg:my-0 max-lg:top-12 max-sm:col-span-full `}
+            class={`w-full h-fit m-auto col-span-6 css-no-scrollbar css-body-row-1 max-lg:w-12/12 max-lg:my-0 max-lg:top-12 max-sm:col-span-full `}
           >
             <slot />
           </Main>
         </>
       )
     }
-
+    <!-- Other pages -->
     {
       !headerIndex && (
         <>
@@ -237,7 +231,7 @@ const projects = await getCollection("projects");
           position: absolute;
         }
 
-        .body-rows  {
+        .body-rows {
           grid-template-rows: 1fr 1fr;
           row-gap: 4rem;
         }
@@ -268,7 +262,7 @@ const projects = await getCollection("projects");
         }
       }
       @media screen and (max-width: 420px) {
-        .body-rows  {
+        .body-rows {
           grid-template-rows: min-content 1fr;
           row-gap: 4rem;
         }
@@ -327,6 +321,21 @@ const projects = await getCollection("projects");
         border-radius: 5px;
         padding: 0;
       }
+
+      .fa-circle {
+        color: var(--clr-brand-blue);
+        font-style: normal;
+        width: fit-content;
+        margin: auto;
+        font-size: small;
+        position: relative;
+        z-index: 2;
+      }
+
+      .portfolio .fa-circle {
+        margin-right: 8px;
+      }
+
       .grid-item-ball > span:nth-child(2) {
         display: block;
         width: fit-content;

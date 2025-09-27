@@ -1,0 +1,290 @@
+---
+import { Image } from "astro:assets";
+import project from "../content/projects_data/kat.json";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div
+    class="portfolio solutions relative z-50 col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"
+  >
+    <div class="project-header">
+      <h2>{project.projectTitle}</h2>
+      <h3>{project.projectSubtitle}</h3>
+      <p><strong>Year:</strong> {project.year}</p>
+      <p><strong>Technologies:</strong> {project.technologies.join(", ")}</p>
+      <Image
+        src={`/images/${project.visuals.thumbnail}.webp`}
+        width={1100}
+        height={940}
+        format="webp"
+        alt=""
+        class="w-1/2"
+      />
+    </div>
+
+    <section class="overview">
+      <h2>Project Overview</h2>
+      <p>{project.overview}</p>
+    </section>
+
+    <section class="reflection">
+      <h2>Reflection</h2>
+      <ul>
+        {project.reflection.map((point) => <li>{point}</li>)}
+      </ul>
+    </section>
+
+    <section class="challenges">
+      <h2>The Challenge</h2>
+      <ul>
+        {
+          project.challenges.map((ch) => (
+            <li>
+              <strong>{ch.title}:</strong> {ch.description}
+            </li>
+          ))
+        }
+      </ul>
+      <Image
+        src={`/images/${project.visuals.challenge}.webp`}
+        width={1100}
+        height={940}
+        format="png"
+        alt=""
+        class="w-full"
+      />
+    </section>
+
+    <section class="rationale">
+      <h2>Rationale</h2>
+
+      {/* Overview */}
+      <p>{project.rationale.overview}</p>
+
+      {/* For Client */}
+      <div class="rationale-section">
+        <h3>For the Client</h3>
+        <p>{project.rationale.forClient.description}</p>
+        <ul>
+          {
+            project.rationale.forClient.bullets.map((bullet, i) => (
+              <li key={i}>{bullet}</li>
+            ))
+          }
+        </ul>
+      </div>
+
+      {/* For Engineer */}
+      <div class="rationale-section">
+        <h3>For the Engineer</h3>
+        <p>{project.rationale.forEngineer.description}</p>
+        <ul>
+          {
+            project.rationale.forEngineer.bullets.map((bullet, i) => (
+              <li key={i}>{bullet}</li>
+            ))
+          }
+        </ul>
+      </div>
+
+      {/* Trade-offs */}
+      <div class="rationale-section">
+        <h3>Trade-offs</h3>
+        <p>{project.rationale.tradeoffs.description}</p>
+        <ul>
+          {
+            project.rationale.tradeoffs.bullets.map((bullet, i) => (
+              <li class="" key={i}>
+                {bullet}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      {/* Implementation */}
+      <div class="rationale-section">
+        <h3>Implementation</h3>
+        <p>{project.rationale.implementation.description}</p>
+        <ul>
+          {
+            project.rationale.implementation.bullets.map((bullet, i) => (
+              <li key={i}>{bullet}</li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="architecture">
+      <h2>Solution Architecture</h2>
+      <Image
+        src={`/images/${project.visuals.architecture}.webp`}
+        width={1100}
+        height={940}
+        format="png"
+        alt="Architecture Diagram"
+        class="w-2/4"
+      />
+      <ul>
+        {
+          project.architecture.map((step, index) => (
+            <li key={index}>
+              <strong>{step.title}:</strong>
+              <p>{step.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="architecture-qa">
+      <h2>Architecture Q&A (Concise View)</h2>
+      <ul>
+        {
+          project.architectureQA.map((qa, index) => (
+            <li key={index}>
+              <strong>{qa.question}:</strong> {qa.answer}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="engineer-process">
+      <h2>Engineer Process (Implementation Steps)</h2>
+      <ol>
+        {
+          project.engineerProcess.map((step, index) => (
+            <li key={index}>
+              <strong>{step.step}:</strong> {step.description}
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    {/* Workflow Section */}
+    <section class="workflow">
+      <h2>Workflow</h2>
+      <ol>
+        {project.workflow.map((step, index) => <li key={index}>{step}</li>)}
+      </ol>
+      <Image
+        src={`/images/${project.visuals.workflow}.webp`}
+        width={1100}
+        height={940}
+        format="png"
+        alt="Architecture Diagram"
+        class="w-1/4"
+      />
+    </section>
+
+    {/* Outcome Section */}
+    <section class="outcome">
+      <h2>Outcome</h2>
+      <ul>
+        {
+          project.outcome.map((item, index) => (
+            <li key={index}>
+              <strong>{item.title}:</strong> {item.description}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <footer class="project-links">
+      {
+        project.projectURL && (
+          <a href={project.projectURL} target="_blank">
+            Live Project
+          </a>
+        )
+      }
+      {
+        project.githubURL && (
+          <a href={project.githubURL} target="_blank">
+            GitHub Repository
+          </a>
+        )
+      }
+    </footer>
+  </div>
+
+  <style>
+    .project-page {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      font-family: system-ui, sans-serif;
+    }
+
+    .project-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-header h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .project-thumbnail {
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+
+    section {
+      margin-top: 3rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    ul {
+      list-style-type: disc; /* Default bullets */
+      padding-left: 20px; /* Space from the edge */
+      margin: 10px 0; /* Space above and below the list */
+    }
+
+    ol {
+      list-style-type: decimal; /* Ensures numbers are displayed */
+      padding-left: 30px; /* Space for numbers */
+      margin: 10px 0; /* Space above/below list */
+      counter-reset: item; /* Optional for custom counters */
+    }
+
+    ul li,
+    ol li {
+      margin-bottom: 0.5rem;
+    }
+
+    .project-links {
+      margin-top: 3rem;
+    }
+
+    .project-links a {
+      margin-right: 1.5rem;
+      color: #0070f3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</Layout>

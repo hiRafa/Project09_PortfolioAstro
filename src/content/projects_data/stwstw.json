@@ -1,0 +1,54 @@
+{
+  "projectURL": "",
+  "githubURL": "",
+  "thumbnail": "projectSTW_thumbnail",
+  "technologies": ["GO", "ASTRO", "HTMX", "DOCKER", "REDIS"],
+  "projectTitle": "Save The Wild (Under Construction)",
+  "year": "2024~2025",
+  "projectSubtitle": "Wildlife Rescue and Conservation Tracking System",
+  "projectBulletList": [
+    "Modular Monolithic API",
+    "API with Go",
+    "Frontend with Astro",
+    "System Engineering",
+    "Diagrams",
+    "DB Planning",
+    "System Requirements",
+    "Algorithms",
+    "UX/UI Flow"
+  ],
+  "overview": "Designed a Wildlife Rescue and Conservation Tracking System that enables communities, organizations, and volunteers to report, rescue, and rehabilitate wildlife...",
+  "challenges": [
+    {
+      "title": "Multi-Feature Integration",
+      "description": "Balancing reporting, rescues, donations, medical records, and volunteer coordination."
+    },
+    {
+      "title": "Geolocation & Real-Time Alerts",
+      "description": "Ensuring precise incident tracking and timely notifications."
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Modular Monolith Architecture",
+      "rationale": "Structured yet flexible design for future microservices migration."
+    }
+  ],
+  "architecture": {
+    "diagram": "/images/STW_architecture.png",
+    "workflowDiagram": "/images/STW_workflow.png",
+    "narrative": "Users report incidents tagged with geolocation and assigned to rescue teams..."
+  },
+  "implementation": [
+    "Defined modular architecture",
+    "Designed API contracts and NoSQL data models"
+  ],
+  "outcome": ["Community empowerment", "Transparency", "Scalability"],
+  "reflection": "Demonstrated mission-driven modular architecture, geolocation workflow design, and security practices.",
+  "visuals": {
+    "overview": "/images/STW_overview.png",
+    "challengeWorkflow": "/images/STW_challenge-workflow.png",
+    "moduleDiagram": "/images/STW_modules.png",
+    "dashboard": "/images/STW_dashboard.png"
+  }
+}

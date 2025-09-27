@@ -1,0 +1,175 @@
+{
+  "projectURL": "",
+  "githubURL": "",
+  "technologies": ["HTML", "CSS", "JS", "Jekyll", "Ruby", "CloudCannon"],
+  "projectTitle": "Website with CloudCannon CMS (Kat Portfolio)",
+  "year": "2025",
+  "projectSubtitle": "",
+  "projectBulletList": ["System Requirements", "Algorithms", "UX/UI Flow"],
+  "overview": "A client requested a personal portfolio website that could be updated frequently. The main requirement was that the client should be able to manage content independently, without needing technical support.",
+  "reflection": [
+    "I evaluated multiple platforms through the lens of client needs, engineering effort, and long-term sustainability.",
+    "I delivered a custom CMS-enabled static site using Jekyll and CloudCannon, balancing trade-offs between editability, performance, and maintainability, demonstrating thoughtful architectural decision-making.",
+    "The project strengthened my skills in solution evaluation, platform integration, and client enablement."
+  ],
+  "challenges": [
+    {
+      "title": "Client Requirement",
+      "description": "Balancing reporting, rescues, donations, medical records, and volunteer coordination."
+    },
+    {
+      "title": "Engineer Constraint",
+      "description": "Ensuring precise incident tracking and timely notifications."
+    },
+    {
+      "title": "Architectural Goal",
+      "description": "Ensuring precise incident tracking and timely notifications."
+    }
+  ],
+  "rationale": {
+    "overview": "CloudCannon provided the right balance between client usability and engineering sustainability.",
+    "forClient": {
+      "description": "The platform offered a clean and intuitive admin/editor screen that made content editing straightforward, while keeping the overall service cost low.",
+      "bullets": [
+        "Clean, intuitive admin/editor interface",
+        "Straightforward content editing",
+        "Low service cost"
+      ]
+    },
+    "forEngineer": {
+      "description": "CloudCannon’s static-site workflow with CMS support enabled a flexible architecture without the recurring maintenance burdens of traditional dynamic CMS platforms.",
+      "bullets": [
+        "Flexible static-site architecture",
+        "CMS support for structured content",
+        "Minimal maintenance compared to dynamic CMS"
+      ]
+    },
+    "tradeoffs": {
+      "description": "While setup and customization were more complex than no-code tools like Wix, the long-term sustainability and customization potential of a static-first approach outweighed the upfront complexity.",
+      "bullets": [
+        "More complex setup than Wix or other no-code tools",
+        "High long-term sustainability",
+        "Greater customization potential"
+      ]
+    },
+    "implementation": {
+      "description": "The site was implemented using Jekyll integrated with CloudCannon, leveraging the benefits of static architecture.",
+      "bullets": [
+        "Jekyll static site generator + CloudCannon CMS",
+        "Performance: pre-rendered static HTML pages",
+        "Security: no live database or server-side code",
+        "Hosting simplicity: deployable to any CDN or static host; CloudCannon Hosting with domain linkage",
+        "Sustainability: long-term maintainable without plugins or server upkeep"
+      ]
+    },
+    "outcome": {
+      "description": "The client received a fast, secure, low-maintenance site, while retaining independent content management.",
+      "bullets": [
+        "Fast site performance",
+        "Secure with minimal attack surface",
+        "Low-maintenance architecture",
+        "Independent content management via CloudCannon editor"
+      ]
+    }
+  },
+
+  "architecture": [
+    {
+      "title": "Content Editing (Client → CloudCannon Editor)",
+      "description": "The client logs into the CloudCannon Editor to modify text, images, and metadata via an intuitive visual interface. These changes trigger updates in the underlying content system."
+    },
+    {
+      "title": "Version Control (CloudCannon → Git Repository)",
+      "description": "All edits are committed directly to the project’s Jekyll repository as Markdown files and configuration data. CloudCannon tracks the commit status and logs any errors, ensuring content integrity."
+    },
+    {
+      "title": "Build & Deployment (CI/CD → Hosting)",
+      "description": "Changes in the repository trigger a Jekyll build through a CI/CD pipeline. The static HTML, CSS, and JavaScript output is then deployed to CloudCannon Hosting, which serves the site through a global CDN."
+    },
+    {
+      "title": "Domain & DNS (Hosting → End Users)",
+      "description": "The client’s custom domain, managed via a DNS provider (e.g., Squarespace), is linked to the CloudCannon-hosted site. Once the build completes, updated content becomes live for all visitors, typically within seconds to a few minutes."
+    }
+  ],
+
+  "architectureQA": [
+    {
+      "question": "Where does content live?",
+      "answer": "In the Jekyll repository, as version-controlled files (Markdown, configs, images)."
+    },
+    {
+      "question": "What triggers deployments?",
+      "answer": "Edits in CloudCannon Admin → repo updates → automatic build → hosting update."
+    },
+    {
+      "question": "How fast does the site update?",
+      "answer": "Typically seconds to a few minutes, depending on build time."
+    },
+    {
+      "question": "What are the integration points?",
+      "answer": "CloudCannon CMS ↔ Jekyll SSG ↔ CloudCannon Hosting (with custom domain)."
+    }
+  ],
+  "engineerProcess": [
+    {
+      "step": "Account Setup",
+      "description": "Created CloudCannon account and initialized project."
+    },
+    {
+      "step": "Template Selection",
+      "description": "Chose a base template from CloudCannon CMS options."
+    },
+    {
+      "step": "Customization",
+      "description": "Edited and modified template files (HTML, CSS, Markdown) to match the client’s brand."
+    },
+    {
+      "step": "Configuration",
+      "description": "Set up content sections for easy editing inside the CMS."
+    },
+    {
+      "step": "Hosting & Domain",
+      "description": "Guided client on domain purchase and linked it to CloudCannon hosting."
+    },
+    {
+      "step": "Testing",
+      "description": "Verified responsiveness across Desktop, Android, Mac, iOS."
+    },
+    {
+      "step": "Client Training",
+      "description": "Walked client through content editing and publishing process."
+    },
+    {
+      "step": "Validation",
+      "description": "Confirmed client could publish updates independently without needing developer support."
+    }
+  ],
+  "workflow": [
+    "Client logs into CloudCannon admin panel.",
+    "Client adds articles by category, filling up a form and adding an image for the thumbnail.",
+    "CloudCannon updates the static site in the connected repo.",
+    "Changes are deployed automatically within seconds-few minutes.",
+    "Check the live website."
+  ],
+  "outcome": [
+    {
+      "title": "Client",
+      "description": "Gained independence in managing their portfolio site. No need to contact any developer or wait for someone else to reply."
+    },
+    {
+      "title": "Engineer",
+      "description": "Delivered a maintainable solution with finished long-term support. Within contract rules. Client is free to contact for emergencies."
+    },
+    {
+      "title": "Result",
+      "description": "A tailored CMS architecture that fit both business needs and technical constraints."
+    }
+  ],
+
+  "visuals": {
+    "thumbnail": "solution_kat_thumbnail",
+    "challenge": "solution_kat_cloudcannon",
+    "architecture": "solution_kat_architecture",
+    "workflow": "solution_kat_workflow"
+  }
+}
