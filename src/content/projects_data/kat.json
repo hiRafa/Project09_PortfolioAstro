@@ -1,11 +1,13 @@
 {
-  "projectURL": "",
-  "githubURL": "",
-  "technologies": ["HTML", "CSS", "JS", "Jekyll", "Ruby", "CloudCannon"],
-  "projectTitle": "Website with CloudCannon CMS (Kat Portfolio)",
-  "year": "2025",
-  "projectSubtitle": "",
-  "projectBulletList": ["System Requirements", "Algorithms", "UX/UI Flow"],
+  "project": {
+    "projectURL": "",
+    "githubURL": "",
+    "technologies": ["HTML", "CSS", "JS", "Jekyll", "Ruby", "CloudCannon"],
+    "projectTitle": "Website with CloudCannon CMS (Kat Portfolio)",
+    "year": "2025",
+    "projectSubtitle": "",
+    "projectBulletList": ["System Requirements", "Algorithms", "UX/UI Flow"]
+  },
   "overview": "A client requested a personal portfolio website that could be updated frequently. The main requirement was that the client should be able to manage content independently, without needing technical support.",
   "reflection": [
     "I evaluated multiple platforms through the lens of client needs, engineering effort, and long-term sustainability.",

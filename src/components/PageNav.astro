@@ -1,0 +1,97 @@
+---
+const { data } = Astro.props;
+const { pathname } = Astro.url;
+
+// Grab only top-level keys (ignores nested objects)
+// Exclude last one
+const keys = Object.keys(data).slice(0, -1);
+---
+
+<nav class="nav-menu">
+  <ul>
+    {keys.map((key) => (
+      <li>
+        <a href={`${pathname}#${key}`} class="nav-link" data-section={key}>
+          <span class="bar"></span>
+          {key}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll(".nav-link");
+    const sections = [...links].map((link) =>
+      document.querySelector(`#${link.dataset.section}`)
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const link = document.querySelector(
+            `.nav-link[data-section="${entry.target.id}"]`
+          );
+          if (entry.isIntersecting) {
+            links.forEach((l) => l.classList.remove("active"));
+            link?.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    sections.forEach((section) => section && observer.observe(section));
+  });
+</script>
+
+<style>
+.nav-menu {
+  width: 220px;
+  padding: 1rem;
+  font-family: sans-serif;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 99;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin: 0.25rem 0;
+  background-color: rgba(255, 255, 255, 0.84);
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #0070f3; /* Highlight color */
+}
+
+.nav-menu a.active {
+  font-weight: 600;
+  color: #0070f3;
+}
+
+.nav-menu .bar {
+  display: inline-block;
+  width: 4px;
+  height: 100%;
+  background: #0070f3;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+}
+</style>

@@ -42,7 +42,7 @@ API: Backend with Nest.js + Typescript<br data-astro-cid-khueswxm>Redis, Jest, J
 Go • HTMX<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></h3><p class="grid-item-ball clr-brand-blue" data-astro-cid-khueswxm>
 Full Stack Web Project: Astro.js, HTMX • Go<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></p></div><div class="relative" data-astro-cid-khueswxm><div class="bar black-bar-blue" data-astro-cid-khueswxm></div><br data-astro-cid-khueswxm><br data-astro-cid-khueswxm><h3 class="grid-item-ball ball-black" data-astro-cid-khueswxm>
 Data: Python<br data-astro-cid-khueswxm>Mobile: Dart • Flutter<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></h3><h3 class="grid-item-ball ball-black" data-astro-cid-khueswxm>
-Mid Full Stack & Systems Engineer
+Software Engineer
 <i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></h3><p class="grid-item-ball ball-black" data-astro-cid-khueswxm>
 ???<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></p><p class="grid-item-ball ball-black" data-astro-cid-khueswxm>
 ???<i class="fa-solid fa-circle" data-astro-cid-khueswxm></i></p><p class="grid-item-ball ball-black" data-astro-cid-khueswxm>

@@ -1,20 +1,26 @@
 ---
 import { Image } from "astro:assets";
-import project from "../content/projects_data/kat.json";
+import portfolio from "../content/projects_data/kat.json";
 import Layout from "../layouts/Layout.astro";
+import PageNav from "../components/PageNav.astro";
 ---
 
 <Layout>
+  <PageNav data={portfolio} />
+
   <div
     class="portfolio solutions relative z-50 col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"
   >
-    <div class="project-header">
-      <h2>{project.projectTitle}</h2>
-      <h3>{project.projectSubtitle}</h3>
-      <p><strong>Year:</strong> {project.year}</p>
-      <p><strong>Technologies:</strong> {project.technologies.join(", ")}</p>
+    <div class="project-header" id="project">
+      <h2>{portfolio.project.projectTitle}</h2>
+      <h3>{portfolio.project.projectSubtitle}</h3>
+      <p><strong>Year:</strong> {portfolio.project.year}</p>
+      <p>
+        <strong>Technologies:</strong>
+        {portfolio.project.technologies.join(", ")}
+      </p>
       <Image
-        src={`/images/${project.visuals.thumbnail}.webp`}
+        src={`/images/${portfolio.visuals.thumbnail}.webp`}
         width={1100}
         height={940}
         format="webp"
@@ -23,52 +29,52 @@ import Layout from "../layouts/Layout.astro";
       />
     </div>
 
-    <section class="overview">
+    <section class="overview" id="overview">
       <h2>Project Overview</h2>
-      <p>{project.overview}</p>
+      <p>{portfolio.overview}</p>
     </section>
 
-    <section class="reflection">
+    <section class="reflection" id="reflection">
       <h2>Reflection</h2>
       <ul>
-        {project.reflection.map((point) => <li>{point}</li>)}
+        {portfolio.reflection.map((point, i) => <li key={i}>{point}</li>)}
       </ul>
     </section>
 
-    <section class="challenges">
+    <section class="challenges" id="challenges">
       <h2>The Challenge</h2>
       <ul>
         {
-          project.challenges.map((ch) => (
-            <li>
+          portfolio.challenges.map((ch, i) => (
+            <li key={i}>
               <strong>{ch.title}:</strong> {ch.description}
             </li>
           ))
         }
       </ul>
       <Image
-        src={`/images/${project.visuals.challenge}.webp`}
+        src={`/images/${portfolio.visuals.challenge}.webp`}
         width={1100}
         height={940}
         format="png"
-        alt=""
+        alt="Challenge Diagram"
         class="w-full"
       />
     </section>
 
-    <section class="rationale">
+    <section class="rationale" id="rationale">
       <h2>Rationale</h2>
 
       {/* Overview */}
-      <p>{project.rationale.overview}</p>
+      <p>{portfolio.rationale.overview}</p>
 
       {/* For Client */}
-      <div class="rationale-section">
+      <div class="rationale-section" id="rationale-forClient">
         <h3>For the Client</h3>
-        <p>{project.rationale.forClient.description}</p>
+        <p>{portfolio.rationale.forClient.description}</p>
         <ul>
           {
-            project.rationale.forClient.bullets.map((bullet, i) => (
+            portfolio.rationale.forClient.bullets.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))
           }
@@ -76,12 +82,12 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       {/* For Engineer */}
-      <div class="rationale-section">
+      <div class="rationale-section" id="rationale-forEngineer">
         <h3>For the Engineer</h3>
-        <p>{project.rationale.forEngineer.description}</p>
+        <p>{portfolio.rationale.forEngineer.description}</p>
         <ul>
           {
-            project.rationale.forEngineer.bullets.map((bullet, i) => (
+            portfolio.rationale.forEngineer.bullets.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))
           }
@@ -89,27 +95,25 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       {/* Trade-offs */}
-      <div class="rationale-section">
+      <div class="rationale-section" id="rationale-tradeoffs">
         <h3>Trade-offs</h3>
-        <p>{project.rationale.tradeoffs.description}</p>
+        <p>{portfolio.rationale.tradeoffs.description}</p>
         <ul>
           {
-            project.rationale.tradeoffs.bullets.map((bullet, i) => (
-              <li class="" key={i}>
-                {bullet}
-              </li>
+            portfolio.rationale.tradeoffs.bullets.map((bullet, i) => (
+              <li key={i}>{bullet}</li>
             ))
           }
         </ul>
       </div>
 
       {/* Implementation */}
-      <div class="rationale-section">
+      <div class="rationale-section" id="rationale-implementation">
         <h3>Implementation</h3>
-        <p>{project.rationale.implementation.description}</p>
+        <p>{portfolio.rationale.implementation.description}</p>
         <ul>
           {
-            project.rationale.implementation.bullets.map((bullet, i) => (
+            portfolio.rationale.implementation.bullets.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))
           }
@@ -117,10 +121,10 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
 
-    <section class="architecture">
+    <section class="architecture" id="architecture">
       <h2>Solution Architecture</h2>
       <Image
-        src={`/images/${project.visuals.architecture}.webp`}
+        src={`/images/${portfolio.visuals.architecture}.webp`}
         width={1100}
         height={940}
         format="png"
@@ -129,8 +133,8 @@ import Layout from "../layouts/Layout.astro";
       />
       <ul>
         {
-          project.architecture.map((step, index) => (
-            <li key={index}>
+          portfolio.architecture.map((step, i) => (
+            <li key={i}>
               <strong>{step.title}:</strong>
               <p>{step.description}</p>
             </li>
@@ -139,11 +143,11 @@ import Layout from "../layouts/Layout.astro";
       </ul>
     </section>
 
-    <section class="architecture-qa">
+    <section class="architecture-qa" id="architectureQA">
       <h2>Architecture Q&A (Concise View)</h2>
       <ul>
         {
-          project.architectureQA.map((qa, index) => (
+          portfolio.architectureQA.map((qa, index) => (
             <li key={index}>
               <strong>{qa.question}:</strong> {qa.answer}
             </li>
@@ -152,11 +156,11 @@ import Layout from "../layouts/Layout.astro";
       </ul>
     </section>
 
-    <section class="engineer-process">
+    <section class="engineer-process" id="engineerProcess">
       <h2>Engineer Process (Implementation Steps)</h2>
       <ol>
         {
-          project.engineerProcess.map((step, index) => (
+          portfolio.engineerProcess.map((step, index) => (
             <li key={index}>
               <strong>{step.step}:</strong> {step.description}
             </li>
@@ -165,14 +169,13 @@ import Layout from "../layouts/Layout.astro";
       </ol>
     </section>
 
-    {/* Workflow Section */}
-    <section class="workflow">
+    <section class="workflow" id="workflow">
       <h2>Workflow</h2>
       <ol>
-        {project.workflow.map((step, index) => <li key={index}>{step}</li>)}
+        {portfolio.workflow.map((step, index) => <li key={index}>{step}</li>)}
       </ol>
       <Image
-        src={`/images/${project.visuals.workflow}.webp`}
+        src={`/images/${portfolio.visuals.workflow}.webp`}
         width={1100}
         height={940}
         format="png"
@@ -181,12 +184,11 @@ import Layout from "../layouts/Layout.astro";
       />
     </section>
 
-    {/* Outcome Section */}
-    <section class="outcome">
+    <section class="outcome" id="outcome">
       <h2>Outcome</h2>
       <ul>
         {
-          project.outcome.map((item, index) => (
+          portfolio.outcome.map((item, index) => (
             <li key={index}>
               <strong>{item.title}:</strong> {item.description}
             </li>
@@ -195,17 +197,17 @@ import Layout from "../layouts/Layout.astro";
       </ul>
     </section>
 
-    <footer class="project-links">
+    <footer class="project-links" id="project">
       {
-        project.projectURL && (
-          <a href={project.projectURL} target="_blank">
+        portfolio.projectURL && (
+          <a href={portfolio.projectURL} target="_blank">
             Live Project
           </a>
         )
       }
       {
-        project.githubURL && (
-          <a href={project.githubURL} target="_blank">
+        portfolio.githubURL && (
+          <a href={portfolio.githubURL} target="_blank">
             GitHub Repository
           </a>
         )
