@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const topAchievements = [
+  {
+    title: "SEO & Ranking Optimization System",
+    impact: "Ranking improved from #40 → #10",
+    metrics: "+24–43% CTR, +100–450 monthly clicks",
+    description:
+      "Designed and implemented SEO and content optimization strategies, improving search visibility and organic traffic performance.",
+  },
+  {
+    title: "Performance Engineering",
+    impact: "+20–40 Lighthouse points",
+    metrics: "-0.6s to -1.7s load time",
+    description:
+      "Optimized frontend performance through asset optimization, rendering improvements, and page structure enhancements.",
+  },
+  {
+    title: "Workflow Automation & Internal Tools",
+    impact: "Saved 700–960+ hours of work",
+    metrics: "-16h per update, -30min/week per member",
+    description:
+      "Built internal automation systems and workflows that significantly reduced manual operations and improved team efficiency.",
+  },
+  {
+    title: "User Engagement Optimization",
+    impact: "+22% direct sessions",
+    metrics: "CTR up to 33%, 3,500 monthly visits",
+    description:
+      "Improved user navigation, linking strategies, and content structure to increase engagement and retention.",
+  },
+  {
+    title: "High-Scale Campaign Performance",
+    impact: "745K average banner clicks",
+    metrics: "Range: 184K → 1.19M",
+    description:
+      "Developed and optimized campaign pages and banner systems for high-traffic marketing initiatives.",
+  },
+  {
+    title: "Design System & Component Architecture",
+    impact: "50+ reusable components",
+    metrics: "316+ tickets delivered",
+    description:
+      "Built scalable UI components and contributed to a consistent design system, improving development speed and maintainability.",
+  },
+  {
+    title: "Operational Efficiency Improvements",
+    impact: "Reduced errors and manual effort",
+    metrics: "-50min tasks, -35 misses",
+    description:
+      "Streamlined repetitive processes and reduced human error through better tooling and system design.",
+  },
+];
+---
+
+<Layout title="RAFAEL HIRASHIKI's Implemented Features and other metrics">
+  <div
+    class="relative z-50 col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"
+  >
+    <h2 class="italic text-2xl clr-brand-orange">Performance & Results</h2>
+    <p>
+      Here are some examples of how my work reduced manual effort, improved
+      system efficiency, and saved developer time.
+    </p>
+
+    <nav class="pt-12 pb-16 relative z-50 max-xl:pb-20 grid gap-6 md:grid-cols-2">
+      {
+        topAchievements.map((ele) => (
+          <div class="group border border-neutral-200 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 bg-white">
+            {/* Impact (main highlight) */}
+            <p class="text-2xl font-semibold text-neutral-900 group-hover:text-orange-500 transition">
+              {ele.impact}
+            </p>
+
+            {/* Metrics */}
+            <p class="text-sm text-neutral-500 mt-1">{ele.metrics}</p>
+
+            {/* Title */}
+            <p class="mt-4 text-base font-medium text-neutral-800">
+              {ele.title}
+            </p>
+
+            {/* Description */}
+            <p class="text-sm text-neutral-600 mt-2 leading-relaxed">
+              {ele.description}
+            </p>
+
+            {/* Bottom accent */}
+            <div class="mt-4 h-[2px] w-12 bg-neutral-300 group-hover:bg-orange-500 transition-all duration-300" />
+          </div>
+        ))
+      }
+    </nav>
+  </div>
+</Layout>
