@@ -1,0 +1,145 @@
+.project-header {
+  margin: 0;
+  width: 100%;
+}
+
+.page__title {
+  font-size: 32px;
+  font-weight: 700;
+  width: 100%;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section__container {
+  margin: 40px auto 80px;
+  max-width: 820px;
+}
+
+.section__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.section__intro {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 8px 0 8px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.section__subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.section__list {
+  margin: 16px 0;
+  padding-left: 20px;
+}
+
+.section__list.--parent {
+  background-color: #fff7ed;
+  border-radius: 12px;
+  padding: 20px 40px;
+  border: 1px solid #f3e2c7;
+}
+
+.section__item {
+  margin: 6px 0;
+  list-style: disc;
+  line-height: 1.6;
+}
+
+/* ✨ subtle section separation */
+.section__container + .section__container {
+  border-top: 1px solid #eee;
+  padding-top: 40px;
+}
+
+.subsection__container {
+  margin: 40px 0;
+}
+
+.subsection__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ✨ improve readability for dense content */
+p {
+  line-height: 1.7;
+}
+
+/* ✨ better code block spacing */
+pre {
+  margin: 16px 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #111;
+  color: #eee;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  background: #0f172a;
+  /* dark background */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead {
+  background: #1e293b;
+}
+
+th {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 0.9rem 1rem;
+  color: #cbd5f5;
+  border-top: 1px solid #1e293b;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #1e293b;
+}
+
+/* Optional: highlight improvement (After column) */
+td:last-child {
+  color: #22c55e;
+  /* subtle green */
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  table {
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    padding: 0.7rem;
+  }
+}

@@ -93,7 +93,9 @@ const projects = await getCollection("projects");
             projects={projects}
             class={`w-full h-screen pb-8 col-span-9 max-lg:col-start-1 max-lg:col-span-full overflow-y-scroll pt-16 css-no-scrollbar grid grid-cols-12`}
           >
-            <slot />
+            <div class="relative z-50 mr-6 ml-6 col-start-1 col-span-12 max-sm:col-start-1 max-sm:col-span-11">
+              <slot />
+            </div>
           </Main>
         </>
       )

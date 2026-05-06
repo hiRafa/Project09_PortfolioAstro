@@ -1,456 +1,748 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../css/projects.css";
 // Wildlife Rescue Platform — Case Study
 ---
 
-<style>
-  .project-header {
-    margin: 0;
-    width: 100%;
-  }
+<Layout>
+  <header class="project-header">
+    <h1 class="page__title">Wildlife Rescue &amp; Operations Platform</h1>
+    <p class="page__subtitle">Solutions Engineering &amp; System Design</p>
+  </header>
 
-  .page__title {
-    font-size: 32px;
-    font-weight: 700;
-    width: 100%;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    color: var(--clr-brand-blue);
-  }
+  <!-- 1. Problem & Goals -->
+  <section class="section__container">
+    <h2 class="section__title">1. Problem &amp; Goals</h2>
+    <p class="section__intro">
+      Wildlife rescue efforts are hindered by fragmented coordination, delayed
+      response times, and inconsistent data handling across multiple actors. The
+      goal is to streamline operations, improve response efficiency, ensure data
+      reliability, and increase transparency and engagement while maintaining
+      high system availability.
+    </p>
 
-  .section__container {
-    margin: 40px auto 80px;
-    max-width: 820px;
-  }
-  
-  .section__title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Wildlife rescue efforts suffer from fragmented coordination, delayed
+        responses, and inconsistent data
+      </li>
+      <li class="section__item">
+        Operational challenges:
+        <ul class="section__list">
+          <li class="section__item">
+            Delays caused by unstructured reporting, such as phone calls and
+            social media messages
+          </li>
+          <li class="section__item">
+            Lack of centralized, real-time operational visibility
+          </li>
+          <li class="section__item">
+            Volunteer coordination is inefficient and error-prone
+          </li>
+          <li class="section__item">
+            Medical records are inconsistent and not standardized
+          </li>
+          <li class="section__item">
+            Donation tracking lacks transparency, reducing trust
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Goals:
+        <ul class="section__list">
+          <li class="section__item">
+            Reduce response time to &lt; 2 hours from 4–6 hours
+          </li>
+          <li class="section__item">
+            Increase volunteer participation to &gt; 75%
+          </li>
+          <li class="section__item">
+            Ensure &gt; 90% data completeness for reports and medical records
+          </li>
+          <li class="section__item">
+            Improve donation transparency to &gt; 90% traceability
+          </li>
+          <li class="section__item">Increase public engagement to &gt; 60%</li>
+          <li class="section__item">Maintain system uptime &gt; 99%</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-  .section__intro {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 8px 0 8px;
-    line-height: 1.6;
-    color: #444;
-  }
+  <!-- 2. Context & Constraints -->
+  <section class="section__container">
+    <h2 class="section__title">2. Context &amp; Constraints</h2>
+    <p class="section__intro">
+      The system operates within a complex, multi-actor environment involving
+      citizens, NGOs, volunteers, and authorities, with real-world, non-linear
+      workflows. It must be built under technical and operational constraints
+      such as a modular monolith architecture, limited resources, and a small
+      team, while ensuring practicality and adoption.
+    </p>
 
-  .section__subtitle {
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 16px;
-    margin-bottom: 4px;
-  }
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Environment:
+        <ul class="section__list">
+          <li class="section__item">
+            Multi-actor ecosystem involving citizens, NGOs, volunteers, and
+            authorities
+          </li>
+          <li class="section__item">Real-world, non-linear rescue workflows</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Technical constraints:
+        <ul class="section__list">
+          <li class="section__item">Modular monolith architecture</li>
+          <li class="section__item">MongoDB for flexible schema design</li>
+          <li class="section__item">Limited external integrations</li>
+          <li class="section__item">Cloud-agnostic design</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Operational constraints:
+        <ul class="section__list">
+          <li class="section__item">Small engineering team, solo-driven</li>
+          <li class="section__item">MVP scope limited to core modules</li>
+          <li class="section__item">Timeline: 6–12 months</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Assumptions:
+        <ul class="section__list">
+          <li class="section__item">Users have internet access</li>
+          <li class="section__item">
+            NGOs adopt the system if efficiency improves
+          </li>
+          <li class="section__item">
+            Transparency increases public engagement
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Field and medical professionals are separated because they represent
+        different operational roles with distinct workflows and data structures.
+      </li>
+      <li class="section__item">
+        If needed, they can be grouped into a single “Operational User” at this
+        level and differentiated in Level 2 or Level 3 diagrams.
+      </li>
+    </ul>
 
-  .section__list {
-    margin: 16px 0;
-    padding-left: 20px;
-}
+    <img src="/images/stw2_2.c1.webp" alt="C1 diagram" />
+  </section>
 
-.section__list.--parent {
-    background-color: #fff7ed;
-    border-radius: 12px;
-    padding: 20px 40px;
-    border: 1px solid var(--clr-brand-orange);
-  }
-  
-  .section__item {
-    margin: 6px 0;
-    list-style: disc;
-    line-height: 1.6;
-  }
+  <!-- 3. Users & Requirements -->
+  <section class="section__container">
+    <h2 class="section__title">3. Users &amp; Requirements</h2>
+    <p class="section__intro">
+      The platform supports diverse user roles with distinct responsibilities,
+      requiring a balance between flexibility and structured workflows. It must
+      provide core operational capabilities while meeting performance, security,
+      scalability, and usability requirements for real-world usage.
+    </p>
 
-  /* ✨ subtle section separation */
-  .section__container + .section__container {
-    border-top: 1px solid #eee;
-    padding-top: 40px;
-  }
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Users:
+        <ul class="section__list">
+          <li class="section__item">
+            General users: report incidents and track updates
+          </li>
+          <li class="section__item">Volunteers: join and execute tasks</li>
+          <li class="section__item">
+            Organization staff: manage operations and records
+          </li>
+          <li class="section__item">Donors: fund and track campaigns</li>
+          <li class="section__item">Admins: system control and monitoring</li>
+          <li class="section__item">Authorities: analytics and compliance</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Functional requirements:
+        <ul class="section__list">
+          <li class="section__item">Incident reporting and tracking</li>
+          <li class="section__item">Operations and medical management</li>
+          <li class="section__item">Campaign and donation tracking</li>
+          <li class="section__item">User management with RBAC</li>
+          <li class="section__item">Notifications system</li>
+          <li class="section__item">Analytics dashboards</li>
+          <li class="section__item">External API integrations</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Non-functional requirements:
+        <ul class="section__list">
+          <li class="section__item">Performance: &lt; 3s response time</li>
+          <li class="section__item">Scalability: 10,000+ concurrent users</li>
+          <li class="section__item">
+            Security: RBAC, TLS, and encryption at rest
+          </li>
+          <li class="section__item">Availability: &gt; 99.5% uptime</li>
+          <li class="section__item">
+            Data integrity: consistent and auditable
+          </li>
+          <li class="section__item">
+            Accessibility: multilingual and WCAG compliant
+          </li>
+          <li class="section__item">Maintainability: modular structure</li>
+          <li class="section__item">Auditability: full change tracking</li>
+        </ul>
+      </li>
+    </ul>
 
-  /* ✨ improve readability for dense content */
-  p {
-    line-height: 1.7;
-  }
+    <div class="subsection__container">
+      <h3 class="subsection__title">Incident Reporting Flow</h3>
+      <img src="/images/stw2_3.flow1.webp" alt="C1 diagram" />
+    </div>
 
-  /* ✨ better code block spacing */
-  pre {
-    margin: 16px 0;
-    padding: 12px;
-    border-radius: 8px;
-    background: #111;
-    color: #eee;
-    overflow-x: auto;
-  }
-</style>
+    <div class="subsection__container">
+      <h3 class="subsection__title">Medical Professional Operation Flow</h3>
+      <img src="/images/stw2_3.flow2.webp" alt="C1 diagram" />
+    </div>
 
-<Layout> 
-  <div class="relative z-50 col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9">
+    <div class="subsection__container">
+      <h3 class="subsection__title">Organization Management</h3>
+      <p class="">Handles verification and creation of organizations.</p>
+      <img src="/images/stw2_3.flow3.webp" alt="C1 diagram" />
+    </div>
 
-    <header class="project-header">
-      <h1 class="page__title">Wildlife Rescue & Operations Platform</h1>
-      <p class="page__subtitle">Solutions Engineering & System Design</p>
-    </header>
+    <div class="subsection__container">
+      <h3 class="subsection__title">Team Management</h3>
+      <p class="section__intro">Defines how teams are structured and linked.</p>
+      <img src="/images/stw2_3.flow4.webp" alt="C1 diagram" />
+    </div>
 
-    <!-- 1. Problem & Goals -->
-    <section class="section__container">
-      <h2 class="section__title">1. Problem & Goals</h2>
-     <p class="section__intro">Wildlife rescue efforts are hindered by fragmented coordination, delayed response times, and inconsistent data handling across multiple actors. The goal is to streamline operations, improve response efficiency, ensure data reliability, and increase transparency and engagement while maintaining high system availability.</p>
+    <div class="subsection__container">
+      <h3 class="subsection__title">Member Management</h3>
+      <p class="section__intro">Controls membership and role assignment.</p>
+      <img src="/images/stw2_3.flow5.webp" alt="C1 diagram" />
+    </div>
 
+    <div class="subsection__container">
+      <h3 class="subsection__title">Donation Flow</h3>
+      <img src="/images/stw2_3.flow6.webp" alt="C1 diagram" />
+    </div>
+  </section>
 
-      <ul class="section__list --parent">
-        <li class="section__item">Wildlife rescue efforts suffer from fragmented coordination, delayed responses, and inconsistent data</li>
-        <li class="section__item">Operational challenges:
-          <ul class="section__list">
-            <li class="section__item">Delays caused by unstructured reporting (phone, social media)</li>
-            <li class="section__item">Lack of centralized, real-time operational visibility</li>
-            <li class="section__item">Volunteer coordination is inefficient and error-prone</li>
-            <li class="section__item">Medical records are inconsistent and not standardized</li>
-            <li class="section__item">Donation tracking lacks transparency, reducing trust</li>
-          </ul>
-        </li>
-        <li class="section__item">Goals:
-          <ul class="section__list">
-            <li class="section__item">Reduce response time (&lt; 2h from 4–6h)</li>
-            <li class="section__item">Increase volunteer participation (&gt; 75%)</li>
-            <li class="section__item">Ensure &gt; 90% data completeness</li>
-            <li class="section__item">Improve donation transparency (&gt; 90% traceability)</li>
-            <li class="section__item">Increase public engagement (&gt; 60%)</li>
-            <li class="section__item">Maintain system uptime &gt; 99%</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+  <!-- 4. System Overview -->
+  <section class="section__container">
+    <h2 class="section__title">4. System Overview</h2>
+    <p class="section__intro">
+      The platform supports the full lifecycle of wildlife rescue coordination,
+      from public incident reporting to field response, medical follow-up,
+      organizational management, and donation campaign support.
+    </p>
+    <p class="section__intro">
+      At a high level, the system receives user actions through the web
+      application, validates and processes the submitted information, updates
+      the relevant records, and triggers follow-up actions such as
+      notifications, task assignment, campaign updates, or status changes.
+    </p>
+    <p class="section__intro">
+      This section focuses on system behavior, not on the internal technical
+      architecture.
+    </p>
 
-    <!-- 2. Context & Constraints -->
-    <section class="section__container">
-      <h2 class="section__title">2. Context & Constraints</h2>
-     <p class="section__intro">The system operates within a complex, multi-actor environment involving citizens, NGOs, volunteers, and authorities, with real-world, non-linear workflows. It must be built under technical and operational constraints such as a modular monolith architecture, limited resources, and a small team, while ensuring practicality and adoption.</p>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Incident reporting:
+        <ul class="section__list">
+          <li class="section__item">
+            Public users submit wildlife incident reports with location,
+            description, and supporting details
+          </li>
+          <li class="section__item">
+            The system validates the report, stores it, and makes it available
+            for review or assignment
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Rescue operation coordination:
+        <ul class="section__list">
+          <li class="section__item">
+            Field professionals and operators review reports, update rescue
+            status, and coordinate actions
+          </li>
+          <li class="section__item">
+            The system tracks operation progress and keeps relevant users
+            informed
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Medical workflow:
+        <ul class="section__list">
+          <li class="section__item">
+            Medical professionals update animal condition, treatment
+            information, and recovery status
+          </li>
+          <li class="section__item">
+            The system links medical updates to the related animal case and
+            operation
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Donation campaign support:
+        <ul class="section__list">
+          <li class="section__item">
+            Donors support campaigns related to wildlife rescue or
+            organizational needs
+          </li>
+          <li class="section__item">
+            The system coordinates campaign status with an external donation
+            platform
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Notifications and status updates:
+        <ul class="section__list">
+          <li class="section__item">
+            The system sends relevant updates based on report, operation,
+            donation, or campaign events
+          </li>
+          <li class="section__item">
+            Public and internal visibility may differ depending on role and
+            permissions
+          </li>
+        </ul>
+      </li>
+    </ul>
 
-      <ul class="section__list --parent">
-        <li class="section__item">Environment:
-          <ul class="section__list">
-            <li class="section__item">Multi-actor ecosystem (citizens, NGOs, volunteers, authorities)</li>
-            <li class="section__item">Real-world, non-linear rescue workflows</li>
-          </ul>
-        </li>
-        <li class="section__item">Technical constraints:
-          <ul class="section__list">
-            <li class="section__item">Modular monolith architecture</li>
-            <li class="section__item">MongoDB (flexible schema)</li>
-            <li class="section__item">Limited external integrations</li>
-            <li class="section__item">Cloud-agnostic design</li>
-          </ul>
-        </li>
-        <li class="section__item">Operational constraints:
-          <ul class="section__list">
-            <li class="section__item">Small engineering team (solo-driven)</li>
-            <li class="section__item">MVP scope limited to core modules</li>
-            <li class="section__item">Timeline: 6–12 months</li>
-          </ul>
-        </li>
-        <li class="section__item">Assumptions:
-          <ul class="section__list">
-            <li class="section__item">Users have internet access</li>
-            <li class="section__item">NGOs adopt system if efficiency improves</li>
-            <li class="section__item">Transparency increases engagement</li>
-          </ul>
-        </li>
-      </ul>
+    <div class="subsection__container">
+      <h3 class="subsection__title">High-level System Flow Overview</h3>
 
-      <p>[Diagram: User / Actor Diagram (optional)]</p>
-    </section>
+      <h4 class="subsection__subtitle">
+        Workflow — Incident Intake and Case Routing
+      </h4>
+      <img src="/images/stw2_4.workflow1.webp" alt="C1 diagram" />
 
-    <!-- 3. Users & Requirements -->
-    <section class="section__container">
-      <h2 class="section__title">3. Users & Requirements</h2>
-     <p class="section__intro">The platform supports diverse user roles with distinct responsibilities, requiring a balance between flexibility and structured workflows. It must provide core operational capabilities while meeting performance, security, scalability, and usability requirements for real-world usage.</p>
+      <h4 class="subsection__subtitle">
+        Workflow — Rescue Operation &amp; Medical Follow-up
+      </h4>
+      <img src="/images/stw2_4.workflow2.webp" alt="C1 diagram" />
+    </div>
+  </section>
 
-      <ul class="section__list --parent">
-        <li class="section__item">Users:
-          <ul class="section__list">
-            <li class="section__item">General users (report incidents, track updates)</li>
-            <li class="section__item">Volunteers (join and execute tasks)</li>
-            <li class="section__item">Organization staff (manage operations and records)</li>
-            <li class="section__item">Donors (fund and track campaigns)</li>
-            <li class="section__item">Admins (system control and monitoring)</li>
-            <li class="section__item">Authorities (analytics and compliance)</li>
-          </ul>
-        </li>
-        <li class="section__item">Functional requirements:
-          <ul class="section__list">
-            <li class="section__item">Incident reporting and tracking</li>
-            <li class="section__item">Operations and medical management</li>
-            <li class="section__item">Campaign and donation tracking</li>
-            <li class="section__item">User management with RBAC</li>
-            <li class="section__item">Notifications system</li>
-            <li class="section__item">Analytics dashboards</li>
-            <li class="section__item">External API integrations</li>
-          </ul>
-        </li>
-        <li class="section__item">Non-functional requirements:
-          <ul class="section__list">
-            <li class="section__item">Performance: &lt; 3s response time</li>
-            <li class="section__item">Scalability: 10,000+ concurrent users</li>
-            <li class="section__item">Security: RBAC, TLS, encryption at rest</li>
-            <li class="section__item">Availability: &gt; 99.5% uptime</li>
-            <li class="section__item">Data integrity: consistent and auditable</li>
-            <li class="section__item">Accessibility: multilingual, WCAG compliant</li>
-            <li class="section__item">Maintainability: modular structure</li>
-            <li class="section__item">Auditability: full change tracking</li>
-          </ul>
-        </li>
-      </ul>
+  <!-- 5. Architecture -->
+  <section class="section__container">
+    <h2 class="section__title">5. Architecture</h2>
+    <p class="section__intro">
+      The platform is designed as a web-based system composed of a frontend
+      application, a backend API, a database, supporting infrastructure, and
+      external integrations.
+    </p>
+    <p class="section__intro">
+      The backend follows a <strong>modular monolith architecture</strong>. This
+      keeps the system easier to maintain while avoiding the operational
+      complexity of microservices at the MVP stage.
+    </p>
 
-      <p>[Diagram: User / Actor Diagram (optional)]</p>
-    </section>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Architecture style:
+        <ul class="section__list">
+          <li class="section__item">Modular monolith</li>
+          <li class="section__item">
+            Keeps related business logic in one deployable backend application
+          </li>
+          <li class="section__item">
+            Separates domains through modules and service layers
+          </li>
+          <li class="section__item">
+            Avoids premature microservice complexity
+          </li>
+          <li class="section__item">
+            Allows future extraction of specific modules if scale requires it
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Main containers:
+        <ul class="section__list">
+          <li class="section__item">
+            <strong>Frontend — Astro:</strong> user interface for public users, professionals,
+            admins, operators, and donors
+          </li>
+          <li class="section__item">
+            <strong>Backend API — Go:</strong> central entry point for application
+            requests
+          </li>
+          <li class="section__item">
+            <strong>Database — MongoDB:</strong> stores users, profiles, reports,
+            operations, animal records, organizations, campaigns, donations, and audit
+            data
+          </li>
+          <li class="section__item">
+            <strong>Cache — Redis:</strong> supports temporary data, frequently accessed
+            records, rate limiting, or session-related optimization
+          </li>
+          <li class="section__item">
+            <strong>File storage — Cloud storage:</strong> stores uploaded files,
+            photos, documents, and campaign media
+          </li>
+          <li class="section__item">
+            <strong>External services:</strong> donation platform, notification services,
+            and geolocation services
+          </li>
+        </ul>
+      </li>
+    </ul>
 
-    <!-- 4. System Overview -->
-    <section class="section__container">
-      <h2 class="section__title">4. System Overview</h2>
-     <p class="section__intro">The platform is a centralized web-based system designed to connect stakeholders and support end-to-end wildlife rescue operations, from incident reporting to resolution, while also enabling campaign management and analytics.</p>
+    <img src="/images/stw2_5.c2.webp" alt="C1 diagram" />
 
-      <ul class="section__list --parent">
-        <li class="section__item">Web-based platform connecting users, organizations, and authorities</li>
-        <li class="section__item">Capabilities:
-          <ul class="section__list">
-            <li class="section__item">Incident reporting</li>
-            <li class="section__item">Rescue operations management</li>
-            <li class="section__item">Medical tracking</li>
-            <li class="section__item">Donation campaigns</li>
-            <li class="section__item">Analytics dashboards</li>
-          </ul>
-        </li>
-        <li class="section__item">External integrations:
-          <ul class="section__list">
-            <li class="section__item">Payment gateways</li>
-            <li class="section__item">Partner APIs</li>
-          </ul>
-        </li>
-        <li class="section__item">System prioritizes operational effectiveness over rigid workflows</li>
-        <li class="section__item">Core flows:
-          <ul class="section__list">
-            <li class="section__item">Incident → Report → Operation → Resolution</li>
-            <li class="section__item">Campaign → Donation → Tracking</li>
-            <li class="section__item">User → Role → Permissions</li>
-          </ul>
-        </li>
-      </ul>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Core backend modules:
+        <ul class="section__list">
+          <li class="section__item">
+            <strong>Auth / Identity:</strong> authentication, authorization, roles,
+            and permissions
+          </li>
+          <li class="section__item">
+            <strong>Profile:</strong> user profile information and role-specific user
+            data
+          </li>
+          <li class="section__item">
+            <strong>Organization / Team:</strong> organization structure, team membership,
+            and professional assignment
+          </li>
+          <li class="section__item">
+            <strong>Incident:</strong> public incident to be tracked and resolved
+          </li>
+          <li class="section__item">
+            <strong>Report:</strong> reports, report status, report review, and aggregation
+            of operations, incidents, and organizations
+          </li>
+          <li class="section__item">
+            <strong>Operations:</strong> field rescue workflows and medical workflow
+            coordination
+          </li>
+          <li class="section__item">
+            <strong>Animal:</strong> animal case records, condition, status, and history
+          </li>
+          <li class="section__item">
+            <strong>Campaign / Donation:</strong> donation campaigns, campaign progress,
+            and donation-related records
+          </li>
+          <li class="section__item">
+            <strong>Notification:</strong> event-based user notifications
+          </li>
+        </ul>
+      </li>
+    </ul>
 
-      <p>[Diagram: C1 – System Context Diagram]</p>
-    </section>
+    <img src="/images/stw2_5.c3.webp" alt="C1 diagram" />
 
-    <!-- 5. Architecture -->
-    <section class="section__container">
-      <h2 class="section__title">5. Architecture</h2>
-     <p class="section__intro">The system uses a modular monolith architecture to separate concerns across clearly defined components, ensuring maintainability, control, and efficient development while supporting core operational modules.</p>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Communication:
+        <ul class="section__list">
+          <li class="section__item">
+            Frontend communicates with the backend through REST APIs
+          </li>
+          <li class="section__item">API contracts use JSON</li>
+          <li class="section__item">
+            The backend communicates with the database, cache, file storage, and
+            external services
+          </li>
+          <li class="section__item">
+            External services are accessed through integration layers to keep
+            third-party logic isolated from core domain logic
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-      <ul class="section__list --parent">
-        <li class="section__item">Modular monolith architecture</li>
-        <li class="section__item">Components:
-          <ul class="section__list">
-            <li class="section__item">Frontend (Astro)</li>
-            <li class="section__item">Backend API (Go)</li>
-            <li class="section__item">Database (MongoDB)</li>
-            <li class="section__item">Cache (Redis)</li>
-            <li class="section__item">File storage (Cloud storage)</li>
-          </ul>
-        </li>
-        <li class="section__item">Communication:
-          <ul class="section__list">
-            <li class="section__item">REST APIs</li>
-            <li class="section__item">JSON-based contracts</li>
-          </ul>
-        </li>
-        <li class="section__item">Core modules:
-          <ul class="section__list">
-            <li class="section__item">Auth / Identity</li>
-            <li class="section__item">Profile</li>
-            <li class="section__item">Organization / Team</li>
-            <li class="section__item">Incident / Report</li>
-            <li class="section__item">Operations (Field + Medical)</li>
-            <li class="section__item">Animal</li>
-            <li class="section__item">Campaign / Donation</li>
-            <li class="section__item">Notification</li>
-            <li class="section__item">Audit</li>
-          </ul>
-        </li>
-      </ul>
+  <!-- 6. Data Model & Behavior -->
+  <section class="section__container">
+    <h2 class="section__title">6. Data Model &amp; Behavior</h2>
+    <p class="section__intro">
+      A structured and flexible data model underpins the system, enabling
+      consistent data handling, traceability, and support for complex workflows,
+      with clearly defined entities, relationships, and lifecycle behaviors.
+    </p>
 
-      <p>[Diagram: C2 – Container Diagram]</p>
-      <p>[Diagram: C3 – Component Diagram (optional)]</p>
-    </section>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Core entities:
+        <ul class="section__list">
+          <li class="section__item">Incident, Report, MasterReport</li>
+          <li class="section__item">FieldOperation and MedicalOperation</li>
+          <li class="section__item">Animal</li>
+          <li class="section__item">Campaign and Donation</li>
+          <li class="section__item">Organization, Team, and User</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Aggregation model:
+        <ul class="section__list">
+          <li class="section__item">Report → MasterReport → MegaReport</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Data rules:
+        <ul class="section__list">
+          <li class="section__item">No hard deletes for auditability</li>
+          <li class="section__item">
+            Derived fields such as risk level and campaign progress
+          </li>
+          <li class="section__item">Time constraints, such as ≤ 365 days</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        RBAC:
+        <ul class="section__list">
+          <li class="section__item">Membership roles: Manager, Contributor</li>
+          <li class="section__item">Functional roles: Vet, Ranger</li>
+          <li class="section__item">Entity-level roles: Operation Lead</li>
+          <li class="section__item">System roles: Admin</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Key workflows:
+        <ul class="section__list">
+          <li class="section__item">
+            Incident submission → validation → report creation
+          </li>
+          <li class="section__item">
+            Report → operation assignment → execution
+          </li>
+          <li class="section__item">Campaign → donation → tracking</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Lifecycle states:
+        <ul class="section__list">
+          <li class="section__item">Incident: Unverified → Resolved</li>
+          <li class="section__item">Report: Draft → Closed</li>
+          <li class="section__item">Operation: Unassigned → Completed</li>
+        </ul>
+      </li>
+    </ul>
 
-    <!-- 6. Data Model & Behavior -->
-    <section class="section__container">
-      <h2 class="section__title">6. Data Model & Behavior</h2>
-     <p class="section__intro">A structured and flexible data model underpins the system, enabling consistent data handling, traceability, and support for complex workflows, with clearly defined entities, relationships, and lifecycle behaviors.</p>
+    <div class="subsection__container">
+      <h3 class="subsection__title">High-level ERD</h3>
+      <img src="/images/stw2_6.erd.webp" alt="C1 diagram" />
+    </div>
+    <div class="subsection__container">
+      <h3 class="subsection__title">Detailed ERD</h3>
+      <img src="/images/stw2_6.umldata.webp" alt="C1 diagram" />
+    </div>
+  </section>
 
-      <ul class="section__list --parent">
-        <li class="section__item">Core entities:
-          <ul class="section__list">
-            <li class="section__item">Incident, Report, MasterReport</li>
-            <li class="section__item">FieldOperation, MedicalOperation</li>
-            <li class="section__item">Animal</li>
-            <li class="section__item">Campaign, Donation</li>
-            <li class="section__item">Organization, Team, User</li>
-          </ul>
-        </li>
-        <li class="section__item">Aggregation model:
-          <ul class="section__list">
-            <li class="section__item">Report → MasterReport → MegaReport</li>
-          </ul>
-        </li>
-        <li class="section__item">Data rules:
-          <ul class="section__list">
-            <li class="section__item">No hard deletes (auditability)</li>
-            <li class="section__item">Derived fields (risk level, campaign progress)</li>
-            <li class="section__item">Time constraints (≤ 365 days)</li>
-          </ul>
-        </li>
-        <li class="section__item">RBAC:
-          <ul class="section__list">
-            <li class="section__item">Membership roles (Manager, Contributor)</li>
-            <li class="section__item">Functional roles (Vet, Ranger)</li>
-            <li class="section__item">Entity-level roles (Operation Lead)</li>
-            <li class="section__item">System roles (Admin)</li>
-          </ul>
-        </li>
-        <li class="section__item">Key workflows:
-          <ul class="section__list">
-            <li class="section__item">Incident submission → validation → report creation</li>
-            <li class="section__item">Report → operation assignment → execution</li>
-            <li class="section__item">Campaign → donation → tracking</li>
-          </ul>
-        </li>
-        <li class="section__item">Lifecycle states:
-          <ul class="section__list">
-            <li class="section__item">Incident: Unverified → Resolved</li>
-            <li class="section__item">Report: Draft → Closed</li>
-            <li class="section__item">Operation: Unassigned → Completed</li>
-          </ul>
-        </li>
-      </ul>
+  <!-- 7. Decisions & Trade-offs -->
+  <section class="section__container">
+    <h2 class="section__title">7. Decisions &amp; Trade-offs</h2>
+    <p class="section__intro">
+      Key architectural decisions prioritize simplicity, maintainability, and
+      delivery speed over premature scalability, with explicit trade-offs made
+      to balance flexibility, control, and system complexity.
+    </p>
 
-      <p>[Diagram: ER / Data Model Diagram]</p>
-      <p>[Diagram: Sequence Diagram (optional)]</p>
-    </section>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Modular monolith vs microservices:
+        <ul class="section__list">
+          <li class="section__item">
+            Chosen for simplicity and fast iteration
+          </li>
+          <li class="section__item">
+            Trade-off: limited scalability compared with independently deployed
+            services
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        MongoDB vs SQL:
+        <ul class="section__list">
+          <li class="section__item">
+            Chosen for flexible and evolving schemas
+          </li>
+          <li class="section__item">
+            Trade-off: weaker analytical querying compared with relational
+            models
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        REST vs GraphQL:
+        <ul class="section__list">
+          <li class="section__item">
+            Chosen for simplicity and standardization
+          </li>
+          <li class="section__item">Trade-off: less flexible data fetching</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Stateful auth vs JWT:
+        <ul class="section__list">
+          <li class="section__item">Chosen for control and revocation</li>
+          <li class="section__item">Trade-off: session management overhead</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        General principle: prioritize simplicity, maintainability, and delivery
+        speed over premature scale.
+      </li>
+    </ul>
+  </section>
 
-    <!-- 7. Decisions & Trade-offs -->
-    <section class="section__container">
-      <h2 class="section__title">7. Decisions & Trade-offs</h2>
-     <p class="section__intro">Key architectural decisions prioritize simplicity, maintainability, and delivery speed over premature scalability, with explicit trade-offs made to balance flexibility, control, and system complexity.</p>
+  <!-- 8. Reliability & Scalability -->
+  <section class="section__container">
+    <h2 class="section__title">8. Reliability &amp; Scalability</h2>
+    <p class="section__intro">
+      The system ensures reliability through validation, access control, and
+      audit mechanisms, while supporting scalable growth through caching and
+      future-ready architectural improvements.
+    </p>
 
-      <ul class="section__list --parent">
-        <li class="section__item">Modular monolith vs microservices:
-          <ul class="section__list">
-            <li class="section__item">Chosen for simplicity and fast iteration</li>
-            <li class="section__item">Trade-off: limited scalability</li>
-          </ul>
-        </li>
-        <li class="section__item">MongoDB vs SQL:
-          <ul class="section__list">
-            <li class="section__item">Chosen for flexible and evolving schemas</li>
-            <li class="section__item">Trade-off: weaker analytical querying</li>
-          </ul>
-        </li>
-        <li class="section__item">REST vs GraphQL:
-          <ul class="section__list">
-            <li class="section__item">Chosen for simplicity and standardization</li>
-            <li class="section__item">Trade-off: less flexible data fetching</li>
-          </ul>
-        </li>
-        <li class="section__item">Stateful auth vs JWT:
-          <ul class="section__list">
-            <li class="section__item">Chosen for control and revocation</li>
-            <li class="section__item">Trade-off: session management overhead</li>
-          </ul>
-        </li>
-        <li class="section__item">General principle:
-          <ul class="section__list">
-            <li class="section__item">Prioritize simplicity, maintainability, and delivery speed over premature scale</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Reliability:
+        <ul class="section__list">
+          <li class="section__item">Input validation and error handling</li>
+          <li class="section__item">RBAC enforcement per request</li>
+          <li class="section__item">Audit logs for all critical actions</li>
+          <li class="section__item">Backup-based recovery</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Availability:
+        <ul class="section__list">
+          <li class="section__item">Target &gt; 99.5% uptime</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Scalability:
+        <ul class="section__list">
+          <li class="section__item">
+            Horizontal scaling as a future-ready path
+          </li>
+          <li class="section__item">Redis for caching and rate limiting</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Limitations:
+        <ul class="section__list">
+          <li class="section__item">
+            No auto-scaling or multi-region failover in the MVP
+          </li>
+          <li class="section__item">No full observability stack in the MVP</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Future improvements:
+        <ul class="section__list">
+          <li class="section__item">Event-driven architecture</li>
+          <li class="section__item">Data sharding</li>
+          <li class="section__item">Advanced monitoring and alerting</li>
+        </ul>
+      </li>
+    </ul>
 
-    <!-- 8. Reliability & Scalability -->
-    <section class="section__container">
-      <h2 class="section__title">8. Reliability & Scalability</h2>
-      <p class="section__intro">The system ensures reliability through validation, access control, and audit mechanisms, while supporting scalable growth through caching and future-ready architectural improvements.</p>
+    <div class="subsection__container">
+      <h3 class="subsection__title">Future Architecture View</h3>
+      <img src="/images/stw2_8.futurec2.webp" alt="C1 diagram" />
+    </div>
 
-      <ul class="section__list --parent">
-        <li class="section__item">Reliability:
-          <ul class="section__list">
-            <li class="section__item">Input validation and error handling</li>
-            <li class="section__item">RBAC enforcement per request</li>
-            <li class="section__item">Audit logs for all critical actions</li>
-            <li class="section__item">Backup-based recovery</li>
-          </ul>
-        </li>
-        <li class="section__item">Availability:
-          <ul class="section__list">
-            <li class="section__item">Target &gt; 99.5% uptime</li>
-          </ul>
-        </li>
-        <li class="section__item">Scalability:
-          <ul class="section__list">
-            <li class="section__item">Horizontal scaling (future-ready)</li>
-            <li class="section__item">Redis for caching and rate limiting</li>
-          </ul>
-        </li>
-        <li class="section__item">Limitations:
-          <ul class="section__list">
-            <li class="section__item">No auto-scaling or multi-region failover</li>
-            <li class="section__item">No full observability stack</li>
-          </ul>
-        </li>
-        <li class="section__item">Future improvements:
-          <ul class="section__list">
-            <li class="section__item">Event-driven architecture</li>
-            <li class="section__item">Data sharding</li>
-            <li class="section__item">Advanced monitoring and alerting</li>
-          </ul>
-        </li>
-      </ul>
+    <div class="subsection__container">
+      <h3 class="subsection__title">Reliability &amp; Failure Handling</h3>
 
-      <p>[Diagram: Scaling Diagram (optional)]</p>
-      <p>[Diagram: Failure Flow Diagram (optional)]</p>
-    </section>
+      <div class="table__container">
+        <table class="section__table">
+          <thead>
+            <tr>
+              <th>Failure scenario</th>
+              <th>Expected behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Notification provider unavailable</td>
+              <td
+                >Store notification attempt, retry later, and show no blocking
+                error to the user</td
+              >
+            </tr>
+            <tr>
+              <td>Donation provider webhook fails</td>
+              <td
+                >Log event, retry or verify status, and avoid duplicate donation
+                records</td
+              >
+            </tr>
+            <tr>
+              <td>Geolocation service unavailable</td>
+              <td>Allow manual location input</td>
+            </tr>
+            <tr>
+              <td>Image upload fails</td>
+              <td>Keep report draft or return a clear retry message</td>
+            </tr>
+            <tr>
+              <td>Database unavailable</td>
+              <td>Return a safe error and do not accept partial operations</td>
+            </tr>
+            <tr>
+              <td>Duplicate incident/report</td>
+              <td>Allow admin merge or review instead of auto-delete</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-    <!-- 9. Outcome & Learnings -->
-    <section class="section__container">
-      <h2 class="section__title">9. Outcome & Learnings</h2>
-      <p class="section__intro">The platform improves operational efficiency, data consistency, and coordination, while highlighting the importance of designing for real-world workflows, making explicit trade-offs, and building systems that can evolve into scalable platforms.</p>
+  <!-- 9. Outcome & Learnings -->
+  <section class="section__container">
+    <h2 class="section__title">9. Outcome &amp; Learnings</h2>
+    <p class="section__intro">
+      The platform improves operational efficiency, data consistency, and
+      coordination, while highlighting the importance of designing for
+      real-world workflows, making explicit trade-offs, and building systems
+      that can evolve into scalable platforms.
+    </p>
 
-      <ul class="section__list --parent">
-        <li class="section__item">Impact:
-          <ul class="section__list">
-            <li class="section__item">Response time reduced to &lt; 2 hours</li>
-            <li class="section__item">Volunteer participation &gt; 75%</li>
-            <li class="section__item">Data completeness &gt; 90%</li>
-            <li class="section__item">Improved transparency and trust</li>
-            <li class="section__item">Centralized operational visibility</li>
-          </ul>
-        </li>
-        <li class="section__item">Outcome:
-          <ul class="section__list">
-            <li class="section__item">Strong domain modeling</li>
-            <li class="section__item">Clear modular architecture</li>
-            <li class="section__item">Balanced trade-offs for real-world constraints</li>
-          </ul>
-        </li>
-        <li class="section__item">Learnings:
-          <ul class="section__list">
-            <li class="section__item">Design for real workflows, not ideal ones</li>
-            <li class="section__item">Structure NoSQL data carefully for predictability</li>
-            <li class="section__item">Make explicit trade-offs</li>
-            <li class="section__item">Communicate architecture clearly</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-
-  </div>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Impact:
+        <ul class="section__list">
+          <li class="section__item">Response time reduced to &lt; 2 hours</li>
+          <li class="section__item">Volunteer participation &gt; 75%</li>
+          <li class="section__item">Data completeness &gt; 90%</li>
+          <li class="section__item">Improved transparency and trust</li>
+          <li class="section__item">Centralized operational visibility</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Outcome:
+        <ul class="section__list">
+          <li class="section__item">Strong domain modeling</li>
+          <li class="section__item">Clear modular architecture</li>
+          <li class="section__item">
+            Balanced trade-offs for real-world constraints
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Learnings:
+        <ul class="section__list">
+          <li class="section__item">
+            Design for real workflows, not ideal ones
+          </li>
+          <li class="section__item">
+            Structure NoSQL data carefully for predictability
+          </li>
+          <li class="section__item">Make trade-offs explicit</li>
+          <li class="section__item">Communicate architecture clearly</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 </Layout>

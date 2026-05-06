@@ -1,338 +1,252 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import "../css/projects.css";
 ---
 
-<style>
-  .project-header {
-    margin: 0;
-    width: 100%;
-  }
+<Layout>
+  <header class="project-header">
+    <h1 class="page__title">Wildlife Rescue & Operations Platform</h1>
+    <p class="page__subtitle">Solutions Engineering & System Design</p>
+  </header>
+  <section class="section__container">
+    <h2 class="section__title">1. Problem & Goals</h2>
+    <p class="section__intro">
+      Campaign page creation was a manual, cross-team process that led to
+      inefficiencies, delays, and inconsistent data.
+    </p>
 
-  .page__title {
-    font-size: 32px;
-    font-weight: 700;
-    width: 100%;
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Campaign page creation relied on manual coordination between sales,
+        frontend, and announcements teams
+      </li>
+      <li class="section__item">
+        Workflow was fragmented:
+        <ul class="section__list">
+          <li class="section__item">Communication via chat tools (Chatwork)</li>
+          <li class="section__item">
+            Manual extraction and rewriting into tickets
+          </li>
+          <li class="section__item">
+            Manual duplication of templates and folders
+          </li>
+          <li class="section__item">Inconsistent and hard-to-track data</li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Impact:
+        <ul class="section__list">
+          <li class="section__item">6–8 hours to prepare a single page</li>
+          <li class="section__item">
+            8–15 back-and-forth messages per project
+          </li>
+          <li class="section__item">
+            Frequent inconsistencies and information loss
+          </li>
+        </ul>
+      </li>
+      <li class="section__item">
+        Goals:
+        <ul class="section__list">
+          <li class="section__item">
+            Reduce manual coordination and repetitive work
+          </li>
+          <li class="section__item">Standardize input and data handling</li>
+          <li class="section__item">Improve delivery speed</li>
+          <li class="section__item">Scale from ~16 to 30+ projects/month</li>
+          <li class="section__item">
+            Maintain quality through controlled automation
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-  .section__container {
-    margin: 40px auto 80px;
-    max-width: 820px;
-  }
-  
-  .section__title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
+  <section class="section__container">
+    <h3 class="section__subtitle">Before vs After</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Before</th>
+          <th>After</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Setup time</td>
+          <td>6–8h</td>
+          <td>2–4h</td>
+        </tr>
+        <tr>
+          <td>Communication</td>
+          <td>8–15 messages</td>
+          <td>Minimal</td>
+        </tr>
+        <tr>
+          <td>Data consistency</td>
+          <td>Low</td>
+          <td>High</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-  .section__intro {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 8px 0 8px;
-    line-height: 1.6;
-    color: #444;
-  }
+  <section class="section__container">
+    <h2 class="section__title">2. Context & Constraints</h2>
+    <p class="section__intro">
+      The solution operates within a cross-team, semi-technical environment and
+      must respect both technical limitations and business realities.
+    </p>
 
-  .section__subtitle {
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 16px;
-    margin-bottom: 4px;
-  }
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Environment:
+        <ul class="section__list">
+          <li class="section__item">
+            Cross-functional workflow (Sales, Frontend, Design, Announcements)
+          </li>
+          <li class="section__item">Non-technical users providing input</li>
+          <li class="section__item">Asynchronous collaboration across teams</li>
+        </ul>
+      </li>
 
-  .section__list {
-    margin: 16px 0;
-    padding-left: 20px;
-}
+      <li class="section__item">
+        Technical constraints:
+        <ul class="section__list">
+          <li class="section__item">No direct AI access to internal systems</li>
+          <li class="section__item">
+            Script-based execution (no backend services)
+          </li>
+          <li class="section__item">
+            Use of existing tools (Google Sheets, Drive, Gemini AI)
+          </li>
+        </ul>
+      </li>
 
-.section__list.--parent {
-    background-color: #fff7ed;
-    border-radius: 12px;
-    padding: 20px 40px;
-    border: 1px solid #f3e2c7;
-  }
-  
-  .section__item {
-    margin: 6px 0;
-    list-style: disc;
-    line-height: 1.6;
-  }
+      <li class="section__item">
+        Business constraints:
+        <ul class="section__list">
+          <li class="section__item">
+            Frontend-driven ecosystem (Node.js preferred)
+          </li>
+          <li class="section__item">Small team (2 members)</li>
+          <li class="section__item">Fast adoption with minimal disruption</li>
+          <li class="section__item">Cost efficiency vs scaling headcount</li>
+        </ul>
+      </li>
 
-  /* ✨ subtle section separation */
-  .section__container + .section__container {
-    border-top: 1px solid #eee;
-    padding-top: 40px;
-  }
+      <li class="section__item">
+        Assumptions:
+        <ul class="section__list">
+          <li class="section__item">AI can structure semi-structured input</li>
+          <li class="section__item">
+            Human validation is required before publishing
+          </li>
+          <li class="section__item">
+            Structured data improves consistency and scalability
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-  /* ✨ improve readability for dense content */
-  p {
-    line-height: 1.7;
-  }
+  <section class="section__container">
+    <h3 class="section__subtitle">System Context</h3>
+    <img
+      src="/images/pagegen_diagram_systemboundries.jpg"
+      alt="System Context Diagram"
+    />
+  </section>
 
-  /* ✨ better code block spacing */
-  pre {
-    margin: 16px 0;
-    padding: 12px;
-    border-radius: 8px;
-    background: #111;
-    color: #eee;
-    overflow-x: auto;
-  }
+  <section class="section__container">
+    <h2 class="section__title">3. Users & Requirements</h2>
 
-  table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1.5rem;
-  font-size: 0.95rem;
-  background: #0f172a; /* dark background */
-  border-radius: 12px;
-  overflow: hidden;
-}
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Users:
+        <ul class="section__list">
+          <li class="section__item">Sales team (input campaign data)</li>
+          <li class="section__item">
+            Frontend engineers (generate and validate pages)
+          </li>
+          <li class="section__item">
+            Announcements team (content and tracking)
+          </li>
+        </ul>
+      </li>
 
-thead {
-  background: #1e293b;
-}
+      <li class="section__item">
+        Functional requirements:
+        <ul class="section__list">
+          <li class="section__item">
+            Accept unstructured or semi-structured input
+          </li>
+          <li class="section__item">Convert input into structured JSON</li>
+          <li class="section__item">Classify project type and templates</li>
+          <li class="section__item">Generate HTML from templates</li>
+          <li class="section__item">Store and share data across systems</li>
+        </ul>
+      </li>
 
-th {
-  text-align: left;
-  padding: 0.9rem 1rem;
-  font-weight: 600;
-  color: #e2e8f0;
-  font-size: 0.85rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
+      <li class="section__item">
+        Non-functional requirements:
+        <ul class="section__list">
+          <li class="section__item">Maintainability (Node.js ecosystem)</li>
+          <li class="section__item">Consistency (single source of truth)</li>
+          <li class="section__item">Security (no direct AI execution)</li>
+          <li class="section__item">Usability (non-technical input support)</li>
+          <li class="section__item">Reliability (fallback without AI)</li>
+          <li class="section__item">
+            Scalability (increasing campaign volume)
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-td {
-  padding: 0.9rem 1rem;
-  color: #cbd5f5;
-  border-top: 1px solid #1e293b;
-}
+  <section class="section__container">
+    <h2 class="section__title">4. System Overview</h2>
+    <p class="section__intro">
+      The system is designed as an AI-assisted pipeline separating data
+      structuring, execution, and validation.
+    </p>
 
-tbody tr {
-  transition: background 0.2s ease;
-}
+    <ul class="section__list --parent">
+      <li class="section__item">AI processing (input structuring)</li>
+      <li class="section__item">Script-based execution</li>
+      <li class="section__item">Human validation</li>
+    </ul>
 
-tbody tr:hover {
-  background: #1e293b;
-}
+    <h3 class="section__subtitle">System Flow</h3>
+    <ol class="section__list --parent">
+      <li class="section__item">Sales provides input (Google Sheets)</li>
+      <li class="section__item">AI transforms data into structured JSON</li>
+      <li class="section__item">JSON becomes the source of truth</li>
+      <li class="section__item">CLI generates pages</li>
+      <li class="section__item">Frontend validates output</li>
+      <li class="section__item">Pages are deployed</li>
+    </ol>
 
-/* Optional: highlight improvement (After column) */
-td:last-child {
-  color: #22c55e; /* subtle green */
-  font-weight: 500;
-}
+    <img src="/images/pagegen_diagram_flow.jpg" alt="System Flow Diagram" />
+  </section>
 
-/* Responsive */
-@media (max-width: 640px) {
-  table {
-    font-size: 0.85rem;
-  }
+  <section class="section__container">
+    <h2 class="section__title">5. Architecture</h2>
 
-  th, td {
-    padding: 0.7rem;
-  }
-}
-</style>
+    <ul class="section__list --parent">
+      <li class="section__item">AI Processing (Gemini)</li>
+      <li class="section__item">Data Layer (JSON)</li>
+      <li class="section__item">Automation Layer (Apps Script)</li>
+      <li class="section__item">Storage (Sheets, Drive)</li>
+      <li class="section__item">Output (HTML, Markdown)</li>
+      <li class="section__item">Human Validation</li>
+    </ul>
 
-<Layout> 
-      <div
-    class="relative z-50 col-start-2 col-span-10 max-sm:col-start-3 max-sm:col-span-9"
-  >
-    <header class="project-header">
-      <h1 class="page__title">Wildlife Rescue & Operations Platform</h1>
-      <p class="page__subtitle">Solutions Engineering & System Design</p>
+    <img src="/images/pagegen_diagram_c2.jpg" alt="C2 Architecture Diagram" />
 
-    </header>
-<section class="section__container">
-  <h2 class="section__title">1. Problem & Goals</h2>
-  <p class="section__intro">Campaign page creation was a manual, cross-team process that led to inefficiencies, delays, and inconsistent data.</p>
-
-  <ul class="section__list --parent">
-    <li class="section__item">Campaign page creation relied on manual coordination between sales, frontend, and announcements teams</li>
-    <li class="section__item">Workflow was fragmented:
-      <ul class="section__list">
-        <li class="section__item">Communication via chat tools (Chatwork)</li>
-        <li class="section__item">Manual extraction and rewriting into tickets</li>
-        <li class="section__item">Manual duplication of templates and folders</li>
-        <li class="section__item">Inconsistent and hard-to-track data</li>
-      </ul>
-    </li>
-    <li class="section__item">Impact:
-      <ul class="section__list">
-        <li class="section__item">6–8 hours to prepare a single page</li>
-        <li class="section__item">8–15 back-and-forth messages per project</li>
-        <li class="section__item">Frequent inconsistencies and information loss</li>
-      </ul>
-    </li>
-    <li class="section__item">Goals:
-      <ul class="section__list">
-        <li class="section__item">Reduce manual coordination and repetitive work</li>
-        <li class="section__item">Standardize input and data handling</li>
-        <li class="section__item">Improve delivery speed</li>
-        <li class="section__item">Scale from ~16 to 30+ projects/month</li>
-        <li class="section__item">Maintain quality through controlled automation</li>
-      </ul>
-    </li>
-  </ul>
-</section>
-  
-<section class="section__container">
-  <h3 class="section__subtitle">Before vs After</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Aspect</th>
-        <th>Before</th>
-        <th>After</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Setup time</td>
-        <td>6–8h</td>
-        <td>2–4h</td>
-      </tr>
-      <tr>
-        <td>Communication</td>
-        <td>8–15 messages</td>
-        <td>Minimal</td>
-      </tr>
-      <tr>
-        <td>Data consistency</td>
-        <td>Low</td>
-        <td>High</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<section class="section__container">
-  <h2 class="section__title">2. Context & Constraints</h2>
-  <p class="section__intro">
-    The solution operates within a cross-team, semi-technical environment and must respect both technical limitations and business realities.
-  </p>
-
-  <ul class="section__list --parent">
-    <li class="section__item">Environment:
-      <ul class="section__list">
-        <li class="section__item">Cross-functional workflow (Sales, Frontend, Design, Announcements)</li>
-        <li class="section__item">Non-technical users providing input</li>
-        <li class="section__item">Asynchronous collaboration across teams</li>
-      </ul>
-    </li>
-
-    <li class="section__item">Technical constraints:
-      <ul class="section__list">
-        <li class="section__item">No direct AI access to internal systems</li>
-        <li class="section__item">Script-based execution (no backend services)</li>
-        <li class="section__item">Use of existing tools (Google Sheets, Drive, Gemini AI)</li>
-      </ul>
-    </li>
-
-    <li class="section__item">Business constraints:
-      <ul class="section__list">
-        <li class="section__item">Frontend-driven ecosystem (Node.js preferred)</li>
-        <li class="section__item">Small team (2 members)</li>
-        <li class="section__item">Fast adoption with minimal disruption</li>
-        <li class="section__item">Cost efficiency vs scaling headcount</li>
-      </ul>
-    </li>
-
-    <li class="section__item">Assumptions:
-      <ul class="section__list">
-        <li class="section__item">AI can structure semi-structured input</li>
-        <li class="section__item">Human validation is required before publishing</li>
-        <li class="section__item">Structured data improves consistency and scalability</li>
-      </ul>
-    </li>
-  </ul>
-</section>
-
-<section class="section__container">
-  <h3 class="section__subtitle">System Context</h3>
-  <img src="/images/pagegen_diagram_systemboundries.jpg" alt="System Context Diagram" />
-</section>
-
-<section class="section__container">
-  <h2 class="section__title">3. Users & Requirements</h2>
-
-  <ul class="section__list --parent">
-    <li class="section__item">Users:
-      <ul class="section__list">
-        <li class="section__item">Sales team (input campaign data)</li>
-        <li class="section__item">Frontend engineers (generate and validate pages)</li>
-        <li class="section__item">Announcements team (content and tracking)</li>
-      </ul>
-    </li>
-
-    <li class="section__item">Functional requirements:
-      <ul class="section__list">
-        <li class="section__item">Accept unstructured or semi-structured input</li>
-        <li class="section__item">Convert input into structured JSON</li>
-        <li class="section__item">Classify project type and templates</li>
-        <li class="section__item">Generate HTML from templates</li>
-        <li class="section__item">Store and share data across systems</li>
-      </ul>
-    </li>
-
-    <li class="section__item">Non-functional requirements:
-      <ul class="section__list">
-        <li class="section__item">Maintainability (Node.js ecosystem)</li>
-        <li class="section__item">Consistency (single source of truth)</li>
-        <li class="section__item">Security (no direct AI execution)</li>
-        <li class="section__item">Usability (non-technical input support)</li>
-        <li class="section__item">Reliability (fallback without AI)</li>
-        <li class="section__item">Scalability (increasing campaign volume)</li>
-      </ul>
-    </li>
-  </ul>
-</section>
-
-<section class="section__container">
-  <h2 class="section__title">4. System Overview</h2>
-  <p class="section__intro">
-    The system is designed as an AI-assisted pipeline separating data structuring, execution, and validation.
-  </p>
-
-  <ul class="section__list --parent">
-    <li class="section__item">AI processing (input structuring)</li>
-    <li class="section__item">Script-based execution</li>
-    <li class="section__item">Human validation</li>
-  </ul>
-
-  <h3 class="section__subtitle">System Flow</h3>
-  <ol class="section__list --parent">
-    <li class="section__item">Sales provides input (Google Sheets)</li>
-    <li class="section__item">AI transforms data into structured JSON</li>
-    <li class="section__item">JSON becomes the source of truth</li>
-    <li class="section__item">CLI generates pages</li>
-    <li class="section__item">Frontend validates output</li>
-    <li class="section__item">Pages are deployed</li>
-  </ol>
-
-  <img src="/images/pagegen_diagram_flow.jpg" alt="System Flow Diagram" />
-</section>
-
-<section class="section__container">
-  <h2 class="section__title">5. Architecture</h2>
-
-  <ul class=" section__list --parent">
-    <li class="section__item">AI Processing (Gemini)</li>
-    <li class="section__item">Data Layer (JSON)</li>
-    <li class="section__item">Automation Layer (Apps Script)</li>
-    <li class="section__item">Storage (Sheets, Drive)</li>
-    <li class="section__item">Output (HTML, Markdown)</li>
-    <li class="section__item">Human Validation</li>
-  </ul>
-
-  <img src="/images/pagegen_diagram_c2.jpg" alt="C2 Architecture Diagram" />
-
-  <h3 class="section__subtitle">Core Pipeline (Representative)</h3>
-  <pre><code class="language-json">
+    <h3 class="section__subtitle">Core Pipeline (Representative)</h3>
+    <pre><code class="language-json">
   function processRow(sheet, row)&#123;
     const lock = LockService.getScriptLock();
     try &#123;
@@ -342,38 +256,47 @@ td:last-child {
       lock.releaseLock();
     &#125;
   &#125;</code></pre>
-</section>
+  </section>
 
-<section class="section__container">
-  <h2 class="section__title">6. Data Model & Behavior</h2>
+  <section class="section__container">
+    <h2 class="section__title">6. Data Model & Behavior</h2>
 
-  <ul class="section__list --parent">
-    <li class="section__item">Project Management Data:
-      <ul class=" section__list">
-        <li class="section__item">Stored in Google Sheets</li>
-        <li class="section__item">Contains campaign metadata and ownership</li>
-        <li class="section__item">Tracks project lifecycle</li>
-      </ul>
-    </li>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        Project Management Data:
+        <ul class="section__list">
+          <li class="section__item">Stored in Google Sheets</li>
+          <li class="section__item">
+            Contains campaign metadata and ownership
+          </li>
+          <li class="section__item">Tracks project lifecycle</li>
+        </ul>
+      </li>
 
-    <li class="section__item">Page Management Data:
-      <ul class=" section__list">
-        <li class="section__item">Stored in Google Sheets</li>
-        <li class="section__item">Defines page configuration and tracking</li>
-        <li class="section__item">Includes links, status, and delivery info</li>
-      </ul>
-    </li>
+      <li class="section__item">
+        Page Management Data:
+        <ul class="section__list">
+          <li class="section__item">Stored in Google Sheets</li>
+          <li class="section__item">Defines page configuration and tracking</li>
+          <li class="section__item">
+            Includes links, status, and delivery info
+          </li>
+        </ul>
+      </li>
 
-    <li class="section__item">Page Generation Data (Source of Truth):
-      <ul class=" section__list">
-        <li class="section__item">Structured JSON used for generation</li>
-        <li class="section__item">Decouples content from implementation</li>
-        <li class="section__item">Enables consistent and repeatable outputs</li>
-      </ul>
-    </li>
-  </ul>
+      <li class="section__item">
+        Page Generation Data (Source of Truth):
+        <ul class="section__list">
+          <li class="section__item">Structured JSON used for generation</li>
+          <li class="section__item">Decouples content from implementation</li>
+          <li class="section__item">
+            Enables consistent and repeatable outputs
+          </li>
+        </ul>
+      </li>
+    </ul>
 
-  <pre><code>&#123;
+    <pre><code>&#123;
   "template": "store_osaka",
   "page_path": "osaka_store",
   "store": "osaka",
@@ -383,63 +306,71 @@ td:last-child {
   "post_sales_allowed": true
   &#125;</code></pre>
 
-  <h3 class="section__subtitle">CLI Prototype</h3>
-  <pre><code>node src/generator.js --file shibuya.json</code></pre>
-</section>
+    <h3 class="section__subtitle">CLI Prototype</h3>
+    <pre><code>node src/generator.js --file shibuya.json</code></pre>
+  </section>
 
-<section class="section__container">
-  <h2 class="section__title">7. Decisions & Trade-offs</h2>
+  <section class="section__container">
+    <h2 class="section__title">7. Decisions & Trade-offs</h2>
 
-  <ul class=" section__list --parent">
-    <li class="section__item">AI limited to structuring (reliability over flexibility)</li>
-    <li class="section__item">JSON as source of truth (strict schema required)</li>
-    <li class="section__item">Node.js ecosystem (simple and maintainable)</li>
-    <li class="section__item">Human-in-the-loop validation</li>
-    <li class="section__item">Apps Script simplicity vs scalability</li>
-  </ul>
-</section>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        AI limited to structuring (reliability over flexibility)
+      </li>
+      <li class="section__item">
+        JSON as source of truth (strict schema required)
+      </li>
+      <li class="section__item">Node.js ecosystem (simple and maintainable)</li>
+      <li class="section__item">Human-in-the-loop validation</li>
+      <li class="section__item">Apps Script simplicity vs scalability</li>
+    </ul>
+  </section>
 
-<section class="section__container">
-  <h2 class="section__title">8. Reliability & Scalability</h2>
+  <section class="section__container">
+    <h2 class="section__title">8. Reliability & Scalability</h2>
 
-  <h3 class="section__subtitle">Reliability</h3>
-  <ul class=" section__list --parent">
-    <li class="section__item">Input validation</li>
-    <li class="section__item">Script validation</li>
-    <li class="section__item">Frontend review</li>
-    <li class="section__item">Fallback without AI</li>
-  </ul>
+    <h3 class="section__subtitle">Reliability</h3>
+    <ul class="section__list --parent">
+      <li class="section__item">Input validation</li>
+      <li class="section__item">Script validation</li>
+      <li class="section__item">Frontend review</li>
+      <li class="section__item">Fallback without AI</li>
+    </ul>
 
-  <h3 class="section__subtitle">Scalability</h3>
-  <ul class=" section__list --parent">
-    <li class="section__item">Current: Sheets + scripts</li>
-    <li class="section__item">Future: backend service + database + dashboard</li>
-  </ul>
-</section>
+    <h3 class="section__subtitle">Scalability</h3>
+    <ul class="section__list --parent">
+      <li class="section__item">Current: Sheets + scripts</li>
+      <li class="section__item">
+        Future: backend service + database + dashboard
+      </li>
+    </ul>
+  </section>
 
-<section class="section__container">
-  <h2 class="section__title">9. Outcome & Learnings</h2>
+  <section class="section__container">
+    <h2 class="section__title">9. Outcome & Learnings</h2>
 
-  <h3 class="section__subtitle">Impact</h3>
-  <ul class=" section__list --parent">
-    <li class="section__item">6–10h → 2–4h preparation time</li>
-    <li class="section__item">Reduced communication overhead</li>
-    <li class="section__item">Scaled to 30+ projects/month</li>
-  </ul>
+    <h3 class="section__subtitle">Impact</h3>
+    <ul class="section__list --parent">
+      <li class="section__item">6–10h → 2–4h preparation time</li>
+      <li class="section__item">Reduced communication overhead</li>
+      <li class="section__item">Scaled to 30+ projects/month</li>
+    </ul>
 
-  <h3 class="section__subtitle">Outcome</h3>
-  <ul class=" section__list --parent">
-    <li class="section__item">Standardized workflow</li>
-    <li class="section__item">Improved data consistency</li>
-    <li class="section__item">Foundation for internal platform</li>
-  </ul>
+    <h3 class="section__subtitle">Outcome</h3>
+    <ul class="section__list --parent">
+      <li class="section__item">Standardized workflow</li>
+      <li class="section__item">Improved data consistency</li>
+      <li class="section__item">Foundation for internal platform</li>
+    </ul>
 
-  <h3 class="section__subtitle">Learnings</h3>
-  <ul class=" section__list --parent">
-    <li class="section__item">AI works best for structuring, not execution</li>
-    <li class="section__item">Workflow design improves team efficiency</li>
-    <li class="section__item">Human validation increases reliability</li>
-    <li class="section__item">Structured data enables scalability</li>
-  </ul>
-</section>
+    <h3 class="section__subtitle">Learnings</h3>
+    <ul class="section__list --parent">
+      <li class="section__item">
+        AI works best for structuring, not execution
+      </li>
+      <li class="section__item">Workflow design improves team efficiency</li>
+      <li class="section__item">Human validation increases reliability</li>
+      <li class="section__item">Structured data enables scalability</li>
+    </ul>
+  </section>
 </Layout>
